@@ -1,0 +1,56 @@
+\documentclass{article}
+
+\usepackage{amsmath}
+
+\begin{document}
+
+\begin{equation}
+  \begin{bmatrix}
+    v_1^{m} \\
+           v_2^m \\
+           v_3^m \\
+           \vdots \\
+           v_n^m
+  \end{bmatrix}
+  =
+  \begin{bmatrix}
+    (1-2r) & -r & 0 & . & . & . & 0 \\
+    -r & (1-2r) & -r & . & . & . & . \\
+     0 & . & . & . & . & . &. \\
+     . & . & . & . & . & . & 0 \\
+     . & . & . & . & -r & (1-2r) & -r \\
+     0 & . & . & . & 0 & -r & (1-2r)
+  \end{bmatrix}
+  \begin{bmatrix}
+    v_1^{m+1}\\
+v_2^{m+1}\\
+v_3^{m+1}\\
+.\\
+.\\
+v_n^{m+1} 
+  \end{bmatrix}
+\end{equation}
+
+\[
+ \begin{bmatrix}
+   A_{11} & A_{12} & \dots    & A_{1n} \\
+   A_{21} & A_{22} & \dots    & \vdots \\
+   \vdots & \vdots & \vdots   & \vdots \\
+   A_{m1} & \dots  & \dots    & A_{mn} 
+ \end{bmatrix}
+ \begin{bmatrix}
+   c_{1}  \\
+   c_{2}  \\
+   \vdots  \\
+   c_{n}   
+ \end{bmatrix}
+ =
+ \begin{bmatrix}
+   \phi _{1}  \\
+   \phi _{2}  \\
+   \vdots   \\
+   \phi _{m}
+ \end{bmatrix}
+\]
+
+\end{document}
