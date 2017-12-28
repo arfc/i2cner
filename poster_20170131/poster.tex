@@ -1,0 +1,377 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% Jacobs Landscape Poster
+% LaTeX Template
+% Version 1.1 (14/06/14)
+%
+% Created by:
+% Computational Physics and Biophysics Group, Jacobs University
+% https://teamwork.jacobs-university.de:8443/confluence/display/CoPandBiG/LaTeX+Poster
+% 
+% Further modified by:
+% Nathaniel Johnston (nathaniel@njohnston.ca)
+%
+% This template has been downloaded from:
+% http://www.LaTeXTemplates.com
+%
+% License:
+% CC BY-NC-SA 3.0 (http://creativecommons.org/licenses/by-nc-sa/3.0/)
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+%----------------------------------------------------------------------------------------
+%	PACKAGES AND OTHER DOCUMENT CONFIGURATIONS
+%----------------------------------------------------------------------------------------
+
+\documentclass[final]{beamer}
+
+\usepackage[scale=1.0]{beamerposter} % Use the beamerposter package for laying out the poster
+\usetheme{confposter} % Use the confposter theme supplied with this template
+
+\setbeamercolor{block title}{fg=dblue!80,bg=white} % Colors of the block titles
+\setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
+\setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
+\setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+% Many more colors are available for use in beamerthemeconfposter.sty
+
+%-----------------------------------------------------------
+% Define the column widths and overall poster size
+% To set effective sepwid, onecolwid and twocolwid values, first choose how many columns you want and how much separation you want between columns
+% In this template, the separation width chosen is 0.024 of the paper width and a 4-column layout
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. (1-(4+1)*0.024)/4 = 0.22
+% onecolwid should therefore be (1-(# of columns+1)*sepwid)/# of columns e.g. 
+% (1-(3+1)*0.025)/3 = 0.3
+% Set twocolwid to be (2*onecolwid)+sepwid = 0.464
+% Set threecolwid to be (3*onecolwid)+2*sepwid = 0.708
+\newcommand{\Cyclus}{\textsc{Cyclus}\xspace}%
+
+\newlength{\sepwid}
+\newlength{\onecolwid}
+\newlength{\twocolwid}
+\newlength{\threecolwid}
+\setlength{\paperwidth}{36in} % A0 width: 46.8in
+\setlength{\paperheight}{48in} % A0 height: 33.1in
+\setlength{\textwidth}{34in} % A0 width: 46.8in
+\setlength{\textheight}{46in} % A0 height: 33.1in
+\setlength{\sepwid}{0.025\paperwidth} % Separation width (white space) between columns
+\setlength{\onecolwid}{0.3\paperwidth} % Width of one column
+\setlength{\twocolwid}{0.625\paperwidth} % Width of two columns
+\setlength{\threecolwid}{0.95\paperwidth} % Width of three columns
+\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+%-----------------------------------------------------------
+
+\usepackage{graphicx}  % Required for including images
+
+\usepackage{tabularx}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{z}{>{\hsize=.65\hsize}X}
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{xspace}
+
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes, calc }
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+
+\tikzstyle{block} = [rectangle, draw, text centered, fill=blue!20]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=6em,
+minimum height=2em]
+
+
+
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{positioning}
+
+
+\setbeamertemplate{bibliography item}[text]
+
+%----------------------------------------------------------------------------------------
+%	TITLE SECTION 
+%----------------------------------------------------------------------------------------
+
+\title{\textbf{Dynamic Transition Analysis with TIMES:}\\ I\textsuperscript{2}CNER Initiative on Challenges in Energy Assessment and Energy Transtitions} % Poster title
+
+\author{Kathryn D. Huff, James Stubbins}
+\institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
+%----------------------------------------------------------------------------------------
+
+\begin{document}
+
+\addtobeamertemplate{block end}{}{\vspace*{2ex}} % White space under blocks
+\addtobeamertemplate{block alerted end}{}{\vspace*{2ex}} % White space under highlighted (alert) blocks
+
+\setlength{\belowcaptionskip}{2ex} % White space under figures
+\setlength\belowdisplayshortskip{2ex} % White space under equations
+
+\begin{frame}[t] % The whole poster is enclosed in one beamer frame
+
+\begin{columns}[t,totalwidth=\threecolwid] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+%=======================================================
+% FIRST COLUMN BEGINS
+%=========================================================
+
+
+\begin{column}{\onecolwid} % The first column
+
+%----------------------------------------------------------------------------------------
+%	OBJECTIVES
+%----------------------------------------------------------------------------------------
+
+\begin{alertblock}{Objectives}
+
+Evaluate potential impact of novel energy technologies within Japan's energy system. Specifically:
+\begin{itemize}
+	\item Help guide practical near term (2010-2050) transition strategies to minimize carbon emissions within realistic constraints.
+	\item Identify high impact technologies.
+	\item Assess role of technology readiness.
+	\item Predict impediments to strategically optimal technology deployment.
+	\item Identify ideal timelines for energy system deployment, infrastructure development, high impact R\&D investment.
+	
+\end{itemize}
+
+\end{alertblock}
+
+\begin{block}{Collaborators}
+
+I\textsuperscript{2}CNER collaborators will include primarily the members of the Energy Analysis Division (EAD), including those members at other institutes, universities or industries with connections to the EAD.   
+ 
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	METHODOLOGY
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Methodology}
+Multiple studies have been conducted to compare the impact of innovative energy technologies in different regions of the world using \textit{static} scenario analyses \cite{chyong_chi_dynamics_2009} \cite{feng_system_2013} \cite{kikuchi_simulation-based_2017} \cite{li_energy_2010} \cite{pambudi_impact_2017} \cite{pambudi_future_2016}. We will simulate \textit{dynamic transition scenarios} \cite{jebaraj_review_2006} \cite{pfenninger_energy_2014} , with realistic constraints and technology readiness of energy generation technologies (in terms of generation, transmission \& storage), aimed at minimizing carbon emissions. We will further extend previous work by combining multiple technologies in a single heterogeneous system.\\
+
+The TIMES (The Integrated MARKAL-EFOM System) model generator \cite{loulou_documentation_2005} \cite{seebregts_energy/environmental_2002} optimizes energy systems of a model using linear and mixed-linear algorithms while implementing user-defined objective functions (such as minimizing carbon emissions or costs) within user defined constraints such as energy generation demand. It will be used to simulate near-term energy transitions while focusing on reduction of carbon emissions. 
+
+\begin{figure}
+	\centering
+	\scalebox{0.8}{
+		\begin{tikzpicture}[    >=stealth,
+		node distance=8cm,
+		on grid,
+		align=center,
+		auto]
+		% Place nodes
+		\node [block] (times) {\textbf{TIMES Model Generator}};
+		\node [cloud, above left=13cm and 12cm of times] (mod) {\texttt{MODEL} \\ heterogeneous \\ mutli-technology \\ model of JPN};
+				\node [cloud, above=9cm of mod] (dat) { Data \\ collection};
+		\node [cloud, above=9cm of times] (of) {\texttt{OBJECTIVE}\\\texttt{FUNCTION} \\ e.g.: Minimize \\ carbon emissions \\ from all \\ deployed sources};
+		\node [cloud, above right=13cm and 10cm of times] (const) {\texttt{CONSTRAINTS} \\ e.g.: Deployed \\
+		sources must\\ meet energy \\ demand};
+		\node [cloud, below=of times] (res) {Simulation \\ Results};
+		\node [cloud, below=of res] (eres) {Projections,\\ Conclusions, \\ Insights} ;
+		
+		\draw[->, ultra thick] let \p1=($(times)-(mod)$) in (mod) -- +(0,\y1)-- +(times);
+		\draw[->, ultra thick] (of) -- (times);
+		%\draw[->, ultra thick] let \p3=($(times)-(const)+(2,3)$),\p4=($(times)+(9,9)$),\p5=($(const)-(3,3)$) in (\x3,\y4) -- +(0,\y2)-- +(times);
+		\draw[->, ultra thick] let \p2=($(times)-(const)$) in (const)-- +(0,\y2) -- + (times);
+		\draw[->, ultra thick] (times) -- (res);
+		\draw[->, ultra thick] (res) -- (eres);
+		\draw[->, ultra thick] (dat) -- (mod);
+ \end{tikzpicture}
+		
+	}
+	\caption{Basic methodology for dynamic simulation of Japan's energy system.}
+\end{figure}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	Anticipated Results
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Anticipated Results}
+
+ \begin{itemize}
+   \item Analysis results can be filtered by sector (commercial, industrial, residential, building etc) or by region.
+   
+   \item Many metrics are automatically postprocessed- such as energy intensity, thermal energy efficiency, transmission capacity. 
+   
+   \item Technology deployment transitions driven by constrained optimization will have valuable strategic value.    
+ 
+ 
+ \end{itemize}  
+ 
+ 	
+\end{block}
+
+
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+
+%===========================================================================================
+% SECOND COLUMN BEGINS
+%=============================================================================================
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\onecolwid} % The second column
+
+
+
+%----------------------------------------------------------------------------------------
+%	RESULTS
+%----------------------------------------------------------------------------------------
+
+
+        \begin{alertblock}{Impact}
+        \large Results will:
+	\begin{itemize}
+		\item {\large Assist in creation of realistic decarbonization roadmaps that maximize efficiency.}
+        \item {\large Identify potential bottlenecks during transitions.}
+		\item {\large Help Japan's policymakers create timelines for R\&D investment and for appropriate infrastructure development.}
+		\item {\large Quantify system sensitivity to technology readiness.}
+	\end{itemize}
+        \end{alertblock}
+   
+
+%--------------------------------------------------------
+% CHALLENGES
+%---------------------------------------------------------
+\begin{block}{Challenges}
+
+ \begin{itemize}
+   \item Reliable data for each technology's deployment and operation is required, such as:
+    \begin{itemize}
+    
+     \item \normalsize Technology readiness
+     
+     \item Carbon intensity
+     
+     \item Capacity and availability factors
+     
+     \item Fuel costs and demands
+     
+     \item Thermal/electric generation capacity
+     
+     \item Storage capacity
+     
+     \item Thermal efficiency
+     
+     \item Construction time
+     
+     \item Construction costs
+     
+     \item Operation and maintenance costs\\
+    
+    
+    \end{itemize}
+    
+   
+   \item Mutiple constraints cause complications.
+   
+   \item Variation of goals or the objective function can significantly change each simulation. e.g.: cost could be objective function whereas carbon reduction up to a certain percentage (50-70\%) could be the constraint, flipping the script.
+   
+   \item Calculation of constituent parameters, such as carbon emissions per component and quantification of deployment, will be complex.
+   
+   \item Intermediate objective functions for a multi-objective formulation could additionally include intermediate-resolution-goals such as Efficiency Increase (EI) and Lower Carbon Intensity (LCI). These intermediate objectives will increase the complexity of the calculation.
+ 
+ 
+ \end{itemize}  
+ 
+ 	
+\end{block}
+
+
+%----------------------------------------------------------------------------------------
+%	CONCLUSION
+%----------------------------------------------------------------------------------------
+
+\begin{block}{Summary}
+\begin{itemize}
+
+\item Dynamic simulation of Japan's energy system in TIMES model generator using a heterogeneous model and realistic constraints will help develop near-term decarbonization strategies.
+
+\item Policymakers will benefit from identification of high impact technologies, and creation of R\&D investment and infrastructure development timelines.
+
+\item Simulations will quantify system sensitivity to technology readiness, and also account for secondary scenarios where decarbonization is not the main priority.
+
+\end{itemize}
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	ACKNOWLEDGEMENTS
+%----------------------------------------------------------------------------------------
+
+\setbeamercolor{block title}{fg=norange,bg=white} % Change the block title color
+
+\begin{block}{Acknowledgements}
+
+This research is being performed using funding received
+from the I\textsuperscript{2}CNER Programs under award number \textbf{<insert details here>}.
+
+\vspace{10mm}
+\begin{center}
+\begin{tabular}{cccc}
+\includegraphics[scale=0.5]{arfc_logo.png} & \includegraphics[scale=0.5]{wpi_logo.png} & \includegraphics[scale=0.1]{ku_logo.png} &\includegraphics[scale=0.7]{i2cner_logo.png}
+%\includegraphics[width=\linewidth, height=0.1\textheight]{i2cner_logo.png}
+\end{tabular}
+\end{center}
+
+
+\end{block}
+
+%----------------------------------------------------------------------------------------
+%	CONTACT INFORMATION
+%----------------------------------------------------------------------------------------
+
+\setbeamercolor{block alerted title}{fg=black,bg=norange} % Change the alert block title colors
+\setbeamercolor{block alerted body}{fg=black,bg=white} % Change the alert block body colors
+
+
+
+\begin{alertblock}{Contact Information}
+\setbeamercolor{block title}{fg=norange,bg=white} % Change the block title color
+\begin{itemize}
+	
+	\item Web: \href{arfc.github.io}{arfc.github.io}
+	\item Email: \href{mailto:kdhuff@illinois.edu}{kdhuff@illinois.edu}
+\end{itemize}
+
+\end{alertblock}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The third column
+
+
+\begin{block}{References}
+
+        {\footnotesize\bibliographystyle{abbrv} 
+        \bibliography{poster}}
+\end{block}
+
+
+%----------------------------------------------------------------------------------------
+
+
+
+\end{column} % End of the third column
+
+\end{columns} % End of all the columns in the poster
+
+\end{frame} % End of the enclosing frame
+
+\end{document}
+\begin{column}{\sepwid}\end{column} % Empty spacer column
