@@ -1,0 +1,8 @@
+hl_a=1
+hl_b=10
+hl_c=0
+N_a0=100
+N_b0=0
+N_c0=0
+Dt=1
+t_final=50

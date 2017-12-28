@@ -1,0 +1,1140 @@
+\documentclass[12pt,a4paper]{article}
+\usepackage[affil-it]{authblk}
+\usepackage{graphicx}
+\usepackage{amsmath}
+\usepackage{mathtools}
+\usepackage{thmtools}
+\graphicspath{ {} }
+\setcounter{secnumdepth}{0}
+
+\begin{document}
+
+\textbf{Free particle}
+
+\[
+\frac{-\hbar ^2}{2m} \frac{d^2 \psi}{dx^2} = E\psi
+\]
+
+\[
+\frac{d^2 \psi}{dx^2} = -k^2 \psi
+\]
+
+\[
+k= \pm \frac{\sqrt{2mE}}{\hbar}
+\]
+
+\[
+\psi _k (x)=A_k e^{ikx}
+\]
+
+Orthonormality:
+\begin{align}
+  \phantom{\int \psi _k ^* (x) \psi _{k'} (x)dx}
+    &\begin{aligned}
+     \mathllap{\int \psi _k ^* (x) \psi _{k'} (x)dx} &= A_k A_{k'} \int e^{-ikx} e^{-ik'x} dx=A_k A_{k'} \int e^{-i(k-k')x}dx \\
+     &\qquad = A_k A_{k'} \lim_{L\to \infty} \int_{-L}^{L} e^{-i(k-k')x} dx = A_k A_{k'} \lim_{L\to \infty} \frac{e^{-i(k-k')x}}{-i(k-k')}\Bigr | _{-L}^{L}\\
+     &\qquad = A_k A_{k'} \lim_{L\to \infty} \frac{2sin(k-k')L}{k-k'} = A_k A_{k'} 2 \pi \delta (k-k')
+     \end{aligned}
+\end{align}
+
+\[
+\lim_{L\to \infty} \frac{sin(Lx)}{\pi x} = \delta (x)
+\]
+
+\[
+A_k A_{k'}=\frac{1}{\sqrt{2\pi}}
+\]
+
+\[
+\psi _k (x)= \frac{1}{\sqrt{2\pi}} e^{ikx}
+\]
+
+\[
+\int \psi _k ^* (x) \psi_{k'} (x) dx = \delta (k-k')
+\]
+
+Completeness:
+\[
+f(x)=\int \phi(k)\psi_{k'}(x)dx= \frac{1}{\sqrt{2\pi}} \int \phi(k) e^{ikx} dx
+\]
+
+$f(x)= \to FT \to \phi(k)$: momentum space wave 
+function.\\
+
+\[
+\phi(k)= \int \psi _k ^* (x) f(x)dx=\frac{1}{\sqrt{2\pi}} \int f(x) e^{-kx} dx
+\]
+
+General solution:
+\[
+\Psi (x,t)= \int \phi(k) \psi_k(x) e^{\frac{-iEt}{\hbar}} dx =\frac{1}{\sqrt{2\pi}} \int \phi(k) e^{i(kx-\frac{E}{\hbar} t)}dx
+\]
+
+\[
+E=\frac{\hbar ^2 k^2}{2m}=\hbar \omega
+\]
+
+Initial condition:
+\[
+\Psi(x,0)= \int \phi(k) \psi_k(x) dx
+\]
+
+\[
+\phi(k)= \int \psi _k ^*(x) \Psi(x,0) dx =\frac{1}{\sqrt{2\pi}} \int \Psi(x,0) e^{-ikx} dx
+\]
+
+Free particle=continuous, band particle=discrete, hence localization = quantization.\\
+
+Velocity:
+\[
+\Psi(x,t)= \frac{1}{\sqrt{2\pi}} \int \phi(k) e^{i(kx-\omega t)} dx ; \omega=\omega(k)\ dispersion \ relation
+\]
+
+Phase velocity: $v_{phase}=\frac{\omega}{k}$ can be larger than c. Group velocity $v_{group}=\frac{d\omega}{dk}$ is true velocity.\\
+
+Eg: $E=\frac{\hbar^2 k^2}{2m}=\hbar \omega; \ \omega=\frac{\hbar k^2}{2m}; \  v_{phase}=\frac{\hbar k}{2m}; \ v_{group}=\frac{\hbar k}{m}; \ v_{phase}=2 v_{group} $\\
+
+\pagebreak
+
+
+Dirac $\delta \ $ function and $\delta$ function potential:
+
+\begin{align}
+\delta (x) &= 0, x \not\equiv 0 \\
+           &= 0, x=0 
+\end{align}
+
+\[
+\int _{-\infty}^{\infty} =1
+\]
+
+Properties of $\delta(x)$:\\
+\[
+\int _{-\infty}^{\infty} \delta(ax) dx = \frac{1}{|a|}
+\]
+
+\[
+\delta(ax)=\frac{\delta (x)}{|a|}
+\]
+
+\[
+\delta (-x)= \delta (x)
+\]
+
+\[
+\int _{-\infty}^{\infty} \delta (x) f(x-a)=f(a)
+\]
+
+\[
+f(x)* \delta (x-a)= \int _{-\infty} ^{\infty} f(\tau) \delta (\tau-(x-a))d\tau = f(x-a)
+\]
+
+\[
+\delta (f(x))= \Sigma _i \frac{\delta (x-x_i)}{|f'(x_i)|}; \ x_i \ are \ zeros \ of \ f(x)
+\]
+
+\[
+\delta (x) = \frac{dH(x)}{dx}; \ Heaviside \ step \  fn
+\]
+
+\begin{align}
+ H (x) &= 1, x>0 \\
+       &= 0.5, x=0 \\
+       &= 0, x<0
+\end{align}
+
+Dimension of $\delta (x)$ are $\frac{1}{[x]}$.
+
+\[
+V(x)=-\alpha \delta (x),\ [\alpha]=[x][E]
+\]
+
+Eg: Fermi pseudopotential $V_f(r)= \frac{2\pi \hbar ^2}{m} b \  \delta (r)$, where b is bound scattering length.
+
+\textbf{Bound State}, $E<0, \not \equiv$
+\[
+\frac{-\hbar ^2}{2m} \frac{d^2 \psi (x)}{dx^2} + 0 =E \psi(x)
+\]
+
+\[
+\psi (x) = A e^{kx} + Be^{-kx}, k= \frac{\sqrt{-2mE}}{\hbar}
+\]
+
+\begin{align}
+\psi(x) &= Ae^{kx},  x<0 \\
+        &= Be^{-kx}, x>0 \\
+\end{align}
+
+Using continuity:
+\[
+\psi(0^-)= \psi(0^+), A=B
+\]
+
+$ \frac{d \psi}{dx}$ is not continuous at $\infty$ potential. 
+\\
+
+\[
+\frac{-\hbar ^2}{2m} \frac{d^2 \psi (x)}{dx^2} - V(x)\psi(x)= E \psi (x)
+\]
+
+Integrating from $-\epsilon$ to $\epsilon$:\\
+\[
+\frac{-\hbar ^2}{2m}= \int _{-\epsilon} ^{\epsilon} \frac{d^2 \psi (x)}{dx^2} dx + \int _{-\epsilon} ^{\epsilon} V(x) \psi (x) dx = E \int _{-\epsilon} ^{\epsilon} \psi (x) dx
+\]
+
+Taking the limit $\epsilon \to 0$:\\
+\[
+\frac{-\hbar ^2}{2m} \frac{d\psi}{dx} \Bigr | _{0 ^-} ^{0 ^+} - \alpha \psi(0)= E \psi(0) 2\epsilon
+\]
+
+\[
+\frac{d\psi}{dx} \Bigr | _{0 ^-} ^{0 ^+}= - \frac{2m}{\hbar ^2} \alpha A \not \equiv 0
+\]
+
+\[
+-Ak -Ak=\frac{2m}{\hbar ^2} \alpha A 
+\]
+
+\[
+k=\frac{m\alpha}{\hbar ^2}=\frac{\sqrt{-2mE}}{\hbar}
+\]
+
+\[
+E=\frac{-m\alpha ^2}{2\hbar ^2}
+\]
+
+Normalization:
+\[
+\int _{-\infty}^{\infty} |\psi|^2 dx= (A^2) (2) \int _0^{\infty} e^{-2kx}dx=(A^2) (2) \frac{1}{2k}=1
+\]
+\[
+A=\sqrt{k}
+\]
+
+\[
+\psi(x)=\sqrt{k} e^{-k|x|}, k=\frac{m\alpha}{\hbar ^2}
+\]
+\[
+E=-\frac{m\alpha ^2}{2\hbar ^2}
+\]
+
+\textbf{Scattering state},$E>0$:
+\[
+x \neq 0, \frac{-\hbar ^2}{2m} \frac{d^\psi(x)}{dx^2}= E\psi(x)
+\]
+
+\[
+x<0, \psi(x)= Ae^{ikx}+Be^{-ikx}
+\]
+
+\[
+x>0, \psi(x)= Ce^{ikx}+De^{-ikx}
+\]
+
+where $k=\frac{\sqrt{2mE}}{\hbar}$.\\
+
+Using continuity at $0^-$ and $0^+$:
+\[
+A+B=C+D
+\]
+
+\[
+\frac{-\hbar ^2}{2m} \frac{d\psi}{dx} \Bigr | _{0 ^-} ^{0 ^+} - \alpha \psi(0)
+\]
+
+\[
+\frac{-\hbar ^2}{2m} ik[(C-D)-(A-B)]=\alpha (A+B)
+\]
+
+Consider $D=0$, particle comes from the left:
+\[
+A+B=C
+\]
+
+\[
+(1+2\beta i)A+(-1+2\beta i)B=C, \beta=\frac{m\alpha}{k\hbar ^2}
+\]
+
+\[
+B(A)=\frac{\beta i}{1-\beta i}A
+\]
+
+\[
+C(A)=\frac{1}{1-\beta i}A
+\]
+
+Reflection coefficient:
+\[
+R=\Bigr | \frac{B}{A} \Bigr | ^2 =\frac{\beta ^2}{1+\beta^2}
+\]
+
+Transmission coefficient:
+\[
+T=\Bigr | \frac{C}{A} \Bigr | ^2 =\frac{1}{1+\beta^2}
+\]
+
+Remarks:
+\begin{itemize}
+\item E inc, k inc, $\beta$ dec, T inc, R dec
+\item $\alpha$ inc, $\beta$ inc, T dec, R inc, $\alpha \to \infty$,$T \to 0$, $R \to 1$
+\item If $V \to -V$: no bound state, scattering state remains the same vs classical.
+\end{itemize}
+
+\section{1D Finite Square Well}
+
+\[ V(x)= \begin{cases} 
+            0    ; & |x|\geq a \\
+           -V_0  ; & |x|<a     \\
+         \end{cases}
+\]
+
+\textbf{(1) Bound State $E<0 (E>-V_0$)}
+For $x<-a$:
+\[
+\frac{-\hbar^2}{2m}\frac{d^2 \psi (x)}{dx^2}=E \psi (x)
+\]
+
+\[
+\kappa=\frac{\sqrt{-2mE}}{\hbar}
+\]
+
+\[
+\psi (x)= Ae^{\kappa x} + Be^{-\kappa x}; B=0
+\]
+
+For $-a<x<a$:
+\[
+\frac{-\hbar^2}{2m}\frac{d^2 \psi (x)}{dx^2} -V_0 \psi (x)=E \psi (x)
+\]
+
+\[
+k=\frac{\sqrt{-2m(E+V_0)}}{\hbar}
+\]
+
+\[
+\psi (x)= Ce^{kx} + De^{-kx}
+\]
+
+For x$>$a:
+\[
+\frac{-\hbar^2}{2m}\frac{d^2 \psi (x)}{dx^2}=E \psi (x)
+\]
+
+\[
+\kappa =\frac{\sqrt{-2mE}}{\hbar}
+\]
+
+\[
+\psi (x)= Fe^{\kappa x} + Ge^{-\kappa x}; F=0
+\]
+
+\[
+   \psi (x)=\begin{cases}
+              Ae^{\kappa x} ; &  x<-a \\
+              Csinkx+Dcoskx;      & -a<x<a \\
+              Ge^{-\kappa x};      & x>a \\
+         \end{cases}
+\]
+
+Continuity:
+
+\begin{equation} \label{d1eq1}
+Ae^{-\kappa a}=-Csinka+Dcoska
+\end{equation}
+
+\begin{equation} \label{d1eq2}
+A \kappa e^{-\kappa a}=-Cksinka+Dkcoska
+\end{equation}
+
+\begin{equation} \label{d1eq3}
+Ge^{-\kappa a}=Csinka+Dcoska
+\end{equation}
+
+\begin{equation} \label{d1eq4}
+-G\kappa e^{-\kappa a}=Cksinka-Dkcoska
+\end{equation}
+
+\[
+\ref{d1eq1}^2+\frac{\ref{d1eq2}}{k} ^2: A^2 e^{-2\kappa a} (1+\frac{\kappa ^2}{k^2})=C^2 + D^2
+\]
+\[
+\ref{d1eq3}^2+\frac{\ref{d1eq3}}{k} ^2: G^2 e^{-2\kappa a} (1+\frac{\kappa ^2}{k^2})=C^2 + D^2
+\]
+For even wave function:
+\[
+A=G
+\]
+For odd wave function:
+\[
+A=-G
+\]
+
+\[
+\ref{d1eq1}-\ref{d1eq3}:0=-2Csinka \Rightarrow  C=0
+\]
+
+\[
+\ref{d1eq1},\ref{d1eq3} \Rightarrow Ae^{-\kappa a}=Dcoska
+\]
+\[
+\ref{d1eq2},\ref{d1eq4} \Rightarrow Ake^{-\kappa a}=Dksinka
+\]
+\[
+\kappa =ktanka
+\]
+For odd, $D=0$:
+\[
+\kappa=-kcotka
+\]
+
+Notice that:
+\[
+k^2 + \kappa ^2 = \frac{2mV_0}{\hbar ^2}
+\]
+
+Let $ka=Z$, then:
+\[
+Z^2 + k^2 a^2 = \frac{2mV_0}{\hbar ^2} a^2 =Z_0 ^2
+\]
+\[
+ka = \sqrt{Z_0 ^{2} - Z^2}
+\]
+\[
+=>\sqrt{Z_0 ^{2} - Z^2}=Ztanz
+\]
+
+\[
+tanZ=\sqrt{\frac{Z_0}{Z}^2 -1}
+\]
+
+Wide($a \to \infty$), deep($V_0 \to \infty$):
+\[
+Z_n \approx \frac{n \pi}{2}
+\]
+where n=1,3,5... for even wave functions and n=2,4,6... for odd wave functions.
+\[
+k_n=\frac{Z_n}{a} \approx \frac{n \pi}{2a}
+\]
+\[
+E_n + V_0 = \frac{k_n ^2 \hbar ^2}{2m} \approx \frac{n^2 \pi ^2 \hbar ^2}{2m(2a)^2}
+\]
+which is same as inifinte square well.
+
+Narrow($a \to 0$), shallow($V_0 \to 0$): If $Z_0 < \frac{\pi}{2}$, then one bound state.
+
+Normalization of even wavefunction:
+\[
+D^2 \int _0 ^a cos^2 kxdx+ A^2 \int _a ^\infty e^{-2\kappa x} dx = \frac{1}{2}
+\]
+\[
+D^2 \frac{1}{k} \frac{1}{2}(\frac{1}{2}sin2ka+ka)+A^2 \frac{1}{2k} e^{-2 \kappa a}=\frac{1}{2}
+\]
+\[
+Ae^{-\kappa a}=Dcoska
+\]
+\[
+D^2 = \frac{\kappa k}{kcos^2 ka+ sinkacoska+\kappa ka}=\frac{\kappa}{1+\kappa a}
+\]
+\[
+D=\sqrt{\frac{\kappa}{1+\kappa a}}
+\]
+\[
+A=\sqrt{\frac{\kappa}{1+\kappa a}} coska \ e^{\kappa a}
+\]
+
+Normalization of odd wavefunction:
+\[
+C^2 \int _0 ^a sin^2 kx dx + A^2 \int _a ^{\infty} e^{-2\kappa x} dx=\frac{1}{2}
+\]
+\[
+C^2 \frac{1}{k}\frac{1}{2}(-\frac{1}{2}sinka+ka)+A^2 \frac{1}{2\kappa}e^{-2\kappa a}=\frac{1}{2}
+\]
+\[
+Ae^{-\kappa a}=-Csinka
+\]
+\[
+C^2 = \frac{\kappa k}{ksin^2 ka- sinkacoska+\kappa ka}=\frac{\kappa}{1+\kappa a}
+\]
+\[
+C=\sqrt{\frac{\kappa}{1+\kappa a}}
+\]
+\[
+A=-\sqrt{\frac{\kappa}{1+\kappa a}} coska \ e^{\kappa a}
+\]
+\textbf{In summary:}\\
+
+For odd n:
+\[
+\psi _n (x)= \begin{cases}
+              Ae^{\kappa x} ; &  x<-a \\
+              Dcoskx;      & -a<x<a \\
+              Ae^{-\kappa x};      & x>a \\
+         \end{cases}
+\]
+For even n:
+\[
+\psi _n (x)= \begin{cases}
+              Ae^{\kappa x} ; &  x<-a \\
+              Csinkx;      & -a<x<a \\
+              -Ae^{-\kappa x};      & x>a \\
+         \end{cases}
+\]
+
+\textbf{(2) Scattering State $E>0$)}
+
+\[
+x<-a, \psi (x)=Ae^{i k_1 x} + Be^{-i k_1 x},k_1 =\frac{\sqrt{2mE}}{\hbar}
+\]
+
+\[
+-a<x<a, \psi (x)=Csin k_2 x + D cos k_2 x,k_2 =\frac{\sqrt{2m(E+V_0}}{\hbar}
+\]
+
+\[
+x>a, \psi (x)=Fe^{i k_1 x} + Ge^{-i k_2 x},G=0
+\]
+
+Consider G=0, particle comes from the left. Using continuity:
+\[
+Ae^{-ik_1 a} + Be^{i k_1 a}= -Csin k_2 a+Dcos k_2 a
+\]
+
+\[
+ik_1 (Ae^{-i k_1 a} - B e^{i k_1 a})=k_2 (Ccos k_2 a + D sin k_2 a)
+\]
+
+\[
+Csin k_2 a + Dcos k_2 a= Fe^{i k_1 a}
+\]
+
+\[
+k_2 (C cos k_2 a - D sin k_2 a)=i k_1 F e^{i k_1 a}
+\]
+
+\[
+F= \frac{e^{-2i k_1 a}}{cos(2 k_2 a) -i\frac{k_1 ^2 + k_2 ^2}{2 k_1 k_2}sin(2 k_2 a)} A
+\]
+
+\[
+B= i \frac{sin(2 k_2 a)}{2 k_2 a} (k_2 ^2 - k_1 ^2)F
+\]
+
+Reflection coefficient:
+\[
+R=\frac{|B|^2}{|A|^2}
+\]
+Transmission coefficient:
+\[
+T=\frac{|F|^2}{|A|^2}
+\]
+
+Remarks:
+\[
+T^{-1}= 1+ \frac{V_0 ^2}{4E(E+ V_0 )} sin^2 (\frac{2a\sqrt{2m(E+V_0}}{\hbar})
+\]
+when
+\[
+\frac{2a\sqrt{2m(E+ V_0)}}{\hbar} =n\pi
+\]
+or
+\[
+E+V_0=\frac{n^2 \pi ^2 \hbar ^2}{2m(2a)^2}
+\]
+the eigen energies. Then $T=1$, the well becomes transparent.
+
+\pagebreak
+
+\section{Formalism: Algebra Mechanics and Vector-Matrix Representation}
+
+\textbf{Hilbert Space}: $\infty$ dimension linear space, could be discrete or continuous.\\
+
+\begin{itemize}
+
+\item Ket vector $| \psi > \to \psi (x)$
+\item Bra vector $< \psi | \to \int \psi^{*} (x)dx$
+\item Inner product $ < \psi | \phi > \to \int \psi ^* \phi dx$
+\item Normalization $< \psi | \psi >=1$
+\item Orthogonality $< \psi | \phi>=0$
+
+\end{itemize}
+
+\textbf{Operator}:
+\begin{itemize}
+
+\item Observable: $<A>=<\psi |A| \psi >$
+Hermitian operator: $<A>$ of physical quantity must be real. $<A>^*=<A>$.
+\[
+< \psi |A \psi>^{*}=<A \psi | \psi >= < \psi | A \psi >
+\]
+[If $<A^{T} \psi | \phi > = < \psi | A \phi >$, then $A^{T}$ is the Hermitian conjugate of A, $(A^{T})^{T} = A$
+\[
+= <A^{T} \psi | \psi > => A^{T} = A
+\]
+
+\item All physical quantities are represented by Hermitian operators.
+
+\item Eigenstates and eigenvalues of Hermitian operators
+
+\end{itemize}
+
+\[
+A | \psi _n > = A_n | \psi _n>
+\]
+
+\begin{itemize}
+
+\item $A_n$ are real:
+\[
+< \psi _n |A| \psi _n > = < \psi _n | A_n | \psi _n > = A_n\
+\]
+\[
+< A \psi _n | \psi _n > = A_n ^{*}
+\]
+
+\item Normalization : $ < \psi _n | \psi _n > =1$
+
+\item Orthogonality : $ < \psi _n | \psi _m > =0$
+\[
+< \psi _n | \psi _n > = \delta _{nm}
+\]
+
+Proof:
+\[
+A | \psi _n >= A_n | \psi _n >; A| \psi _m >=A _m | \psi _m >
+\]
+
+\[
+< \psi _n |A| \psi _m > = < \psi _n |A_m| \psi _m > = A_m <\psi _n | \psi _m>
+\]
+
+\[
+< A \psi _n| \psi _m > = A_n ^{*} < \psi _n | \psi _m > = A_n <\psi _n | \psi _m >
+\]
+
+If $A_n \neq A_m$, then $< \psi _n | \psi _m > = 0$.\\
+If $A_n = A_m$, then Gram-Schmidt orthogonalization.
+
+\item Completeness $ | \psi > = \Sigma C_n | \psi _n >$, where $C_n < \psi _n | \psi >$.
+
+\[
+| \psi > = \Sigma < \psi _n | \psi > | \psi _n > = \Sigma | \psi _n > < \psi _n | \psi > => I= \Sigma | \psi _n > <\psi _n |
+\]
+
+\item Projection operator $\hat{P} = | \alpha > < \alpha |$, picks out the portion along $ | \alpha >$.
+
+\item $<A>=< \psi |A| \psi >= ( \Sigma _n C_n ^{*} < \psi _n | ) A ( \Sigma _m C_m | \psi _m >) = \Sigma |C_n|^2 A_n$, where $|C_n|^2$ is the probability.
+
+\item  Normalization:
+\[
+1= < \psi | \psi > = \Sigma _m C_m ^{*} < \psi _m |  \Sigma _n C_n | \psi _n > = \Sigma _{n,m} C_m ^* C_n < \psi _m | \psi _n > = \Sigma |C_n|^2
+\]
+
+\end{itemize}
+
+\pagebreak
+
+\section{Vector-Matrix Representation}
+
+\begin{itemize}
+
+\item Heisenberg (1932 Nobel), Born (1954 Nobel), Jordan (\emph{N a z i}).\\ Given an operator and its eigenstates $| \psi _n >$.
+
+\item Vector:  
+\[
+| \psi > = \Sigma c_n |\psi _n > \to 
+\begin{pmatrix}
+c_1 \\
+. \\
+. \\
+. \\
+c_n
+\end{pmatrix}
+\]
+
+\item Dual vector
+\[
+< \psi | = \Sigma c_n ^{*} < \psi _n | \to (c_1,...,c_n ^{*})
+\]
+
+\item inner product:\\
+\begin{itemize}
+
+\item $< \psi | \phi > = \Sigma c_n ^{*} d_n$
+
+\item $< \psi | \phi > ^{*} = < \phi | \psi >$
+
+\item Normalization: $ < \psi | \psi > = 1 = \Sigma |c_n|^2$
+
+\item Orthogonality: $< \psi | \phi > = 0 = \Sigma c_n ^* d_n$
+
+\end{itemize}
+
+\item Operator $A | \psi >= | \phi >$
+\[
+| \psi > = \Sigma c_n | \psi _n >, | \phi > = \Sigma d_m | \psi _m >
+\]
+
+\[
+A \Sigma _n c_n | \psi _n > = \Sigma _m d_m | \psi _m >
+\]
+
+\[
+\Sigma _n < \psi _m |A| \psi _n > c_n = d_m
+\]
+
+\[
+\Sigma _n A_{mn} c_n = d_{mn}
+\]
+
+$$A_{mn}= < \psi _m |A| \psi _n >$$-matrix element.\\
+
+Rotation:
+
+\[
+ \begin{pmatrix}
+   A_{11} & A_{12} & \dots    & A_{1n} \\
+   A_{21} & A_{22} & \dots    & \vdots \\
+   \vdots & \vdots & \vdots   & \vdots \\
+   A_{m1} & \dots  & \dots    & A_{mn} 
+ \end{pmatrix}
+ \begin{pmatrix}
+   c_{1}  \\
+   c_{2}  \\
+   \vdots  \\
+   c_{n}   
+ \end{pmatrix}
+ =
+ \begin{pmatrix}
+   \phi _{1}  \\
+   \phi _{2}  \\
+   \vdots   \\
+   \phi _{m}
+ \end{pmatrix}
+\]
+
+\item vector representation using different bases:
+\[
+x: \Psi (x,t)= <x | \Psi (t) > ; | \Psi (t) > = \int |x><x| \psi (t) > dx
+\]
+
+\[
+p: \Phi (p,t) = <p| \Psi (t) > ; | \Psi (t) > = \int |p><p| \psi (t) > dx
+\]
+
+\[
+H: c_n (t)= <n | \Psi (t)> ; | \Psi (t)>= \Sigma |n><n | \Psi (t) >
+\]
+
+\[
+\Psi (x,t) = \int <x|y> \Psi (y,t) dy = \int <x|p> \Phi (p,t) dp = \Sigma <x|n> c_n (t)
+\]
+
+\[
+= \int \delta (x,y) \Psi (y,t) dy = \int \frac{1}{\sqrt{2 \pi \hbar}} e^{\frac{i}{\hbar}px} \Phi (p,t) dp = \Sigma c_n(t) e^{-\frac{i}{\hbar} E_n t} \psi _n (x)
+\]
+
+
+\end{itemize}
+
+\pagebreak
+
+\section{Time evolution of an operator}
+
+\begin{itemize}
+
+\item Classical mechanics
+\[
+\frac{dA}{dt}=\frac{\partial A}{\partial t} + [A,H](Poisson \ bracket)
+\]
+
+\item Quantum mechanics
+\[
+\frac{dA}{dt}= \frac{\partial A}{\partial t} + \frac{1}{i \hbar}[A,H] (Commutator)
+\]
+
+which is equivalent to Schroedinger equation:
+\[
+i \hbar \frac{\partial}{\partial t} | \psi > = H | \psi >
+\]
+
+\end{itemize}
+
+Proof:
+\[
+\frac{d<A>}{dt}= \frac{d}{dt} < \Psi |A| \Psi >
+\]
+
+\[
+\frac{\partial}{\partial t} < \Psi |A| \Psi > + < \Psi | \frac{\partial A}{\partial t} | \Psi + < \Psi |A| (\frac{\partial}{\partial t} | \Psi > )
+\]
+
+\[
+( i \hbar \frac{\partial}{\partial t} | \psi > = H | \psi > => \frac{\partial}{\partial t} | \psi > = \frac{1}{i \hbar} H | \psi > => \frac{\partial}{\partial t} < \psi | = - \frac{1}{i \hbar} <H \psi | )
+\]
+
+\[
+= -\frac{1}{i \hbar} <H \Psi |A| \Psi > + <\frac{\partial A}{\partial t}+ \frac{1}{i \hbar} <\psi |A| H \psi >
+\]
+
+\[
+=<\frac{\partial A}{\partial t} + \frac{1}{i \hbar} 
+< \Psi |AH-HA| \Psi >
+\]
+
+\[
+= < \frac{\partial A}{\partial t} > + \frac{1}{i \hbar} < [A,H]>
+\]
+
+\begin{itemize}
+
+\item If $[A,H]=0$, and A does not depend on t explicitly:
+\[
+\frac{dA}{dt}=\frac{\partial A}{\partial t} = 0
+\]
+A is conserved.
+
+\item Schroedinger picture vs Heisenberg picture:
+\[
+i \hbar \frac{\partial}{\partial t} | \psi (t) >=H | \psi (t)>; | \psi (t)>= \hat{S} | \psi (0)>
+\]
+
+$\hat{S}=e^{- \frac{i}{\hbar} H t}$ - S matrix.
+
+\end{itemize}
+
+\textbf{Procedure:}\\
+
+\begin{itemize}
+
+\item Given H, solve $H |\psi _n >= E_n | \psi _n >$ to get $E_n$ and $ | \psi _n >$.
+
+\item General solution $ | \psi (t) > = \Sigma c_n e^{ - \frac{i}{\hbar} E_n t} | \psi _n >$.\\
+$| \psi (0) > = \Sigma c_n | \psi _n > => c_n = < \psi _n | \psi (0) >$.
+
+\item Observable:
+\[
+<H>= < \psi (t) |H| \psi (t) > = \Sigma _n c_n ^* e^{\frac{i}{\hbar} E_n t} < \psi _n | \Sigma _m E_m c_m e^{- \frac{i}{\hbar} E_n t} | \psi _n > = \Sigma |c_n|^2 E_n
+\]
+
+\end{itemize}
+
+\textbf{Example: Two state system}\\
+
+Spin(up/down), bit(0/1), Schroedinger's cat (dead/alive), relationship(love/hate), exam(pass/fail).\\
+
+\[
+  \begin{pmatrix}
+  E_1 &    \\
+      & E_2
+  \end{pmatrix}
+  => | \psi _1 > =
+  \begin{pmatrix}
+  1 \\
+  0
+  \end{pmatrix}
+  = | \uparrow >, | \psi _2 > =
+  \begin{pmatrix}
+  0 \\
+  1
+  \end{pmatrix}
+  = | \downarrow >
+\]
+
+If:
+\[
+| \psi (0) > = c_1 | \uparrow > + c_2 | \downarrow > = 
+ \begin{pmatrix}
+ c_1 \\
+ c_2
+ \end{pmatrix}
+\]
+
+If $c_1= \frac{1}{2}, c_2=(?) \frac{\sqrt{3}}{2}$
+
+\[
+| \psi (t) > = c_1 e^{- \frac{i}{\hbar} E_1 t } | \uparrow > + c_2 e^{- \frac{i}{\hbar} E_2 t } | \downarrow > =
+ \begin{pmatrix}
+   c_1 e^{- \frac{i}{\hbar} E_1 t } \\
+   c_2 e^{- \frac{i}{\hbar} E_2 t }
+ \end{pmatrix}
+\]
+
+\[
+<H> = |c_1|^2 E_1 + |c_2|^2 E_2
+\]
+
+\pagebreak
+
+\section{Uncertainty Principle (Heisenberg)}
+
+\begin{itemize}
+
+\item If $[A,B]=0$, then A,B can have the same eigen state.
+
+\[
+A | \psi _n > =A_n | \psi _n >
+\]
+\[
+BA | \psi _n > =A (B | \psi _n > )
+\]
+\[
+B | \psi _n > =B_n | \psi _n >
+\]
+\[
+BA_n | \psi _n > =A_n (B | \psi _n > )
+\]
+
+\item If $[A,B] \neq 0$, then $ \sigma _A \sigma _B  \geq \frac{1}{2} | < [A,B] > | $.
+
+\[
+\sigma _A ^2 = < \Delta A | \Delta A > = < (A - <A>)^2 > = < A^2 -2A<A>+ <A>^2 >=<A^2> - <A>^2
+\]
+Schwarz inequality:
+\[
+< \alpha | \alpha > < \beta | \beta > \geq | < \alpha | \beta > |^2, ( | \alpha |^2 | \beta |^2 \geq | \alpha |^2 | \beta |^2 cos ^2 \theta
+\]
+
+\[
+\sigma _A ^2 \sigma _B ^2 = < \Delta A | \Delta A > < \Delta B | \Delta B > \geq | < \Delta A | \Delta B > |^2
+\]
+
+\[
+\Delta A \Delta B =\frac{1}{2} (\Delta A \Delta B - \Delta B \Delta A) + \frac{1}{2} (\Delta A \Delta B + \Delta B \Delta A) = \frac{1}{2} [ \Delta A, \Delta B ] + {\Delta A, \Delta B}
+\]
+
+\[
+[\Delta A, \Delta B] ^{\dagger} =(\Delta A \Delta B - \Delta B \Delta A) ^{\dagger} =  (\Delta B) ^{\dagger} (\Delta A) ^{\dagger} - (\Delta A) ^{\dagger} (\Delta B) ^{\dagger} =  \Delta B \Delta A - \Delta A \Delta B = -[\Delta A, \Delta B]
+\]
+...anti-Hermitian, imaginary.
+
+\[
+{\Delta A, \Delta B} ^{\dagger} =(\Delta A \Delta B + \Delta B \Delta A) ^{\dagger} =  (\Delta B) ^{\dagger} (\Delta A) ^{\dagger} + (\Delta A) ^{\dagger} (\Delta B) ^{\dagger} =  \Delta B \Delta A + \Delta A \Delta B = {\Delta A, \Delta B}
+\]
+...Hermitian, real.
+
+\[
+\sigma _A ^2 \sigma _B ^2 \geq \frac{1}{4} | < [\Delta A, \Delta B] > |^2
+\]
+
+\begin{align*}
+[\Delta A, \Delta B] &= \Delta A \Delta B - \Delta B \Delta A = (A - <A>)(B-<B>)-(B-<B>)(A-<A>) \\
+   &=  (AB-<A>B-A<B>+<A><B>)-(BA-<B>A-B<A>+<B><A>)
+   &= AB-BA=[A,B]
+\end{align*}
+
+\[
+\sigma _A ^2 \sigma _B ^2 \geq \frac{1}{4} | < [ A, B] > |^2, \sigma _A  \sigma _B  \geq \frac{1}{2} | < [ A, B] > |
+\]
+
+eg: $[x,p_x]=i \hbar$, $\sigma _x \sigma _{p_x} \geq \frac{1}{2} \hbar$.
+
+\pagebreak
+
+\section{Minimum uncertainty wave packet}
+
+$\Delta A = ia \Delta B$, a is real.\\
+For position-momentum uncertainty relation:\\
+
+\[
+(- i \hbar \frac{d}{d \chi} - <p>) \psi (\chi)= ia (\chi -<\chi>) \psi (\chi)
+\]
+\[
+\frac{d}{d\chi} \psi + \frac{a}{\hbar} \chi \psi -\frac{i}{\hbar}(<p> - ia<\chi>)\psi=0
+\]
+\[
+\chi \to \infty, \frac{d \psi}{d \chi} + \frac{a}{\hbar} \chi \psi = 0
+\]
+\[
+\psi (\chi) = c_1 e^{-\frac{a}{2 \hbar} \chi ^2}
+\]
+Let $\psi (\chi) = \phi (\chi) e^{-\frac{a}{2 \hbar} \chi ^2}$:
+\[ 
+\frac{d \phi }{d \chi} e^{-\frac{a}{2 \hbar} \chi ^2 } + \phi (\chi) e^{-\frac{a}{2 \hbar} \chi ^2} (- \frac{a}{2 \hbar} \chi) + \phi (\chi) e^{-\frac{a}{2 \hbar} \chi ^2} ( \frac{a}{2 \hbar} \chi)
+-\frac{i}{\hbar} (<p>-ia<\chi>) \phi (\chi ) e^{-\frac{a}{2 \hbar} \chi ^2} =0
+\]
+
+\[ 
+\frac{d \phi }{d \chi} 
+-\frac{i}{\hbar} (<p>-ia<\chi >) \phi ( \chi ) e^{-\frac{a}{2 \hbar} \chi ^2} =0
+\]
+\[
+\phi (\chi ) = e^{\frac{i}{\hbar} (<p>-ia<\chi > ) \chi }
+\]
+\[
+\psi ( \chi ) = c_2 e^{-\frac{a}{2 \hbar} \chi ^2} e^{\frac{i}{\hbar} (<p>-ia<\chi > ) \chi }
+= c_3 e^{-\frac{a}{2 \hbar} (\chi - <\chi >) ^2} e^{\frac{i}{\hbar} (<p> \chi}
+\]
+...Gaussian in $\chi$.
+
+\end{itemize}
+
+\section{Energy-time uncertainty principle}
+
+\[
+\sigma _H \sigma _t \geq \frac{1}{2} \hbar
+\]
+
+If A doesn't depend on t explicitly, $\frac{\partial A}{\partial t} = 0$, $\frac{dA}{dt}=\frac{1}{i \hbar} [A,H]$.
+
+\[
+\sigma _A \sigma _H \geq \frac{1}{2} | < [A,H]>| = \frac{\hbar}{2} | \frac{d <A>}{dt} |
+\]
+
+Define $\sigma _t = \frac{\sigma _A}{\frac{d<A>}{dt}}$, then $\sigma  _H, \sigma _t \geq \frac{1}{2} \hbar$.\\
+
+$\sigma _A = | \frac{d<A>}{dt} | \sigma _t =$ the amount of time it takes the expectation value of A to change by one standard deviation of $\sigma _A$.
+
+
+\pagebreak
+
+\section{3D Schroedinger Equation}
+
+\[
+[ - \frac{\hbar ^2}{2m} \nabla ^2 + V(r) ] \psi (r, \theta , \phi ) = E \psi (r, \theta , \phi )
+\]
+
+\[
+\nabla ^2 = \frac{1}{r^2} \frac{\partial}{\partial r} ( r^2 \frac{\partial}{\partial r} ) + \frac{1}{r^2 sin \theta} \frac{\partial}{\partial \theta} ( sin \theta \frac{\partial}{\partial \theta}) + \frac{1}{r^2 sin ^2 \theta} \frac{\partial ^2}{\partial \phi ^2}
+\]
+
+Separation of variables $\psi (r, \theta , \phi ) = R(r) Y(\theta , \phi )$:
+\[
+{ \frac{1}{R} \frac{d}{dr} (r^2 \frac{dR}{dr}) - \frac{2mr^2}{\hbar ^2} [V(r)-E]} + \frac{1}{Y} { \frac{1}{sin \theta} \frac{\partial}{\partial \theta} (sin \theta \frac{\partial Y}{\partial \theta})+\frac{1}{sin ^2 \theta} \frac{\partial ^2 Y}{\partial \phi ^2} } =0
+\]
+
+\[
+l(l+1) - l(l+1)=0
+\]
+
+The angular equation let $Y(\theta , \phi ) = \Theta (\theta ) \Phi (\phi )$:
+\[
+{ \frac{1}{\Theta} [ sin \theta \frac{d}{d \theta} (sin \theta \frac{d \Theta}{d \theta}) ] + l(l+1) sin ^2 \theta } + \frac{1}{\Phi} \frac{d^2 \Phi }{d^2 \phi} = 0
+\]
+...same as solving $\nabla ^2 \psi = 0$. Previous equation is same as:
+\[
+m^2 - m^2 =0
+\]
+For $\Phi$ :
+\[
+\frac{1}{\Phi} \frac{d^2 \Phi}{d \phi ^2}=-m^2 , \Phi (\phi ) = e^{im \phi}
+\]
+(-m is included by allowing m to run negative).\\
+Symmetry:
+\[
+\Phi (\phi )= \Phi (\phi + 2 \pi )
+\]
+
+\[
+=> e^{im \phi } = e^{im (\phi + 2 \pi ) } => m = integer
+\]
+
+For $\Theta$:
+\[
+sin \theta \frac{d}{d \theta} ( sin \theta \frac{d \Theta }{d \theta } ) + [l(l+1) sin ^2 \theta - m^2 ] \Theta =0
+\]
+\[
+\Theta (\theta )= A P_l ^m (cos \theta )
+\]
+$P_l ^m (\chi )$: associated Legendre function/polynomial:
+\[
+P_l ^m (\chi ) = (-1)^m (1 - \chi ^2) ^{\frac{m}{2}} \frac{d^m}{d \chi ^m} P_l (\chi ), m>0
+\]
+Rodrigue's formula:
+\[
+P_l (\chi ) = \frac{1}{2^l l!} \frac{d^l}{d \chi ^l} ( \chi ^2 -1 )^l
+\]
+\[
+P_l ^{-m} (\chi )= (-1)^m \frac{(l-m)!}{(l+m)!} P_l ^m (\chi )
+\]
+\[
+P_l ^{m} (- \chi )= (-1)^{m+l} P_l ^m (\chi )
+\]
+
+\[
+P_0 (\chi ) = 1
+\]
+\[
+P_1 (\chi ) = \chi
+\]
+\[
+P_2 (\chi )= \frac{1}{2} ( 3 \chi ^2 -1)
+\]
+\[
+P_3 (\chi )= \frac{1}{2}(5 \chi ^3 - 3 \chi )
+\]
+
+If $|m|>l$, then $P_l ^m = 0$, so $|m| \leq l$, m=-l,....,l (2l+1 values).\\
+$P_l ^m (\chi )$ is always a polynomial in $cos \theta$ and $sin \theta$.
+\[
+P_0 ^0 =1
+\]
+\[
+P_1 ^0 = cos \theta ; P_1 ^1 = -sin \theta ; P_1 ^{-1} = - \frac{1}{2} P_1 ^1
+\]
+\[
+P_2 ^0 = \frac{1}{2} ( 3 cos ^2 \theta -1 ), P_2 ^1 = -3 sin \theta cos \theta ;  P_2 ^2 =3 sin ^2 \theta 
+\]
+\[
+P_2 ^{-1}= - \frac{1}{6} P_2 ^1;P_2 ^{-2}= - \frac{1}{24} P_2 ^2
+\] 
+
+\[
+Y_l ^m = (-1)^m \sqrt{\frac{(2l+1)(l-m!)}{4 \pi (l+m!)}} P_l ^m (cos \theta ) e^{im \theta }
+\]
+...spherical harmonics, solution of Laplace's equation. Vibration of a string: sin, cos. Vibration of a sphere: $Y_l ^m$.
+\[
+Y_l ^{-m} = (-1)^m (Y_l ^m)
+\]
+\[
+\int _0 ^{\pi} d \theta \int _0 ^{2 \pi} d \phi Y_l ^m Y_{l'} ^{m'}= \delta _{ll'} \delta _{mm'}
+\]
+Normalization:
+\[
+\int _0 ^{\infty} |R|^2 r^2 dr =1; \int _0 ^{2 \pi} d \phi \int _0 ^{\pi} d \theta  (|Y|^2 sin \theta ) =1
+\]
+
+Parity:
+\[
+Y_l ^m ( \pi - \theta , \pi + \phi )= (-1)^l Y_l ^m (\theta , \phi )
+\]
+l=0:\\
+\[
+Y_0 ^0 = \frac{1}{2} \sqrt{\frac{1}{\pi}}
+\]
+l=1:\\
+\[
+Y_1 ^{-1} = \frac{1}{2} \sqrt{\frac{3}{2 \pi}} sin \theta e^{-i \phi}
+\]
+
+\[
+Y_1 ^0 = \frac{1}{2} \sqrt{\frac{3}{\pi}} cos \theta
+\]
+
+\[
+Y_1 ^{-1} = \frac{1}{2} \sqrt{\frac{3}{2 \pi}} sin \theta e^{-i \phi}
+\]
+a _{n,m} C_m ^* C_n < \psi _m | \psi _n > = \Sigma |C_n|^2
+l=2:\\
+\[
+Y_2 ^{-2} = \frac{1}{4} \sqrt{\frac{15}{2 \pi}} sin ^2  \theta e^{-2i \phi}
+\]
+
+\[
+Y_2 ^{-1} = \frac{1}{2} \sqrt{\frac{15}{\pi}}  sin \theta cos \theta e^{-i \phi}
+\]
+
+\[
+Y_2 ^{0} = \frac{1}{4} \sqrt{\frac{5}{ \pi}}(3 cos^2 \theta -1 )
+\]
+
+\[
+Y_2 ^{1} = - \frac{1}{2} \sqrt{\frac{15}{\pi}}  sin \theta cos \theta e^{i \phi}
+\]
+
+\[
+Y_2 ^{2} = \frac{1}{4} \sqrt{\frac{15}{2 \pi}} sin ^2  \theta e^{2i \phi}
+\]
+
+
+\end{document}
+
