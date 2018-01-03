@@ -76,6 +76,8 @@
 \tikzstyle{decision} = [diamond, draw, fill=blue!20, 
 text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
 
+\tikzstyle{const} = [rectangle, draw, text centered, fill=purple!20]
+\tikzstyle{data} = [rectangle, draw, text centered, fill=green!20]
 
 \tikzstyle{block} = [rectangle, draw, text centered, fill=blue!20]
 \tikzstyle{line} = [draw, -latex']
@@ -94,9 +96,9 @@ minimum height=2em]
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
 
-\title{\textbf{Dynamic Transition Analysis with TIMES:}\\ I\textsuperscript{2}CNER Initiative on Challenges in Energy Assessment and Energy Transtitions} % Poster title
+\title{\textbf{Dynamic Transition Analysis with TIMES:}\\ I\textsuperscript{2}CNER Initiative on Challenges in Energy Assessment and Energy Transitions} % Poster title
 
-\author{Kathryn D. Huff, James Stubbins}
+\author{Anshuman Chaube, James Stubbins, \textbf{Kathryn Huff}}
 \institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
 %----------------------------------------------------------------------------------------
 
@@ -129,21 +131,22 @@ minimum height=2em]
 
 Evaluate potential impact of novel energy technologies within Japan's energy system. Specifically:
 \begin{itemize}
-	\item Help guide practical near term (2010-2050) transition strategies to minimize carbon emissions within realistic constraints.
+	\item Guide practical near term (2010-2050) transition strategies.
+        \item Minimize carbon emissions within realistic constraints.
 	\item Identify high impact technologies.
 	\item Assess role of technology readiness.
 	\item Predict impediments to strategically optimal technology deployment.
 	\item Identify ideal timelines for energy system deployment, infrastructure development, high impact R\&D investment.
-	
 \end{itemize}
 
 \end{alertblock}
-
-\begin{block}{Collaborators}
-
-I\textsuperscript{2}CNER collaborators will include primarily the members of the Energy Analysis Division (EAD), including those members at other institutes, universities or industries with connections to the EAD.   
- 
-\end{block}
+%
+%\begin{block}{Collaborators}
+%
+%I\textsuperscript{2}CNER collaborators will include primarily the members of 
+%the Energy Analysis Division (EAD), including those members at other 
+%institutes, universities or industries with connections to the EAD.   
+%\end{block}
 
 %----------------------------------------------------------------------------------------
 %	METHODOLOGY
@@ -154,38 +157,24 @@ Multiple studies have been conducted to compare the impact of innovative energy 
 
 The TIMES (The Integrated MARKAL-EFOM System) model generator \cite{loulou_documentation_2005} \cite{seebregts_energy/environmental_2002} optimizes energy systems of a model using linear and mixed-linear algorithms while implementing user-defined objective functions (such as minimizing carbon emissions or costs) within user defined constraints such as energy generation demand. It will be used to simulate near-term energy transitions while focusing on reduction of carbon emissions. 
 
-\begin{figure}
-	\centering
-	\scalebox{0.8}{
-		\begin{tikzpicture}[    >=stealth,
-		node distance=8cm,
-		on grid,
-		align=center,
-		auto]
-		% Place nodes
-		\node [block] (times) {\textbf{TIMES Model Generator}};
-		\node [cloud, above left=13cm and 12cm of times] (mod) {\texttt{MODEL} \\ heterogeneous \\ mutli-technology \\ model of JPN};
-				\node [cloud, above=9cm of mod] (dat) { Data \\ collection};
-		\node [cloud, above=9cm of times] (of) {\texttt{OBJECTIVE}\\\texttt{FUNCTION} \\ e.g.: Minimize \\ carbon emissions \\ from all \\ deployed sources};
-		\node [cloud, above right=13cm and 10cm of times] (const) {\texttt{CONSTRAINTS} \\ e.g.: Deployed \\
-		sources must\\ meet energy \\ demand};
-		\node [cloud, below=of times] (res) {Simulation \\ Results};
-		\node [cloud, below=of res] (eres) {Projections,\\ Conclusions, \\ Insights} ;
-		
-		\draw[->, ultra thick] let \p1=($(times)-(mod)$) in (mod) -- +(0,\y1)-- +(times);
-		\draw[->, ultra thick] (of) -- (times);
-		%\draw[->, ultra thick] let \p3=($(times)-(const)+(2,3)$),\p4=($(times)+(9,9)$),\p5=($(const)-(3,3)$) in (\x3,\y4) -- +(0,\y2)-- +(times);
-		\draw[->, ultra thick] let \p2=($(times)-(const)$) in (const)-- +(0,\y2) -- + (times);
-		\draw[->, ultra thick] (times) -- (res);
-		\draw[->, ultra thick] (res) -- (eres);
-		\draw[->, ultra thick] (dat) -- (mod);
- \end{tikzpicture}
-		
-	}
-	\caption{Basic methodology for dynamic simulation of Japan's energy system.}
-\end{figure}
 
 \end{block}
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+
+%===========================================================================================
+% SECOND COLUMN BEGINS
+%=============================================================================================
+
+%----------------------------------------------------------------------------------------
+
+\begin{column}{\onecolwid} % The second column
+
 
 %----------------------------------------------------------------------------------------
 %	Anticipated Results
@@ -208,21 +197,6 @@ The TIMES (The Integrated MARKAL-EFOM System) model generator \cite{loulou_docum
 
 
 
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of the first column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-
-%===========================================================================================
-% SECOND COLUMN BEGINS
-%=============================================================================================
-
-%----------------------------------------------------------------------------------------
-
-\begin{column}{\onecolwid} % The second column
-
 
 
 %----------------------------------------------------------------------------------------
@@ -233,10 +207,10 @@ The TIMES (The Integrated MARKAL-EFOM System) model generator \cite{loulou_docum
         \begin{alertblock}{Impact}
         \large Results will:
 	\begin{itemize}
-		\item {\large Assist in creation of realistic decarbonization roadmaps that maximize efficiency.}
-        \item {\large Identify potential bottlenecks during transitions.}
-		\item {\large Help Japan's policymakers create timelines for R\&D investment and for appropriate infrastructure development.}
-		\item {\large Quantify system sensitivity to technology readiness.}
+        \item {Optimize realistic decarbonization roadmaps.}
+        \item {Identify potential transition bottlenecks.}
+        \item {Help Japan's policymakers create timelines for R\&D investment and infrastructure development.}
+        \item {Quantify system sensitivity to technology readiness.}
 	\end{itemize}
         \end{alertblock}
    
@@ -245,49 +219,19 @@ The TIMES (The Integrated MARKAL-EFOM System) model generator \cite{loulou_docum
 % CHALLENGES
 %---------------------------------------------------------
 \begin{block}{Challenges}
-
- \begin{itemize}
-   \item Reliable data for each technology's deployment and operation is required, such as:
-    \begin{itemize}
-    
-     \item \normalsize Technology readiness
-     
-     \item Carbon intensity
-     
-     \item Capacity and availability factors
-     
-     \item Fuel costs and demands
-     
-     \item Thermal/electric generation capacity
-     
-     \item Storage capacity
-     
-     \item Thermal efficiency
-     
-     \item Construction time
-     
-     \item Construction costs
-     
-     \item Operation and maintenance costs\\
-    
-    
-    \end{itemize}
-    
-   
-   \item Mutiple constraints cause complications.
-   
-   \item Variation of goals or the objective function can significantly change each simulation. e.g.: cost could be objective function whereas carbon reduction up to a certain percentage (50-70\%) could be the constraint, flipping the script.
-   
-   \item Calculation of constituent parameters, such as carbon emissions per component and quantification of deployment, will be complex.
-   
-   \item Intermediate objective functions for a multi-objective formulation could additionally include intermediate-resolution-goals such as Efficiency Increase (EI) and Lower Carbon Intensity (LCI). These intermediate objectives will increase the complexity of the calculation.
- 
- 
- \end{itemize}  
+   Reliable data for each technology's deployment and operation is required, such as:
  
  	
 \end{block}
 
+
+%----------------------------------------------------------------------------------------
+
+\end{column} % End of column 2
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The third column
 
 %----------------------------------------------------------------------------------------
 %	CONCLUSION
@@ -349,29 +293,98 @@ from the I\textsuperscript{2}CNER Programs under award number \textbf{<insert de
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of column 2
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-\begin{column}{\onecolwid} % The third column
-
-
-\begin{block}{References}
-
-        {\footnotesize\bibliographystyle{abbrv} 
-        \bibliography{poster}}
-\end{block}
-
-
-%----------------------------------------------------------------------------------------
-
-
-
 \end{column} % End of the third column
 
 \end{columns} % End of all the columns in the poster
 
+%=======================================================
+% Double Wide Figure Column 
+%=========================================================
+\begin{columns}[t,totalwidth=\threecolwid] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\twocolwid} % The double wide figure column
+
+%=======================================================
+% FIGURE BEGINS
+%=========================================================
+
+\newlength{\figwidth}
+\setlength{\figwidth}{8cm}
+
+\begin{figure}
+	\centering
+	\scalebox{1.0}{
+		\begin{tikzpicture}[>=stealth,
+		node distance=\figwidth,
+		on grid,
+		align=center,
+		auto]
+		% Place nodes
+		\node [block] (times) {\textbf{TIMES Model Generator}};
+		\node [cloud, below=\figwidth of times] (mod) {\texttt{MODEL} \\ heterogeneous \\ multi-technology \\ model of Japan};
+                \node [cloud, above left=1.5\figwidth and 2*\figwidth of times] (dat) {\texttt{DATA}\\regarding\\both\\i$^2$cner\\ \&\\ conventional\\technologies};
+                \node [data, above=1.5\figwidth of dat] (dat1) {Storage\\Capacity};
+                \node [data, above=0.5\figwidth of dat1] (dat2) {Thermal\\Efficiency};
+                \node [data, above=0.5\figwidth of dat2] (dat3) {Capacity\\factor};
+                \node [data, above=0.5\figwidth of dat3] (dat4) {Availability\\factor};
+                \node [data, right=\figwidth of dat1] (dat5) {Thermal\\capacity};
+                \node [data, above=0.5\figwidth of dat5] (dat6) {Fuel costs};
+                \node [data, above=0.5\figwidth of dat6] (dat7) {Construction\\costs};
+                \node [data, above=0.5\figwidth of dat7] (dat8) {Operation\\costs};
+                \node [data, above=0.5\figwidth of dat8] (dat9) {Maintenance\\costs};
+                \node [data, right=\figwidth of dat5] (dat10) {Technology\\readiness};
+                \node [data, above=0.5\figwidth of dat10] (dat11) {Construction\\time};
+                \node [data, above=0.5\figwidth of dat11] (dat12) {Carbon\\intensity};
+                \node [data, above=0.5\figwidth of dat12] (dat13) {Fuel needs};
+		\node [cloud, above=\figwidth of times] (of) {\texttt{OBJECTIVE}\\\texttt{FUNCTION}};
+		\node [block, above left=\figwidth of of] (min) {Minimize\\carbon emissions \\ from all sources};
+		\node [block, above right=\figwidth of of] (max) {Maximize\\energy market\\ diversity};
+		\node [cloud, above right=1.5*\figwidth and 2*\figwidth of times] (const) {\texttt{CONSTRAINTS} \\ e.g.: Deployed \\ sources must\\ meet energy \\ demand};
+		\node [const, above=\figwidth of const ] (dem) {electricity\\demand growth};
+        \begin{scope}[on background layer]
+		\draw[->, ultra thick] let \p1=($(times)-(dat)$) in (dat) -- +(0,\y1)-- +(times);
+		\draw[->, ultra thick] (of) -- (times);
+		%\draw[->, ultra thick] let \p3=($(times)-(const)+(2,3)$),\p4=($(times)+(9,9)$),\p5=($(const)-(3,3)$) in (\x3,\y4) -- +(0,\y2)-- +(times);
+		\draw[->, ultra thick] let \p2=($(times)-(const)$) in (const)-- +(0,\y2) -- + (times);
+		\draw[->, ultra thick] (times) -- (mod);
+		\draw[->, ultra thick] (min) -- (of);
+		\draw[->, ultra thick] (max) -- (of);
+		\draw[->, ultra thick] (dem) -- (const);
+		\draw[->, ultra thick] (dat1) -- (dat);
+		\draw[->, ultra thick] (dat2) -- (dat);
+		\draw[->, ultra thick] (dat3) -- (dat);
+		\draw[->, ultra thick] (dat4) -- (dat);
+		\draw[->, ultra thick] (dat5) -- (dat);
+		\draw[->, ultra thick] (dat6) -- (dat);
+		\draw[->, ultra thick] (dat7) -- (dat);
+		\draw[->, ultra thick] (dat8) -- (dat);
+		\draw[->, ultra thick] (dat9) -- (dat);
+		\draw[->, ultra thick] (dat10) -- (dat);
+		\draw[->, ultra thick] (dat11) -- (dat);
+		\draw[->, ultra thick] (dat12) -- (dat);
+		\draw[->, ultra thick] (dat13) -- (dat);
+               % \draw[out=330,in=300,looseness=8] (mod) -- (mod);
+        \end{scope}
+ \end{tikzpicture}
+	}
+	\caption{Basic methodology for dynamic simulation of Japan's energy system.}
+\end{figure}
+
+\end{column} % End of the first column
+
+\begin{column}{\sepwid}\end{column} % Empty spacer column
+
+\begin{column}{\onecolwid} % The second column
+
+\begin{block}{References}
+        {\footnotesize\bibliographystyle{abbrv} 
+        \bibliography{poster}}
+\end{block}
+\end{column} % End of the final column
+
+\end{columns}
 \end{frame} % End of the enclosing frame
 
 \end{document}
-\begin{column}{\sepwid}\end{column} % Empty spacer column
