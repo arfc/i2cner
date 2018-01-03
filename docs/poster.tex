@@ -123,7 +123,9 @@ minimum height=2em]
 %=========================================================
 
 
-\begin{column}{\onecolwid} % The first column
+\begin{column}{\twocolwid} % The first two columns, two cols wide
+\begin{columns}[t,totalwidth=\twocolwid] % Split up the first column into two, 
+\begin{column}{\onecolwid} % The first column, one col wide
 
 %----------------------------------------------------------------------------------------
 %	OBJECTIVES
@@ -171,16 +173,13 @@ system model.
         \cite{loulou_documentation_2005} 
         \cite{seebregts_energy/environmental_2002} optimizes energy systems 
         using linear and mixed-linear algorithms. A user-defined objective 
-        function (such as minimizing carbon emissions or costs) is solve within user defined constraints such as energy generation demand.  
+        function (such as minimizing carbon emissions or costs) is solved within user defined constraints such as energy generation demand.  
 \end{block}
 
 
 %----------------------------------------------------------------------------------------
 
 \end{column} % End of the first column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
 
 %===========================================================================================
 % SECOND COLUMN BEGINS
@@ -232,9 +231,15 @@ system model.
 
 %----------------------------------------------------------------------------------------
 
-\end{column} % End of column 2
 
-\begin{column}{\sepwid}\end{column} % Empty spacer column
+\end{column} % End of column 2, top half
+\end{columns}
+%=======================================================
+% Double Wide Figure Column 
+%=========================================================
+\input{model-fig}
+
+\end{column} % End of wide column, total length
 
 \begin{column}{\onecolwid} % The third column
 
@@ -265,30 +270,12 @@ system model.
 \end{block}
 
 
-%----------------------------------------------------------------------------------------
-
-\end{column} % End of the third column
-
-\end{columns} % End of all the columns in the poster
-
-%=======================================================
-% Double Wide Figure Column 
-%=========================================================
-\begin{columns}[t,totalwidth=\threecolwid] % The whole poster consists of three major columns, the second of which is split into two columns twice - the [t] option aligns each column's content to the top
-
-\begin{column}{\twocolwid} % The double wide figure column
-
-        \input{model-fig}
-\end{column} % End of the first column
-
-\begin{column}{\sepwid}\end{column} % Empty spacer column
-
-\begin{column}{\onecolwid} % The second column
-
 \begin{block}{References}
         {\footnotesize\bibliographystyle{abbrv} 
         \bibliography{poster}}
 \end{block}
+
+%----------------------------------------------------------------------------------------
 
 %----------------------------------------------------------------------------------------
 %	CONTACT INFORMATION
