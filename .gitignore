@@ -1,0 +1,191 @@
+# Ignore possible build & documentation
+docs/_build/
+build/
+# Ignore temp files
+__pycache__/
+*.py[cod]
+*.save
+*.bak
+.*.swp
+*~
+*.o
+*.mod
+*.so
+
+# Ignore data &binary files
+*.h5
+*.ace
+
+# Ignore specific files
+matplotlibrc
+.ipynb_checkpoints
+
+# Ignore rope files introduced by python-mode
+.ropeproject
+
+*.pdf
+*.eps
+
+.DS_Store
+
+# Ignore cluster files
+*.out
+*.log
+*.serr
+*.err
+*.sub
+
+# Ignore mergetool temp file
+*.orig
+
+
+# LaTeX gitignore
+# core latex/pdflatex auxiliary files:
+
+*.aux
+*.lof
+*.log
+*.lot
+*.fls
+*.out
+*.toc
+*.fmt
+*.fot
+*.cb
+*.cb2
+
+## Intermediate documents:
+*.dvi
+*.xdv
+*-converted-to.*
+# these rules might exclude image files for figures etc.
+# *.ps
+# *.eps
+# *.pdf
+
+## Bibliography auxiliary files (bibtex/biblatex/biber):
+*.bbl
+*.bcf
+*.blg
+*-blx.aux
+*-blx.bib
+*.run.xml
+
+## Build tool auxiliary files:
+*.fdb_latexmk
+*.synctex
+*.synctex(busy)
+*.synctex.gz
+*.synctex.gz(busy)
+*.pdfsync
+
+## Auxiliary and intermediate files from other packages:
+# algorithms
+*.alg
+*.loa
+
+# amsthm
+*.thm
+
+# beamer
+*.nav
+*.pre
+*.snm
+*.vrb
+
+# changes
+*.soc
+
+# cprotect
+*.cpt
+
+# elsarticle (documentclass of Elsevier journals)
+*.spl
+
+# endnotes
+*.ent
+
+# fixme
+*.lox
+
+# feynmf/feynmp
+*.mf
+*.mp
+*.t[1-9]
+*.t[1-9][0-9]
+*.tfm
+
+# glossaries
+*.acn
+*.acr
+*.glg
+*.glo
+*.gls
+*.glsdefs
+
+# hyperref
+*.brf
+
+# listings
+*.lol
+
+# makeidx
+*.idx
+*.ilg
+*.ind
+*.ist
+
+# minitoc
+*.maf
+*.mlf
+*.mlt
+*.mtc[0-9]*
+*.slf[0-9]*
+*.slt[0-9]*
+*.stc[0-9]*
+
+# minted
+_minted*
+*.pyg
+
+# pdfcomment
+*.upa
+*.upb
+
+
+# TikZ & PGF
+*.dpth
+*.md5
+*.auxlock
+
+# todonotes
+*.tdo
+
+# easy-todo
+*.lod
+
+# xindy
+*.xdy
+
+# xypic precompiled matrices
+*.xyc
+
+# endfloat
+*.ttt
+*.fff
+
+# Latexian
+TSWLatexianTemp*
+
+# Texpad
+.texpadtmp
+
+# Kile
+*.backup
+
+# auto folder when using emacs and auctex
+./auto/*
+*.el
+
+# standalone packages
+*.sta
