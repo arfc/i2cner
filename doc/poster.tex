@@ -93,6 +93,23 @@ minimum height=2em]
 \usetikzlibrary{positioning}
 
 
+%-----------------------------------------------------------
+% KNOWN ISSUE IN TIKZ MATH: tiny big symbols, like sum.
+%-----------------------------------------------------------
+
+% declare `cmex` to be arbitrary scalable
+\DeclareFontShape{OMX}{cmex}{m}{n}{
+  <-7.5> cmex7
+  <7.5-8.5> cmex8
+  <8.5-9.5> cmex9
+  <9.5-> cmex10
+}{}
+
+\SetSymbolFont{largesymbols}{normal}{OMX}{cmex}{m}{n}
+\SetSymbolFont{largesymbols}{bold}  {OMX}{cmex}{m}{n}
+
+
+
 \setbeamertemplate{bibliography item}[text]
 
 %----------------------------------------------------------------------------------------
@@ -212,14 +229,33 @@ system model.
          \item[\textbf{Regional Analysis:}] TIMES can also resolve regions.
          \item[\textbf{Post-Processing:}] Many metrics are automatically postprocessed 
                  (i.e. energy intensity, thermal energy efficiency, 
-                 transmission capacity).. 
+                 transmission capacity). 
          \item[\textbf{Constrained Optimization}] Modeling technology deployment 
                  transition as a constrained optimization problem will
                  drive insights.
  \end{description}  
 
-\end{block}
+         The key objective function is minimization of carbon emissions in 2050 
+         and a key
+         constraint will be that deployed generation capacity must meet energy 
+         demand. This can na\"ively be written:
 
+\begin{align}
+        \intertext{minimize:}
+        &\sum_g^G C_g x_g 
+        \intertext{subject to:}
+        &\sum_g^Gx_g = d
+        \intertext{where}
+        C_g =& \mbox{ carbon emissions from generation component g}\\
+        x_g =& \mbox{ deployment of generation component g}\\
+        d =& \mbox{ generation demand}
+\end{align}
+
+A simple \textbf{static} formulation is straightforward to write, as above.  
+However this  formulation is quickly complicated by including \textbf{dynamic 
+time} as well as additional constraints (energy storage, variable demand, 
+$CO_2$ sequestration, efficiency, costs, etc.)
+\end{block}
 
 
 \end{column} % End of column 2, top half
