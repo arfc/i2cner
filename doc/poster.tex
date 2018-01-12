@@ -24,7 +24,7 @@
 
 \documentclass[final]{beamer}
 
-\usepackage[scale=1.0]{beamerposter} % Use the beamerposter package for laying out the poster
+\usepackage[scale=0.9]{beamerposter} % Use the beamerposter package for laying out the poster
 \usetheme{confposter} % Use the confposter theme supplied with this template
 
 \setbeamercolor{block title}{fg=dblue!80,bg=white} % Colors of the block titles
@@ -48,15 +48,15 @@
 \newlength{\onecolwid}
 \newlength{\twocolwid}
 \newlength{\threecolwid}
-\setlength{\paperwidth}{36in} % A0 width: 46.8in
-\setlength{\paperheight}{48in} % A0 height: 33.1in
-\setlength{\textwidth}{34in} % A0 width: 46.8in
-\setlength{\textheight}{46in} % A0 height: 33.1in
+\setlength{\paperwidth}{33.1in} % A0 width: 46.8in
+\setlength{\paperheight}{46.8in} % A0 height: 33.1in
+\setlength{\textwidth}{33.1in} % A0 width: 46.8in
+\setlength{\textheight}{46.8in} % A0 height: 33.1in
 \setlength{\sepwid}{0.025\paperwidth} % Separation width (white space) between columns
 \setlength{\onecolwid}{0.3\paperwidth} % Width of one column
 \setlength{\twocolwid}{0.625\paperwidth} % Width of two columns
 \setlength{\threecolwid}{0.95\paperwidth} % Width of three columns
-\setlength{\topmargin}{-0.5in} % Reduce the top margin size
+\setlength{\topmargin}{-1in} % Reduce the top margin size
 %-----------------------------------------------------------
 
 \usepackage{graphicx}  % Required for including images
@@ -101,9 +101,9 @@ minimum height=2em]
 
 \title{Dynamic Transition Analysis with TIMES}
 
-\author{\textbf{Energy Analysis Division}\\
-        \textbf{I\textsuperscript{2}CNER Initiative on Challenges in Energy 
-        Assessment and Energy Transitions}\\
+\author{
+       % \textbf{ENERGY ANALYSIS DIVISION}\\
+       % \textbf{I\textsuperscript{2}CNER Initiative on Challenges in Energy Assessment and Energy Transitions}\\
         Anshuman Chaube, James Stubbins, \textbf{Kathryn Huff}}
 \institute{University of Illinios at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
 %----------------------------------------------------------------------------------------
@@ -136,15 +136,22 @@ minimum height=2em]
 
 \begin{alertblock}{Objectives}
 
-Evaluate potential impact of novel energy technologies within Japan's energy system. Specifically:
-\begin{itemize}
-	\item Guide practical near term (2010-2050) transition strategies.
+\begin{description}
+{\large 
+        \item[\textbf{Division:}] Energy Analysis Division
+        \item[\textbf{Project:}] I\textsuperscript{2}CNER Initiative on Challenges in Energy Assessment and Energy Transitions
+        \item[\textbf{Objective:}] Evaluate potential impact of novel energy technologies within Japan's energy system.
+\item[\textbf{Milestones:}] ~\\}
+        \begin{itemize}
         \item Minimize carbon emissions within realistic constraints.
+        \item Optimize realistic 2010-2050 decarbonization roadmaps.
 	\item Identify high impact technologies.
-	\item Assess role of technology readiness.
+        \item Identify potential transition bottlenecks.
+        \item Help Japan's policymakers create timelines for R\&D investment and infrastructure development.
+        \item Quantify system sensitivity to technology readiness.
 	\item Predict impediments to strategically optimal technology deployment.
-	\item Identify ideal timelines for energy system deployment, infrastructure development, high impact R\&D investment.
-\end{itemize}
+	\end{itemize}
+\end{description}
 
 \end{alertblock}
 %
@@ -171,14 +178,6 @@ storage) and will combine multiple technologies in a single heterogeneous
 system model.
 \end{block}
 
-\begin{block}{Methodology}
-        \textbf{The Integrated MARKAL-EFOM System (TIMES)} model generator 
-        \cite{loulou_documentation_2005} 
-        \cite{seebregts_energy/environmental_2002} optimizes energy systems 
-        using linear and mixed-linear algorithms. A user-defined objective 
-        function (such as minimizing carbon emissions or costs) is solved within user defined constraints such as energy generation demand.  
-\end{block}
-
 
 %----------------------------------------------------------------------------------------
 
@@ -193,46 +192,34 @@ system model.
 \begin{column}{\onecolwid} % The second column
 
 
-%----------------------------------------------------------------------------------------
-%	Anticipated Results
-%----------------------------------------------------------------------------------------
 
-\begin{block}{Anticipated Results}
 
- \begin{itemize}
-   \item Analysis results can be filtered by sector (commercial, industrial, residential, building etc) or by region.
-   
-   \item Many metrics are automatically postprocessed- such as energy intensity, thermal energy efficiency, transmission capacity. 
-   
-   \item Technology deployment transitions driven by constrained optimization will have valuable strategic value.    
- 
- 
- \end{itemize}  
- 
- 	
+
+
+%----------------------------------------------------------------------------------------
+\begin{block}{Methodology}
+        \textbf{The Integrated MARKAL-EFOM System (TIMES)} model generator 
+        \cite{loulou_documentation_2005} 
+        \cite{seebregts_energy/environmental_2002} optimizes energy systems 
+        using linear and mixed-linear algorithms. A user-defined objective 
+        function (such as minimizing carbon emissions or costs) is solved within user defined constraints such as energy generation demand.  
+
+
+\begin{description}
+        \item[\textbf{Sector Analysis:}] TIMES models can resolve generation and 
+                 consumption by sector (commercial, industrial, residential, 
+                 building etc). 
+         \item[\textbf{Regional Analysis:}] TIMES can also resolve regions.
+         \item[\textbf{Post-Processing:}] Many metrics are automatically postprocessed 
+                 (i.e. energy intensity, thermal energy efficiency, 
+                 transmission capacity).. 
+         \item[\textbf{Constrained Optimization}] Modeling technology deployment 
+                 transition as a constrained optimization problem will
+                 drive insights.
+ \end{description}  
+
 \end{block}
 
-
-
-
-
-%----------------------------------------------------------------------------------------
-%	RESULTS
-%----------------------------------------------------------------------------------------
-
-
-        \begin{alertblock}{Impact}
-        \large Results will:
-	\begin{itemize}
-        \item {Optimize realistic decarbonization roadmaps.}
-        \item {Identify potential transition bottlenecks.}
-        \item {Help Japan's policymakers create timelines for R\&D investment and infrastructure development.}
-        \item {Quantify system sensitivity to technology readiness.}
-	\end{itemize}
-        \end{alertblock}
-   
-
-%----------------------------------------------------------------------------------------
 
 
 \end{column} % End of column 2, top half
@@ -246,6 +233,27 @@ system model.
 
 \begin{column}{\onecolwid} % The third column
 
+%----------------------------------------------------------------------------------------
+%	TAKE AWAY
+%----------------------------------------------------------------------------------------
+
+        \begin{alertblock}{Take Aways}
+	\begin{itemize}
+                \item Dynamic simulation of Japan's energy system transition in 
+                        the TIMES model generator will help develop near-term 
+                        decarbonization strategies.
+                \item Policymakers will benefit from identification of high 
+                        impact technologies, and creation of R\&D investment 
+                        and infrastructure development timelines.  
+                \item Simulations will quantify system sensitivity to 
+                        technology readiness. 
+                \item Dynamic analysis will identify potential transition 
+                        bottlenecks.
+	\end{itemize}
+        \end{alertblock}
+   
+
+
 %--------------------------------------------------------
 % PROJECT TIMELINE
 %---------------------------------------------------------
@@ -255,21 +263,6 @@ system model.
 
 
 
-%----------------------------------------------------------------------------------------
-%	CONCLUSION
-%----------------------------------------------------------------------------------------
-
-\begin{block}{Summary}
-\begin{itemize}
-
-\item Dynamic simulation of Japan's energy system transition in the TIMES model 
-        generator will help develop near-term decarbonization strategies.
-\item Policymakers will benefit from identification of high impact technologies, and creation of R\&D investment and infrastructure development timelines.
-\item Simulations will quantify system sensitivity to technology readiness.
-
-\end{itemize}
-
-\end{block}
 
 
 \begin{block}{References}
