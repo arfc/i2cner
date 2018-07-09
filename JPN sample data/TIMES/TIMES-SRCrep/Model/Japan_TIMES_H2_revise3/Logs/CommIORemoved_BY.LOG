@@ -1,0 +1,18 @@
+The following Comms I/O and associated data have been removed due to ZERO flow coefficient :
+
+Region / Technology / Commodity / Parameter / Year / Value / SheetName / Cell
+
+Japan / S28 / CDE / ENV_ACT / 1990 / 0 / TData / 1091,9
+Japan / S28 / CDE / ENV_ACT / 1995 / 0 / TData / 1091,10
+Japan / S28 / CDE / ENV_ACT / 2000 / 0 / TData / 1091,11
+Japan / S28 / CDE / ENV_ACT / 2005 / 0 / TData / 1091,12
+Japan / S28 / CDE / ENV_ACT / 2010 / 0 / TData / 1091,13
+Japan / S28 / CDE / ENV_ACT / 2015 / 0 / TData / 1091,14
+Japan / S28 / CDE / ENV_ACT / 2020 / 0 / TData / 1091,15
+Japan / S28 / CDE / ENV_ACT / 2025 / 0 / TData / 1091,16
+Japan / S28 / CDE / ENV_ACT / 2030 / 0 / TData / 1091,17
+Japan / S28 / CDE / ENV_ACT / 2035 / 0 / TData / 1091,18
+Japan / S28 / CDE / ENV_ACT / 2040 / 0 / TData / 1091,19
+Japan / S28 / CDE / ENV_ACT / 2045 / 0 / TData / 1091,20
+Japan / S28 / CDE / ENV_ACT / 2050 / 0 / TData / 1091,21
+
