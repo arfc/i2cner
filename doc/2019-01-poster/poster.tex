@@ -267,9 +267,9 @@ Our model includes conventional energy sources such as \textbf{fossil fuels, nuc
         
          \item\textbf{Constraints:} CO$_2$ emissions, demand (+1.7\% per year) \cite{noauthor_electricity_2017}.
          
-         \item Hydropower capacity held constant \cite{noauthor_energy_2018}.
+         \item Hydropower and geothermal capacity held constant \cite{noauthor_energy_2018}.
          
-         \item The cost of fossil fuels, geothermal, hydropower, steam reforming and nuclear is held constant. Variation in costs of wind, solar, and photocatalytic H$_2$ production is given in Fig. \ref{cost}.
+         \item Variation in costs of wind, solar, and photocatalytic H$_2$ production is given in Fig. \ref{cost}.
          
          \item All new nuclear reactors are ABWRs \cite{rothwell_real_2006}.
          
@@ -371,10 +371,18 @@ We have modeled \textbf{four scenarios} with different energy technologies enabl
 %--------------------------------------------------------
 % PROJECT TIMELINE
 %---------------------------------------------------------
-\begin{block}{Future work}
+\begin{block}{Limitations and Future work}
     \begin{itemize}
     
-    \item Capture realistic, gradual transition behaviour.
+    \item Model focuses entirely on \textbf{electricity supply sector}.
+    
+    \item The cost of fossil fuels, geothermal, hydropower, steam reforming and nuclear is held constant.
+    
+    \item No limit on penetration of solar or wind except maximum potential.
+    
+    \item Annual timesteps and annually averaged capacity factors limit ability to capture seasonal and daily variation in wind and solar.    
+    
+    \item Capture realistic, gradual transition behaviour and fluctuations in demand due to population decline in Japan.
     
     \item Incorporation of more I$^2$CNER technologies.
     
