@@ -5,7 +5,11 @@ No new nuclear.
 
 New solar can grow in steps of:
 	- 5,7,10 GW from 2017-2020
-	- 10,20,...60 GW from 2018 onwards (based on China 2017 growth)
+	- 1,5 10,20,...60 GW from 2018 onwards (based on China 2017 growth)
 New wind(onshore/offshore) can grow in steps of:
 	- 2,4 GW from 2017-2020
-	- 5,10,15,20 GW from 2021 onwards (based on China 2017 growth)
+	- 1, 5,10,15,20 GW from 2021 onwards (based on China 2017 growth)
+Wind caps (based on max potential - Kojima 2012 p 28):
+	- 283 GW for ONSHORE
+	- 1572 GW for OFFSHORE
+
