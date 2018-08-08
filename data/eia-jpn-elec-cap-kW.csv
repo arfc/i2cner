@@ -1,0 +1,68 @@
+"International_data"
+"https://www.eia.gov/beta/international/data/browser/#/?pa=0000000000000000000007vo70000fvu&c=00000000000000000000000g&ct=0&tl_id=2-A&vs=INTL.2-12-JPN-BKWH.A&vo=0&v=H&start=2009&end=2017"
+"Tue Jul 31 2018 11:54:57 GMT-0500 (Central Daylight Time)"
+"Source: U.S. Energy Information Administration"
+,,,2009,2010,2011,2012,2013,2014,2015,2016,2017
+"","Electricity",""
+"","Capacity",""
+"","Capacity","Million Kw"
+"","Japan","Million Kw",282.46,286.192,288.83,294.797,302.413,315.249,322.159,-,-
+"","Nuclear","Million Kw"
+"","Japan","Million Kw",46.821,46.821,44.215,44.215,42.388,42.388,40.29,-,-
+"","Renewables",""
+"","Renewables","Million Kw"
+"","Japan","Million Kw",28.444,30.953,32.322,34.235,41.335,51.38,62.785,-,-
+"","Hydroelectricity","Million Kw"
+"","Japan","Million Kw",21.784,22.362,22.144,22.19,22.188,22.248,22.485,-,-
+"","Non-Hydroelectric Renewables",""
+"","Non-Hydroelectric Renewables","Million Kw"
+"","Japan","Million Kw",6.66,8.591,10.178,12.045,19.147,29.132,40.3,-,-
+"","Geothermal","Million Kw"
+"","Japan","Million Kw",0.535,0.537,0.537,0.512,0.512,0.508,0.516,-,-
+"","Solar, Tide, Wave, Fuel Cell",""
+"","Solar, Tide, Wave, Fuel Cell","Million Kw"
+"","Japan","Million Kw",2.627,3.618,4.914,6.632,13.599,23.339,34.15,-,-
+"","Tide, Wave, Fuel Cell",""
+"","Tide and Wave","Million Kw"
+"","Japan","Million Kw",0,0,0,0,0,0,0,-,-
+"","Solar","Million Kw"
+"","Japan","Million Kw",2.627,3.618,4.914,6.632,13.599,23.339,34.15,-,-
+"","Wind","Million Kw"
+"","Japan","Million Kw",1.997,2.294,2.419,2.562,2.645,2.753,2.808,-,-
+"","Biomass and Waste","Million Kw"
+"","Japan","Million Kw",1.501,2.142,2.308,2.339,2.391,2.532,2.826,-,-
+"","Fossil Fuels","Million Kw"
+"","Japan","Million Kw",181.736,183.044,186.019,189.603,191.946,194.132,191.535,-,-
+"","Hydroelectric Pumped Storage","Million Kw"
+"","Japan","Million Kw",25.459,25.374,26.274,26.744,26.744,27.349,27.549,-,-
+"","Generation",""
+"","Generation","Billion Kwh"
+"","Japan","Billion Kwh",981.958,1086.42124,1076.29446,1000.21582,1007.58728,997.81066,976.39344,-,-
+"","Nuclear","Billion Kwh"
+"","Japan","Billion Kwh",263.053,280.25,156.182,17.23,13.947,0,4.346,-,-
+"","Renewables",""
+"","Renewables","Billion Kwh"
+"","Japan","Billion Kwh",103.151,122.887,126.571,121.74,133.005,152.032,169.66,-,-
+"","Hydroelectricity","Billion Kwh"
+"","Japan","Billion Kwh",76.127,81.859,82.852,75.145,77.759,81.443,84.845,-,-
+"","Non-Hydroelectric Renewables",""
+"","Non-Hydroelectric Renewables","Billion Kwh"
+"","Japan","Billion Kwh",27.024,41.028,43.719,46.595,55.246,70.589,84.815,-,-
+"","Geothermal","Billion Kwh"
+"","Japan","Billion Kwh",2.886,2.399,2.419,2.35,2.342,2.328,2.337,-,-
+"","Wind","Billion Kwh"
+"","Japan","Billion Kwh",3.616,3.962,4.559,4.722,4.286,5.038,5.16,-,-
+"","Solar, Tide, Wave, Fuel Cell",""
+"","Solar, Tide, Wave, Fuel Cell","Billion Kwh"
+"","Japan","Billion Kwh",2.758,3.8,5.16,6.963,14.279,24.506,35.858,-,-
+"","Tide, Wave, Fuel Cell",""
+"","Tide and Wave","Billion Kwh"
+"","Japan","Billion Kwh",0,0,0,0,0,0,0,-,-
+"","Solar","Billion Kwh"
+"","Japan","Billion Kwh",2.758,3.8,5.16,6.963,14.279,24.506,35.858,-,-
+"","Biomass and Waste","Billion Kwh"
+"","Japan","Billion Kwh",17.764,30.867,31.581,32.56,34.339,38.717,41.46,-,-
+"","Fossil Fuels","Billion Kwh"
+"","Japan","Billion Kwh",616.34,684.64524,794.73146,863.25182,861.66228,847.49366,804.24144,-,-
+"","Hydroelectric Pumped Storage","Billion Kwh"
+"","Japan","Billion Kwh",-0.586,-1.361,-1.19,-2.006,-1.027,-1.715,-1.854,-,- 
