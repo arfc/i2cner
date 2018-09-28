@@ -29,6 +29,9 @@
 
 \begin{document}
 
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
 
 \begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
     \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
@@ -46,7 +49,7 @@
         \end{minipage}%
         \begin{minipage}{0.6\textwidth}
         {\begin{flushright}\huge\bfseries Dynamic Transition Analysis With TIMES\end{flushright}}
-        {\begin{flushright}\large\textit{ I\textsuperscript{2}CNER Project Report}\end{flushright}}
+        {\begin{flushright}\large\textit{I\textsuperscript{2}CNER Project Report}\end{flushright}}
 
         \end{minipage}
 
@@ -54,6 +57,25 @@
     \HRule
     \vspace{0.5cm}
     
+    %------------------------------------------------
+    %    Author(s)
+    %------------------------------------------------
+    
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft}
+            \large
+            \textit{Author}\\
+            Anshuman \textsc{Chaube}\\
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \large
+            \textit{Principal Investigator}\\
+            Kathryn D. \textsc{Huff} % Supervisor's name
+        \end{flushright}
+    \end{minipage}
     
     % If you don't want a supervisor, uncomment the two lines below and comment the code above
     %{\large\textit{Author}}\\
@@ -90,6 +112,7 @@
     %    Logo
     %------------------------------------------------
     
+    
     \vspace{0.5cm}
     \includegraphics[scale=0.2]{arfc_logo}
     \includegraphics[scale=0.3]{i2cner_logo}
@@ -104,11 +127,9 @@
     % For this section, either use \vfill to fill the space 
     % or insert funding acknowledgement
     \textit{The authors gratefully acknowledge the support of the International Institute for Carbon
-Neutral Energy Research (WPI-I2CNER), sponsored by the Japanese Ministry of Education, Culture, Sports, Science and Technology.} 
+Neutral Energy Research (WPI-I2CNER), sponsored by the Japanese Ministry of Education, Culture, Sports, Science and Technology.}  
 
 \end{titlepage}
-
-
 
 \section{Introduction}
 We initiated a project in January 2018 to simulate dynamic transition scenarios for the energy industry in Japan to suggest pathways for minimizing carbon emissions. This report is a summary of the progress we have made so far, the challenges we currently face, and the future direction of this research. 
@@ -161,15 +182,27 @@ While collecting this data, we noticed that the EDMC databank that we have been 
 
 \end{enumerate}
 
-Based on these assumptions, the preliminary transition scenario gives the following distribution of electric utilities to meet the supplied demand process:
+Based on these assumptions, the model yields the following results for the years 2011-16, which are very close to the actual electricity generation figures supplied by EDMC:
 
-%\begin{figure}[H]
-%\centering
-%\includegraphics[scale=0.4]{q1_1_1}
-%\caption{The partial sum $g ^N (x)$ for %$f_1 (x)$ for $N=1,2,...10$.}
-%\end{figure}
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{elc-2016}
+\caption{Electricity generated from different sources}
+\end{figure}
 
-The emitted CO\textsubscript{2} values for the period 2011-16 are as follows. The error is at most 5.7\% (see fig), which is due to the aforementioned absence of accurate data for 2011, 2012 and 2016. 
+The emitted CO\textsubscript{2} values for the period 2011-16 are as follows. The error is at most 5.7\% \ref{co2err}, which is due to the aforementioned absence of accurate data for 2011, 2012 and 2016. 
+
+\begin{figure}[H]
+\centering
+\includegraphics[scale=0.6]{co2-2016}
+\caption{CO2 emissions from electricity generation compared with actual emissions reported by Ministry of Environment(MoE), Japan}
+\end{figure}
+
+\begin{figure}[H] \label{co2err}
+\centering
+\includegraphics[scale=0.6]{co2-err}
+\caption{Relative error in CO2 emissions.}
+\end{figure}
 
 \subsection{Post Hoc Analysis and Challenges} 
 
