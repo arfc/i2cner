@@ -3,7 +3,9 @@
 \usepackage[english]{babel}
 \usepackage{graphicx}
 \usepackage{rotating}
-\usepackage{amsmath}
+%\usepackage{bibtex}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
 \usepackage{adjustbox}
 \usepackage{courier}
 \usepackage{verbatim}
@@ -12,15 +14,24 @@
 \usepackage{array}
 \usepackage{breakcites}
 \usepackage{gensymb}
+\usepackage{bib}
 \usepackage{booktabs,tabularx}
 \usepackage{listings}
 \usepackage{appendix}
 \usepackage{blindtext}
+
+\bibliographystyle{unsrt}
+
+
+\bibliography{2018-chaube-i2cner-report-sept}
+
+
 \title{I\textsuperscript{2}CNER Project Report \\ Dynamic Transition Analysis With TIMES}
 \date{September 2018}
 \author{Anshuman Chaube\\UIUC}
 \begin{document}
 \maketitle
+
 
 \section{Introduction}
 We initiated a project in January 2018 to simulate dynamic transition scenarios for the energy industry in Japan to suggest pathways for minimizing carbon emissions. This report is a summary of the progress we have made so far, the challenges we currently face, and the future direction of this research. 
@@ -32,16 +43,16 @@ We initiated a project in January 2018 to simulate dynamic transition scenarios 
 The tasks that we performed can be divided into two categories: technical tasks associated with implementation of details and features in our model, and data collection and organization. Our accomplishments have been:
 
 \begin{enumerate}
-\item \textbf{Installation of and familiarization with VEDA} (January – March 2018) : To model Japan’s energy industry, we chose VEDA, a TIMES (The Integrated MARKAL-EFOM System) <cite something> model generator. We found the format of the developer-prescribed model files restrictive and unsuitable for our purposes. Therefore, we took the time to develop our own model files, which we have progressively refined since then. Major impediments to this process were the quality of documentation and customer-support provided by VEDA developers, which delayed the process.
+\item \textbf{Installation of and familiarization with VEDA} (January – March 2018) : To model Japan's energy industry, we chose VEDA, a TIMES (The Integrated MARKAL-EFOM System) \cite{loulou_documentation_2005} \cite{gargiulo_et_al._documentation_nodate}model generator. We found the format of the developer-prescribed model files restrictive and unsuitable for our purposes. Therefore, we took the time to develop our own model files, which we have progressively refined since then. Major impediments to this process were the quality of documentation and customer-support provided by VEDA developers, which delayed the process.
 At the same time, we collected data pertaining to electricity generation and carbon emissions.
 
-\item \textbf{Incorporation of fossil fuel-related data} (April – May 2018): We incorporated data for electricity generation from fossil fuels from the EDMC databank, along with creating a simplified demand process reflecting the recent trends in electricity demand in Japan. \\
+\item \textbf{Incorporation of fossil fuel-related data} (April – May 2018): We incorporated data for electricity generation from fossil fuels from the EDMC databank\cite{edmc_ieej_edmc_nodate}, along with creating a simplified demand process reflecting the recent trends in electricity demand in Japan. \\
 
-While collecting this data, we noticed that the EDMC databank that we have been relying on has no data for the amount of electricity generated from individual fossil fuels for the years 2011-12. Instead, the amount of electricity generated from coal, oil, and natural gas is lumped together in one category titled “thermal”. Further, the 2016 data seems slightly inconsistent across different data tables in the EDMC databank. The source of variation in these numbers is likely to be the changes in the electricity distribution system of Japan since 2016.
+While collecting this data, we noticed that the EDMC databank that we have been relying on has no data for the amount of electricity generated from individual fossil fuels for the years 2011-12. Instead, the amount of electricity generated from coal, oil, and natural gas is lumped together in one category titled "thermal". Further, the 2016 data seems slightly inconsistent across different data tables in the EDMC databank. The source of variation in these numbers is likely to be the changes in the electricity distribution system of Japan since 2016.
 
-\item \textbf{Incorporation of nuclear, hydropower and renewables into the model} (June – August 2018): The process of incorporating these into the model was similar to the previous energy sources, but simpler, since the data obtained for these energy sources from EDMC was consistent across EDMC data tables and secondary sources (EIA, IEA). We have also included processes for the projected growth of nuclear, solar and wind based on data from the Federation of <bleh>, JWPA, and <some solar body.>
+\item \textbf{Incorporation of nuclear, hydropower and renewables into the model} (June – August 2018): The process of incorporating these into the model was similar to the previous energy sources, but simpler, since the data obtained for these energy sources from EDMC was consistent across EDMC data tables and secondary sources \cite{edmc_ieej_edmc_nodate} \cite{iea_iea_2017} \cite{japan_electric_power_information_centerjepic_japan_2017}. We have also included processes for the projected growth of nuclear, solar and wind based on data from various studies, reports and articles. \cite{publicover_japan_2017} \cite{publicover_japan_2017} \cite{dincer_analysis_2011} \cite{the_geothermal_research_society_of_japan_geothermal_nodate} \cite{heger_wind_2016} \cite{japan_nuclear_energy_safety_organization_operational_2013} \cite{the_federation_of_electric_power_companies_of_japan_electricity_2017}
 
-\item \textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel’s energy cycle having different emission coefficients. We estimated the missing figures based on previous years’ trends (cite EDMC 2012 handbook) and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.
+\item \textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel's energy cycle having different emission coefficients. We estimated the missing figures based on previous years' trends \cite{edmc_ieej_edmc_nodate} \cite{ministry_of_the_environment_japan_national_2018} and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.
 
 \end{enumerate}
 
@@ -55,21 +66,21 @@ While collecting this data, we noticed that the EDMC databank that we have been 
 
 \item The coal and natural gas capacities are held constant throughout the simulation.
 
-\item Oil-based electricity has been gradually retired due to the emphasis of the Japanese government on energy self-sufficiency and minimizing costs, and due to a general trend in the EDMC data indicating declining use of oil.
+\item The levelized cost of electricity (LCOE) for fossil fuels has been held constant throughout the simulation \cite{chapman_energy_2018} \cite{lazard_lazards_2017} \cite{iea_iea_2017}. LCoE projections for wind and solar have been incorporated \cite{lazard_lazards_2017}. However, the implementation of costs associated with electricity generation is still under-development. 
 
-\item Nuclear capacity is increased in chunks equivalent to the capacity of GE-Hitachi’s ABWRs, which are under consideration for construction <cite elec review>, with efficiency values based on existing ABWRs in operation. It has been assumed that there can be as many as 22 ABWRs constructed in between 2020-2100, with the number of reactors constructed during the earlier years based on the number of projects currently under consideration for construction, and the pace of construction based on similar reactors constructed in Japan. All nuclear technology, current or future, has a finite lifetime based realistic values <cite hitachi>.
+\item Oil-based electricity has been gradually retired due to the emphasis of the Japanese government on energy self-sufficiency and minimizing costs, and due to a general trend in the EDMC data \cite{edmc_ieej_edmc_nodate} indicating declining use of oil.
 
-\item Solar – Any new solar capacity created by the model has been assumed to be non-tracking. The maximum capacity implemented is based on <>
+\item Nuclear capacity is increased in chunks equivalent to the capacity of GE-Hitachi's ABWRs \cite{ge_hitachi_nuclear_energy_advanced_2007}, which are under consideration for construction \cite{the_federation_of_electric_power_companies_of_japan_electricity_2017}, with efficiency values based on existing ABWRs in operation. It has been assumed that there can be as many as 22 ABWRs constructed in between 2020-2100, with the number of reactors constructed during the earlier years based on the number of projects currently under consideration for construction, and the pace of construction based on similar reactors constructed in Japan. All nuclear technology, current or future, has a finite lifetime based realistic values.
 
-\item Wind –The offshore and onshore wind capacity potential for Japan is based on the report by <>.
+\item Solar – Any new solar capacity created by the model has been assumed to be non-tracking.
 
 \item Hydropower – held constant at current levels.
 
-\item Geothermal – expanded to maximum potential <cite>.
+\item Geothermal is expanded to its maximum potential \cite{the_geothermal_research_society_of_japan_geothermal_nodate}.
 
-\item The values of electricity generated from coal, oil and natural gas in 2011 and 2012 have been estimated using previous years’ values and CO\textsubscript{2} emissions.
+\item The values of electricity generated from coal, oil and natural gas in 2011 and 2012 have been estimated using previous years' values and CO\textsubscript{2} emissions.
 
-\item The CO\textsubscript{2} emission constraints implemented are very lax and not representative of any constraints that the Japanese government or I\textsuperscript{2}CNER wish to implement. This feature of the model is still under-development, since we do not have accurate data for electricity generated from fossil fuels for the years 2011, 2012, and 2016.
+\item The CO\textsubscript{2} emission constraints implemented are very lax and not representative of any constraints that the Japanese government or I\textsuperscript{2}CNER wish to implement. Since we do not have accurate data for electricity generated from fossil fuels for the years 2011, 2012, and 2016, we have been focusing our efforts on modelling CO\textsubscript{2} emissions from previous years accurately.
 
 \end{enumerate}
 
@@ -87,7 +98,7 @@ The emitted CO\textsubscript{2} values for the period 2011-16 are as follows. Th
 
 The project was significantly delayed due to the quality of the documentation and customer support provided by the VEDA developers. The primitive, black-box like nature of the software often produces inexplicable, illogical results and inhibits efficient debugging. Therefore, while data acquisition and organization proceeded at the originally suggested pace, the incorporation of this data into the model has been behind schedule, by about three months. \\
 
-In addition to having incomplete/inaccurate data for 2011, 2012 and 2016, EDMC has been eliminating data related to electricity generation from individual fossil fuels and lumping power from coal, oil, and natural gas into a category called “thermal” in its databank. This complicates the process of estimating CO\textsubscript{2} emissions from these energy sources, since each fossil fuel has a different emission coefficient. Losing the primary data that we have been relying on has affected our pace and the reproducibility of our research significantly. The EDMC databank figures in GWh, instead of in tons of coal or oil, have influenced our model’s simplistic design, as discussed previously. Our efforts to find similar data have been unsuccessful. Switching to data in terms of the quantity of raw fossil fuels consumed instead of GWh of electricity produced may require a substantial revision of our model. 
+In addition to having incomplete/inaccurate data for 2011, 2012 and 2016, EDMC has been eliminating data related to electricity generation from individual fossil fuels and lumping power from coal, oil, and natural gas into a category called "thermal" in its databank. This complicates the process of estimating CO\textsubscript{2} emissions from these energy sources, since each fossil fuel has a different emission coefficient. Losing the primary data that we have been relying on has affected our pace and the reproducibility of our research significantly. The EDMC databank figures in GWh, instead of in tons of coal or oil, have influenced our model's simplistic design, as discussed previously. Our efforts to find similar data have been unsuccessful. Switching to data in terms of the quantity of raw fossil fuels consumed instead of GWh of electricity produced may require a substantial revision of our model. 
 
 \section{Future Work} 
 Considering these challenges, any future efforts on this project will be concentrated in the following areas, in this order of precedence:
@@ -114,16 +125,8 @@ In case we must switch to more accurate data that is different from the EDMC fig
 
 
 
+%\bibliographystyle{plain}
 
-
-
-
-%\begin{thebibliography}{1}
-
-%\bibitem{dude} Duderstadt and Hamilton, %"Nuclear Reactor Analysis", 1976, John %Wiley and Sons.
-
-%\end{thebibliography}
-
-
+%\printbibliography
 
 \end{document}
