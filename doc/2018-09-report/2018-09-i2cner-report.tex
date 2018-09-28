@@ -14,23 +14,100 @@
 \usepackage{array}
 \usepackage{breakcites}
 \usepackage{gensymb}
-\usepackage{bib}
+%\usepackage[backend=biber]{biblatex}
 \usepackage{booktabs,tabularx}
 \usepackage{listings}
 \usepackage{appendix}
+\usepackage{cite}
 \usepackage{blindtext}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx} % For the logo
 
-\bibliographystyle{unsrt}
+%\bibliographystyle{numeric}
 
-
-\bibliography{2018-chaube-i2cner-report-sept}
-
-
-\title{I\textsuperscript{2}CNER Project Report \\ Dynamic Transition Analysis With TIMES}
-\date{September 2018}
-\author{Anshuman Chaube\\UIUC}
 \begin{document}
-\maketitle
+
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+    
+    \center % Centre everything on the page
+
+    %------------------------------------------------
+    %    Title
+    %------------------------------------------------
+    
+    \HRule\\[0.2cm]
+    
+     \begin{minipage}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{arfc-logo}
+        \end{minipage}%
+        \begin{minipage}{0.6\textwidth}
+        {\begin{flushright}\huge\bfseries Dynamic Transition Analysis With TIMES\end{flushright}}
+        {\begin{flushright}\large\textit{ I\textsuperscript{2}CNER Project Report}\end{flushright}}
+
+        \end{minipage}
+
+    \vspace{0.2cm}
+    \HRule
+    \vspace{0.5cm}
+    
+    
+    % If you don't want a supervisor, uncomment the two lines below and comment the code above
+    %{\large\textit{Author}}\\
+    %John \textsc{Smith} % Your name
+
+    %------------------------------------------------
+    %    Report Number
+    %------------------------------------------------
+    \vspace{1cm}
+    \textsc{\LARGE\bfseries UIUC-ARFC-2018-01} % Replace YYYY with the year, NN with report index
+    \vspace{0.5cm}
+    
+    %------------------------------------------------
+    %    Date
+    %------------------------------------------------
+    
+    \vspace{0.5cm} % Position the date further down the remaining page
+    {\large\today} % Date, change the \today to a set date if you want to be precise
+    \vspace{0.5cm}
+
+%------------------------------------------------
+    %    Headings
+    %------------------------------------------------
+    
+    \textsc{\LARGE Advanced Reactors and Fuel Cycles}\\[0.25cm] % Research Group
+    
+    \textsc{\large Dept. of Nuclear, Plasma, \& Radiological Engineering}\\% Department
+    
+    \textsc{\large University of Illiois at Urbana-Champaign}\\ % University
+
+
+    
+    %------------------------------------------------
+    %    Logo
+    %------------------------------------------------
+    
+    \vspace{0.5cm}
+    \includegraphics[scale=0.2]{arfc_logo}
+    \includegraphics[scale=0.3]{i2cner_logo}
+    \includegraphics[scale=0.2]{wpi_logo}
+    \includegraphics[scale=0.04]{ku_logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+     
+    %----------------------------------------------------------------------------------------
+
+    %------------------------------------------------
+    %   Funding 
+    %------------------------------------------------
+    % For this section, either use \vfill to fill the space 
+    % or insert funding acknowledgement
+    \textit{The authors gratefully acknowledge the support of the International Institute for Carbon
+Neutral Energy Research (WPI-I2CNER), sponsored by the Japanese Ministry of Education, Culture, Sports, Science and Technology.} 
+
+\end{titlepage}
+
 
 
 \section{Introduction}
@@ -43,16 +120,16 @@ We initiated a project in January 2018 to simulate dynamic transition scenarios 
 The tasks that we performed can be divided into two categories: technical tasks associated with implementation of details and features in our model, and data collection and organization. Our accomplishments have been:
 
 \begin{enumerate}
-\item \textbf{Installation of and familiarization with VEDA} (January – March 2018) : To model Japan's energy industry, we chose VEDA, a TIMES (The Integrated MARKAL-EFOM System) \cite{loulou_documentation_2005} \cite{gargiulo_et_al._documentation_nodate}model generator. We found the format of the developer-prescribed model files restrictive and unsuitable for our purposes. Therefore, we took the time to develop our own model files, which we have progressively refined since then. Major impediments to this process were the quality of documentation and customer-support provided by VEDA developers, which delayed the process.
+\item \textbf{Installation of and familiarization with VEDA} (January – March 2018) : To model Japan's energy industry, we chose VEDA, a TIMES (The Integrated MARKAL-EFOM System) \cite{loulou_documentation_2005} \cite{gargiulo_documentation_2005} generator. We found the format of the developer-prescribed model files restrictive and unsuitable for our purposes. Therefore, we took the time to develop our own model files, which we have progressively refined since then. Major impediments to this process were the quality of documentation and customer-support provided by VEDA developers, which delayed the process.
 At the same time, we collected data pertaining to electricity generation and carbon emissions.
 
-\item \textbf{Incorporation of fossil fuel-related data} (April – May 2018): We incorporated data for electricity generation from fossil fuels from the EDMC databank\cite{edmc_ieej_edmc_nodate}, along with creating a simplified demand process reflecting the recent trends in electricity demand in Japan. \\
+\item \textbf{Incorporation of fossil fuel-related data} (April – May 2018): We incorporated data for electricity generation from fossil fuels from the EDMC databank\cite{noauthor_energy_2018}, along with creating a simplified demand process reflecting the recent trends in electricity demand in Japan. \\
 
 While collecting this data, we noticed that the EDMC databank that we have been relying on has no data for the amount of electricity generated from individual fossil fuels for the years 2011-12. Instead, the amount of electricity generated from coal, oil, and natural gas is lumped together in one category titled "thermal". Further, the 2016 data seems slightly inconsistent across different data tables in the EDMC databank. The source of variation in these numbers is likely to be the changes in the electricity distribution system of Japan since 2016.
 
-\item \textbf{Incorporation of nuclear, hydropower and renewables into the model} (June – August 2018): The process of incorporating these into the model was similar to the previous energy sources, but simpler, since the data obtained for these energy sources from EDMC was consistent across EDMC data tables and secondary sources \cite{edmc_ieej_edmc_nodate} \cite{iea_iea_2017} \cite{japan_electric_power_information_centerjepic_japan_2017}. We have also included processes for the projected growth of nuclear, solar and wind based on data from various studies, reports and articles. \cite{publicover_japan_2017} \cite{publicover_japan_2017} \cite{dincer_analysis_2011} \cite{the_geothermal_research_society_of_japan_geothermal_nodate} \cite{heger_wind_2016} \cite{japan_nuclear_energy_safety_organization_operational_2013} \cite{the_federation_of_electric_power_companies_of_japan_electricity_2017}
+\item \textbf{Incorporation of nuclear, hydropower and renewables into the model} (June – August 2018): The process of incorporating these into the model was similar to the previous energy sources, but simpler, since the data obtained for these energy sources from EDMC was consistent across EDMC data tables and secondary sources \cite{noauthor_energy_2018} \cite{noauthor_iea_2017} \cite{noauthor_japan_2017}. We have also included processes for the projected growth of nuclear, solar and wind based on data from various studies, reports and articles. \cite{publicover_japan_2017} \cite{publicover_japan_2017} \cite{dincer_analysis_2011} \cite{noauthor_geothermal_2018} \cite{heger_wind_2016} \cite{noauthor_operational_2013} \cite{noauthor_electricity_2017}
 
-\item \textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel's energy cycle having different emission coefficients. We estimated the missing figures based on previous years' trends \cite{edmc_ieej_edmc_nodate} \cite{ministry_of_the_environment_japan_national_2018} and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.
+\item \textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel's energy cycle having different emission coefficients. We estimated the missing figures based on previous years' trends \cite{noauthor_energy_2018} \cite{noauthor_national_2018} and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.
 
 \end{enumerate}
 
@@ -66,17 +143,17 @@ While collecting this data, we noticed that the EDMC databank that we have been 
 
 \item The coal and natural gas capacities are held constant throughout the simulation.
 
-\item The levelized cost of electricity (LCOE) for fossil fuels has been held constant throughout the simulation \cite{chapman_energy_2018} \cite{lazard_lazards_2017} \cite{iea_iea_2017}. LCoE projections for wind and solar have been incorporated \cite{lazard_lazards_2017}. However, the implementation of costs associated with electricity generation is still under-development. 
+\item The levelized cost of electricity (LCOE) for fossil fuels has been held constant throughout the simulation \cite{chapman_energy_2018} \cite{noauthor_lazards_2017} \cite{noauthor_iea_2017}. LCoE projections for wind and solar have been incorporated \cite{noauthor_lazards_2017}. However, the implementation of costs associated with electricity generation is still under-development. 
 
-\item Oil-based electricity has been gradually retired due to the emphasis of the Japanese government on energy self-sufficiency and minimizing costs, and due to a general trend in the EDMC data \cite{edmc_ieej_edmc_nodate} indicating declining use of oil.
+\item Oil-based electricity has been gradually retired due to the emphasis of the Japanese government on energy self-sufficiency and minimizing costs, and due to a general trend in the EDMC data \cite{noauthor_energy_2018} indicating declining use of oil.
 
-\item Nuclear capacity is increased in chunks equivalent to the capacity of GE-Hitachi's ABWRs \cite{ge_hitachi_nuclear_energy_advanced_2007}, which are under consideration for construction \cite{the_federation_of_electric_power_companies_of_japan_electricity_2017}, with efficiency values based on existing ABWRs in operation. It has been assumed that there can be as many as 22 ABWRs constructed in between 2020-2100, with the number of reactors constructed during the earlier years based on the number of projects currently under consideration for construction, and the pace of construction based on similar reactors constructed in Japan. All nuclear technology, current or future, has a finite lifetime based realistic values.
+\item Nuclear capacity is increased in chunks equivalent to the capacity of GE-Hitachi's ABWRs \cite{ge_advanced_2007}, which are under consideration for construction \cite{noauthor_electricity_2017}, with efficiency values based on existing ABWRs in operation. It has been assumed that there can be as many as 22 ABWRs constructed in between 2020-2100, with the number of reactors constructed during the earlier years based on the number of projects currently under consideration for construction, and the pace of construction based on similar reactors constructed in Japan. All nuclear technology, current or future, has a finite lifetime based realistic values.
 
 \item Solar – Any new solar capacity created by the model has been assumed to be non-tracking.
 
 \item Hydropower – held constant at current levels.
 
-\item Geothermal is expanded to its maximum potential \cite{the_geothermal_research_society_of_japan_geothermal_nodate}.
+\item Geothermal is expanded to its maximum potential \cite{noauthor_geothermal_2018}.
 
 \item The values of electricity generated from coal, oil and natural gas in 2011 and 2012 have been estimated using previous years' values and CO\textsubscript{2} emissions.
 
@@ -124,6 +201,9 @@ Considering these challenges, any future efforts on this project will be concent
 In case we must switch to more accurate data that is different from the EDMC figures, we may have to modify the model accordingly. For instance, if the data is in terms of units of fossil fuels consumed, we must model the appropriate fossil fuel conversion processes with the relevant conversion factors and efficiencies. This will further delay the project by another one to two months.
 
 
+\bibliographystyle{ieeetr}
+%\addbibresource{2018-chaube-i2cner-report-sept}
+\bibliography{2018-chaube-i2cner-report-sept}
 
 %\bibliographystyle{plain}
 
