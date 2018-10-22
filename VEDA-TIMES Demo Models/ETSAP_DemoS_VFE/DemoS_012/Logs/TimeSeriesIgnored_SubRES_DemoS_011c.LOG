@@ -1,0 +1,4 @@
+Scenario,Region,Attribute,Process,Commgrp,Commodity,UC_N,Year,Timeslice,Limtype,Valfield
+SysSettings.REG1.FLO_SHAR.ELCBNGAB01.ELCBNGAB01_NRGI.ELCBIO.-.0.ANNUAL.UP.5
+SysSettings.REG2.FLO_SHAR.ELCBNGAB01.ELCBNGAB01_NRGI.ELCBIO.-.0.ANNUAL.UP.5
+
