@@ -1,4 +1,5 @@
-CO2 emissions objective function
+CO2 emissions constraint.
+Cost - objective function.
 No max cap on any resource.
 Hydro, geothermal held constant
 New nuclear can grow in steps of:
