@@ -31,6 +31,8 @@
 \setbeamercolor{block body}{fg=black,bg=white} % Colors of the body of blocks
 \setbeamercolor{block alerted title}{fg=white,bg=dblue!70} % Colors of the highlighted block titles
 \setbeamercolor{block alerted body}{fg=black,bg=dblue!10} % Colors of the body of highlighted blocks
+\setbeamertemplate{caption}[numbered]
+
 % Many more colors are available for use in beamerthemeconfposter.sty
 
 %-----------------------------------------------------------
@@ -187,14 +189,40 @@ minimum height=2em]
 Previous work has compared the impact of innovative energy technologies in 
 various world regions using \textbf{static} scenario analyses 
 \cite{chyong_chi_dynamics_2009,feng_system_2013,kikuchi_simulation-based_2017,li_energy_2010,pambudi_impact_2017,pambudi_future_2016}.  
-We will simulate \textbf{dynamic} transition scenarios 
-\cite{jebaraj_review_2006,pfenninger_energy_2014} aimed at minimizing carbon 
-emissions in Japan by 2050. These scenarios will include realistic constraints 
-regarding technology readiness (in terms of generation, transmission \& 
-storage) and will combine multiple technologies in a single heterogeneous 
-system model.
+We are simulating \textbf{dynamic} transition scenarios 
+\cite{jebaraj_review_2006,pfenninger_energy_2014} aimed at optimizing energy supply to minimize carbon 
+emissions in Japan to 80\% of 1990 levels by 2050, and maintaining these levels from 2050-2100. \\
+Our simulation includes conventional energy sources such as \textbf{fossil fuels, nuclear energy, wind, solar, hydropower, and geothermal}, and applicable I$^2$CNER technologies like \textbf{post-combustion absorption-type carbon capture and sequestration, hydrogen production (steam reforming and photocatalytic conversion)}.
 \end{block}
 
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{conv_nuc_elc}
+\caption{\textbf{Scenario 1} (conventional, with new nuclear) Electricity Generation.}
+\label{s1e}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{conv_nuc_co2}
+\caption{\textbf{Scenario 1} (conventional, with new nuclear) CO$_2$ emissions.}
+\label{s1c}
+\end{figure}
+
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{conv_nonuc_elc}
+\caption{\textbf{Scenario 2} (conventional, no new nuclear) Electricity Generation.}
+\label{s2e}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{conv_nonuc_co2}
+\caption{\textbf{Scenario 2} (conventional, no new nuclear) CO$_2$ emissions.}
+\label{s2c}
+\end{figure}
 
 %----------------------------------------------------------------------------------------
 
@@ -209,61 +237,90 @@ system model.
 \begin{column}{\onecolwid} % The second column
 
 
-
-
-
-
 %----------------------------------------------------------------------------------------
 \begin{block}{Methodology}
         \textbf{The Integrated MARKAL-EFOM System (TIMES)} model generator 
         \cite{loulou_documentation_2005} 
         \cite{seebregts_energy/environmental_2002} optimizes energy systems 
         using linear and mixed-linear algorithms. A user-defined objective 
-        function (such as minimizing carbon emissions or costs) is solved within user defined constraints such as energy generation demand.  
+        function is solved within user defined constraints.\hfill \break
 
+\textbf{Key assumptions:}
+
+\begin{itemize}
+        \item\textbf{Objective function:} System cost. 
+        
+         \item\textbf{Constraints:} CO$_2$ emissions, demand (+1.7\% per year).
+         
+         \item Hydropower capacity held constant
+         
+         \item All new nuclear power is based on ABWR designs.
+         
+         \item Growth rate and discrete investment size of nuclear, wind and solar is based on data and trends seen in the US, Chinese, and Japanese energy sectors.
+         
+         \item \textbf{Carbon capture and sequestration and steam reforming:} Deployed in 2030, with their costs reducing by 2050 as per projected trends.
+         
+         \item \textbf{Photocatalytic conversion:} Deployed in 2050, assumed to be cost-competitive with other H$_2$ producing technologies. \hfill \break
+         
+
+ \end{itemize} 
+ 
+We have modeled \textbf{four scenarios:}
 
 \begin{description}
-        \item[\textbf{Sector Analysis:}] TIMES models can resolve generation and 
-                 consumption by sector (commercial, industrial, residential, 
-                 building etc). 
-         \item[\textbf{Regional Analysis:}] TIMES can also resolve regions.
-         \item[\textbf{Post-Processing:}] Many metrics are automatically postprocessed 
-                 (i.e. energy intensity, thermal energy efficiency, 
-                 transmission capacity). 
-         \item[\textbf{Constrained Optimization}] Modeling technology deployment 
-                 transition as a constrained optimization problem will
-                 drive insights.
- \end{description}  
+        \item[\textbf{Scenario 1:}]
+        I$^2$CNER technologies \textbf{disabled}. Deployment of all conventional technologies, \textbf{including new ABWR reactors}, enabled (Fig. \ref{s1e} and \ref{s1c}.
+        
+        \item[\textbf{Scenario 2:}]
+        I$^2$CNER technologies \textbf{disabled}. Deployment of all conventional technologies, \textbf{except new ABWR reactors}, enabled (Fig. \ref{s2e} and \ref{s2c}).
+        
+        \item[\textbf{Scenario 3:}]
+        I$^2$CNER technologies \textbf{enabled}.  Deployment of all conventional technologies, \textbf{including new ABWR reactors}, enabled. (Fig.\ref{s3e} and \ref{s3c}).
+        
+        \item[\textbf{Scenario 4:}] 
+ I$^2$CNER technologies \textbf{enabled}. Deployment of all conventional technologies, \textbf{excluding new ABWR reactors}, enabled (Fig.\ref{s4e} and \ref{s4c})
+ 
+\end{description}
 
-         The key objective function is minimization of carbon emissions in 2050 
-         and a key
-         constraint will be that deployed generation capacity must meet energy 
-         demand. This can na\"ively be written:
-
-\begin{align}
-        \intertext{minimize:}
-        &\sum_g^G C_g x_g 
-        \intertext{subject to:}
-        &\sum_g^Gx_g = d
-        \intertext{where}
-        C_g =& \mbox{ carbon emissions from generation component g}\\
-        x_g =& \mbox{ deployment of generation component g}\\
-        d =& \mbox{ generation demand}
-\end{align}
-
-A simple \textbf{static} formulation is straightforward to write, as above.  
-However this  formulation is quickly complicated by including \textbf{dynamic 
-time} as well as additional constraints (energy storage, variable demand, 
-$CO_2$ sequestration, efficiency, costs, etc.)
 \end{block}
 
+\vspace{11mm}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{i2cner_nuc_elc}
+\caption{\textbf{Scenario 3} (with I$^2$CNER tech and new nuclear) Electricity Generation.}
+\label{s3e}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{i2cner_nuc_co2}
+\caption{\textbf{Scenario 3} (with I$^2$CNER tech and new nuclear) CO$_2$ emissions.}
+\label{s3c}
+\end{figure}
+
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{i2cner_nonuc_elc}
+\caption{\textbf{Scenario 4} (with I$^2$CNER tech, no new nuclear) Electricity Generation.}
+\label{s4e}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{i2cner_nonuc_co2}
+\caption{\textbf{Scenario 4} (with I$^2$CNER tech, no new nuclear) CO$_2$ emissions.}
+\label{s4c}
+\end{figure}
 
 \end{column} % End of column 2, top half
 \end{columns}
 %=======================================================
 % Double Wide Figure Column 
 %=========================================================
-\input{model-fig}
+%\input{model-fig}
 
 \end{column} % End of wide column, total length
 
@@ -273,18 +330,15 @@ $CO_2$ sequestration, efficiency, costs, etc.)
 %	TAKE AWAY
 %----------------------------------------------------------------------------------------
 
-        \begin{alertblock}{Take Aways}
+         \begin{alertblock}{Take Aways}
 	\begin{itemize}
-                \item Dynamic simulation of Japan's energy system transition in 
-                        the TIMES model generator will help develop near-term 
-                        decarbonization strategies.
-                \item Policymakers will benefit from identification of high 
-                        impact technologies, and creation of R\&D investment 
-                        and infrastructure development timelines.  
-                \item Simulations will quantify system sensitivity to 
-                        technology readiness. 
-                \item Dynamic analysis will identify potential transition 
-                        bottlenecks.
+                \item Nuclear power has the lowest emissions intensity and it results in the most economical energy mix, despite high investment costs.
+                                        
+                \item Without nuclear and I$^2$CNER technology, solar and offshore wind must be deployed in a 1:2 ratio for grid resilience
+                
+                \item Cost competitive photocatalytic H$_2$ and offshore wind can replace nuclear, resulting in significantly higher system costs.
+                
+                \item Technologies with the highest impact: nuclear power, offshore wind, photocatalytic H$_2$ generation, solar power
 	\end{itemize}
         \end{alertblock}
    
@@ -293,8 +347,8 @@ $CO_2$ sequestration, efficiency, costs, etc.)
 %--------------------------------------------------------
 % PROJECT TIMELINE
 %---------------------------------------------------------
-\begin{block}{Timeline}
-        \input{timeline}
+\begin{block}{Future work}
+    no
 \end{block}
 
 
