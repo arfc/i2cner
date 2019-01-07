@@ -117,6 +117,11 @@ minimum height=2em]
 
 \setbeamertemplate{bibliography item}[text]
 
+\makeatletter
+\def\beamer@andinst{\\[0em]}
+\makeatother
+
+
 %----------------------------------------------------------------------------------------
 %	TITLE SECTION 
 %----------------------------------------------------------------------------------------
@@ -126,8 +131,8 @@ minimum height=2em]
 \author{
        % \textbf{ENERGY ANALYSIS DIVISION}\\
        % \textbf{I\textsuperscript{2}CNER Initiative on Challenges in Energy Assessment and Energy Transitions}\\
-        Anshuman Chaube, James Stubbins, \textbf{Kathryn Huff}}
-\institute{University of Illinois at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, IL 61801}
+        Anshuman Chaube\inst{1}, Andrew Chapman\inst{2}, James Stubbins\inst{1}, \textbf{Kathryn Huff}\inst{1}}
+\institute[shortinst]{ \inst{1} University of Illinois at Urbana-Champaign, Department of Nuclear, Plasma, and Radiological Engineering, Urbana, USA \and \inst{2} International Institute for Carbon Neutral Energy Research (I$^2$CNER), Kyushu University, Fukuoka, Japan}
 %----------------------------------------------------------------------------------------
 
 \begin{document}
