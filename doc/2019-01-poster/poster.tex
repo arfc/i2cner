@@ -200,8 +200,12 @@ various world regions using \textbf{static} scenario analyses
 We are simulating \textbf{dynamic} transition scenarios 
 \cite{pfenninger_energy_2014} aimed at optimizing energy supply to minimize carbon 
 emissions in Japan to 80\% of 1990 levels by 2050, and maintaining these levels from 2050-2100. \\
-Our simulation includes conventional energy sources such as \textbf{fossil fuels, nuclear, wind, solar, hydropower, and geothermal}, and applicable I$^2$CNER technologies like \textbf{post-combustion absorption-type carbon capture and sequestration, hydrogen production (steam reforming and photocatalytic conversion)}.
+
+Our model includes conventional energy sources such as \textbf{fossil fuels, nuclear, wind, solar, hydropower, and geothermal}, and applicable I$^2$CNER technologies like \textbf{post-combustion absorption-type carbon capture and sequestration, hydrogen production (steam reforming and photocatalytic conversion)}. \hfill \break
+
 \end{block}
+
+%\vspace{77mm}
 
 \begin{figure}[H] 
 \centering
@@ -251,7 +255,7 @@ Our simulation includes conventional energy sources such as \textbf{fossil fuels
         \cite{loulou_documentation_2005} 
         \cite{seebregts_energy/environmental_2002} optimizes energy systems 
         using linear and mixed-linear algorithms. A user-defined objective 
-        function is solved within user defined constraints.\hfill \break
+        function is solved within user defined constraints. \hfill \break
 
 \textbf{Key assumptions:}
 
@@ -273,26 +277,21 @@ Our simulation includes conventional energy sources such as \textbf{fossil fuels
 
  \end{itemize} 
  
-We have modeled \textbf{four scenarios:}
+We have modeled \textbf{four scenarios} with different energy technologies enabled: \hfill \break
 
-\begin{description}
-        \item[\textbf{Scenario 1:}]
-        I$^2$CNER technologies \textbf{disabled}. Deployment of all conventional technologies, \textbf{including new ABWR reactors}, enabled (Fig. \ref{s1e} and \ref{s1c}.
-        
-        \item[\textbf{Scenario 2:}]
-        I$^2$CNER technologies \textbf{disabled}. Deployment of all conventional technologies, \textbf{except new ABWR reactors}, enabled (Fig. \ref{s2e} and \ref{s2c}).
-        
-        \item[\textbf{Scenario 3:}]
-        I$^2$CNER technologies \textbf{enabled}.  Deployment of all conventional technologies, \textbf{including new ABWR reactors}, enabled. (Fig.\ref{s3e} and \ref{s3c}).
-        
-        \item[\textbf{Scenario 4:}] 
- I$^2$CNER technologies \textbf{enabled}. Deployment of all conventional technologies, \textbf{excluding new ABWR reactors}, enabled (Fig.\ref{s4e} and \ref{s4c})
- 
-\end{description}
+\begin{tabular}{c c c c c}
+
+\textbf{Scenario} & \textbf{Figures}         & \textbf{Conventional}      & \textbf{I$^2$CNER}   & \textbf{New nuclear} \\
+                  &                          & \textbf{technology}        &  \textbf{technology} & \textbf{reactors}    \\
+1                 & Fig. \ref{s1e}\&\ref{s1c}&        Yes                 &           No         &       Yes            \\ 
+2                 & Fig. \ref{s2e}\&\ref{s2c}&        Yes                 &           No         &       No             \\ 
+3                 & Fig. \ref{s3e}\&\ref{s3c}&        Yes                 &           Yes        &       Yes            \\ 
+4                 & Fig. \ref{s4e}\&\ref{s4c}&        Yes                 &           Yes        &       No             \\
+\end{tabular}
 
 \end{block}
 
-%\vspace{11mm}
+\vspace{65 mm}
 
 \begin{figure}[H] 
 \centering
@@ -357,6 +356,8 @@ We have modeled \textbf{four scenarios:}
 %---------------------------------------------------------
 \begin{block}{Future work}
     \begin{itemize}
+    
+    \item Making transitions more gradual.
     
     \item Incorporation of more I$^2$CNER technologies.
     
