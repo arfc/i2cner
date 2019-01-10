@@ -259,8 +259,7 @@ Our model includes conventional energy sources such as \textbf{fossil fuels, nuc
         \cite{loulou_documentation_2005} 
         \cite{seebregts_energy/environmental_2002} optimizes energy systems 
         using linear and mixed-linear algorithms. A user-defined objective 
-        function is solved within user defined constraints. \hfill \break
-
+        function is solved within user defined constraints.\\
 \textbf{Key assumptions:}
 
 \begin{itemize}
@@ -270,13 +269,15 @@ Our model includes conventional energy sources such as \textbf{fossil fuels, nuc
          
          \item Hydropower capacity held constant \cite{noauthor_energy_2018}.
          
+         \item The cost of fossil fuels, geothermal, hydropower, steam reforming and nuclear is held constant. Variation in costs of wind, solar, and photocatalytic H$_2$ production is given in Fig. \ref{cost}.
+         
          \item All new nuclear reactors are ABWRs \cite{rothwell_real_2006}.
          
          \item Growth rate and maximum annual increase in capacity of nuclear, wind and solar is based on data and trends seen in USA, China, and Japan. \cite{noauthor_electricity_2017,noauthor_energy_2018,eia_international_nodate,eia_monthly_2018,iea-pvps_snapshot_2018}
          
          \item \textbf{Carbon capture and sequestration and steam reforming:} Deployed in 2030, with its costs reducing by 2050 as per projected trends. \cite{kato_energy_2016}
          
-         \item \textbf{Hydrogen production:} Steam reforming deployed in 2030. Photocatalytic hydrogen production deployed in 2050, assumed to be cost-competitive with other H$_2$ production technologies. \cite{kato_energy_2016} \cite{acar_comparative_2014} \hfill \break
+         \item \textbf{Hydrogen production:} Steam reforming deployed in 2030. Photocatalytic hydrogen production deployed in 2050, assumed to be cost-competitive with other H$_2$ production technologies. \cite{kato_energy_2016} \cite{acar_comparative_2014} \\
          
 
  \end{itemize} 
@@ -347,7 +348,12 @@ We have modeled \textbf{four scenarios} with different energy technologies enabl
 %----------------------------------------------------------------------------------------
 %	TAKE AWAY
 %----------------------------------------------------------------------------------------
-
+\begin{figure}[H] 
+\centering
+\includegraphics[scale=1.2]{cost}
+\caption{Cost variation in solar, wind, and photocatalytic H$_2$ production.}
+\label{cost}
+\end{figure}
          \begin{alertblock}{Take Aways}
 	\begin{itemize}
                 \item Nuclear power has the lowest emissions intensity and it results in the most economical energy supply.
