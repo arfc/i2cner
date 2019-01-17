@@ -7,19 +7,23 @@
 \documentclass[9pt]{beamer}
 \usetheme[white]{Illinois}
 %\title[short title]{long title}
-\title[Short Title]{A Very Very Long Title for a Presentation about Cats}
+\title[Short Title]{Dynamic Transition Analysis with TIMES}
 %\subtitle[short subtitle]{long subtitle}
-\subtitle[Short SubTitle]{Mostly Kittens}
+%\subtitle[Short SubTitle]{Mostly Kittens}
 %\author[short name]{long name}
-\author[Your Name]{Your Name\\Advanced Reactors and Fuel Cycles Group}
+\author[Anshuman Chaube]{Anshuman Chaube\\Advanced Reactors and Fuel Cycles Group}
 %\date[short date]{long date}
-\date[04.01.2100]{April 1, 2100}
+\date[01.02.2019]{February 1, 2019}
 %\institution[short name]{long name}
 \institute[UIUC]{University of Illinois at Urbana-Champaign}
 
 %\usepackage{bbding}
 \usepackage{amsfonts}
 \usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{xcolor}
+\newcommand{\greencheck}{{\color{green}\checkmark}}
+\newcommand{\xmark}{{\color{red}\ding{55}}}
 \usepackage{xspace}
 \usepackage{graphicx}
 \usepackage{subfigure}
@@ -86,17 +90,34 @@
 }
 
 \section{Motivation}
-\subsection{Cat Behavior}
-\input{cat_behavior}
-\subsection{Cat Appearance}
-\input{cat_appearance}
-\subsection{Cat Math}
-\input{cat_math}
-\section{Methods}
-\subsection{Illinois Colors}
-\input{fierce}
+%\subsection{Cat Behavior}
+\input{motivation}
+%\subsection{Cat Appearance}
+%\input{cat_appearance}
+%\subsection{Cat Math}
+%\input{cat_math}
+\section{Methodology}
+\subsection{Basics}
+\input{basics}
+\subsection{Assumptions}
+\input{assums}
+\subsection{Limitations}
+\input{limits}
+\subsection{Scenarios}
+\input{scens}
+\section{Results}
+\subsection{Scenario 1}
+\input{s1}
+\subsection{Scenario 2}
+\input{s2}
+\subsection{Scenario 3}
+\input{s3}
+\subsection{Scenario 4}
+\input{s4}
 \section{Conclusion}
 \input{conclusion}
+\section{Future work}
+\input{future}
 \input{acks}
 %%--------------------------------%%
 %%--------------------------------%%
