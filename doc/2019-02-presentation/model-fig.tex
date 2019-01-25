@@ -1,0 +1,79 @@
+
+%=======================================================
+% FIGURE BEGINS
+%=========================================================
+
+% tell TikZ how to stack them (back to front)
+\newlength{\figwidth}
+\setlength{\figwidth}{8cm}
+
+\begin{figure}
+    \centering
+    \scalebox{1.0}{
+                \begin{tikzpicture}[>={Latex[width=6mm,length=6mm]},
+                                node distance=\figwidth,
+                                on grid,
+                                align=center,
+                                auto]
+        % Place nodes
+        \node [block] (times) {\textbf{TIMES Model Generator}};
+        \node [cloud, below=\figwidth of times] (mod) {\texttt{MODEL} \\ heterogeneous \\ multi-technology \\ model of Japan};
+                \node [cloud, above left=1.5\figwidth and 2*\figwidth of times]
+                (dat) {\texttt{DATA}\\regarding both\\i$^2$cner and\\ conventional\\technologies};
+                \node [data, above=1.5\figwidth of dat] (dat1) {Storage\\Capacity};
+                \node [data, above=0.5\figwidth of dat1] (dat2) {Thermal\\Efficiency};
+                \node [data, above=0.5\figwidth of dat2] (dat3) {Capacity\\factor};
+                \node [data, above=0.5\figwidth of dat3] (dat4) {Availability\\factor};
+                \node [data, right=\figwidth of dat1] (dat5) {Thermal\\capacity};
+                \node [data, above=0.5\figwidth of dat5] (dat6) {Fuel costs};
+                \node [data, above=0.5\figwidth of dat6] (dat7) {Construction\\costs};
+                \node [data, above=0.5\figwidth of dat7] (dat8) {Operation\\costs};
+                \node [data, above=0.5\figwidth of dat8] (dat9) {Maintenance\\costs};
+                \node [data, right=\figwidth of dat5] (dat10) {Technology\\readiness};
+                \node [data, above=0.5\figwidth of dat10] (dat11) {Construction\\time};
+                \node [data, above=0.5\figwidth of dat11] (dat12) {Carbon\\intensity};
+                \node [data, above=0.5\figwidth of dat12] (dat13) {Fuel needs};
+        \node [cloud, above=\figwidth of times] (of) {\texttt{OBJECTIVE}\\\texttt{FUNCTION}};
+        \node [block, above left=\figwidth of of] (min) {Minimize\\carbon emissions \\ from all sources};
+        \node [block, above right=\figwidth of of] (max) {Maximize\\energy market\\ diversity};
+        \node [cloud, above right=1.5*\figwidth and 2*\figwidth of times] (const) {\texttt{CONSTRAINTS} \\ e.g.: Deployed \\ sources must\\ meet energy \\ demand};
+        \node [const, above=\figwidth of const ] (dem) {electricity\\demand growth};
+        \node [const, left=\figwidth of dem ] (init) {initial\\condition (2010)};
+        \node [const, above=0.5*\figwidth of dem] (infra) {infrastructure\\availability};
+        \node [const, left=\figwidth of infra] (sec) {consumption\\by sector};
+        \node [const, above=0.5*\figwidth of infra] (reg) {regional\\transmission};
+        
+        \begin{scope}[on background layer]
+        \draw[->, ultra thick] let \p1=($(times)-(dat)$) in (dat) -- +(0,\y1)-- +(times);
+        \draw[->, ultra thick] (of) -- (times);
+        %\draw[->, ultra thick] let \p3=($(times)-(const)+(2,3)$),\p4=($(times)+(9,9)$),\p5=($(const)-(3,3)$) in (\x3,\y4) -- +(0,\y2)-- +(times);
+        \draw[->, ultra thick] let \p2=($(times)-(const)$) in (const)-- +(0,\y2) -- + (times);
+                \draw[->, ultra thick] (times) -- (mod);
+        \draw[->, ultra thick] (min) -- (of);
+        \draw[->, ultra thick] (max) -- (of);
+        \draw[->, ultra thick] (dem) -- (const);
+        \draw[->, ultra thick] (dat1) -- (dat);
+        \draw[->, ultra thick] (dat2) -- (dat);
+        \draw[->, ultra thick] (dat3) -- (dat);
+        \draw[->, ultra thick] (dat4) -- (dat);
+        \draw[->, ultra thick] (dat5) -- (dat);
+        \draw[->, ultra thick] (dat6) -- (dat);
+        \draw[->, ultra thick] (dat7) -- (dat);
+        \draw[->, ultra thick] (dat8) -- (dat);
+        \draw[->, ultra thick] (dat9) -- (dat);
+        \draw[->, ultra thick] (dat10) -- (dat);
+        \draw[->, ultra thick] (dat11) -- (dat);
+        \draw[->, ultra thick] (dat12) -- (dat);
+        \draw[->, ultra thick] (dat13) -- (dat);
+        \draw[->, ultra thick] (reg) -- (const);
+        \draw[->, ultra thick] (infra) -- (const);
+        \draw[->, ultra thick] (sec) -- (const);
+        \draw[->, ultra thick] (init) -- (const);
+                \path[->] (mod) edge [ultra thick,out=330,in=0,looseness=10] (mod) node[above right=0.1\figwidth and 0.8\figwidth] {simulate\\2010-2050};
+                %\draw (mod.east) to [->, ultra thick,looseness=10] (mod.south) node[above right=0.1\figwidth and 0.1\figwidth] {simulate\\2010-2050};
+        \end{scope}
+ \end{tikzpicture}
+    }
+    \caption{Basic methodology for dynamic simulation of Japan's energy system.}
+\end{figure}
+
