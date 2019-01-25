@@ -1,0 +1,58 @@
+\usepackage{tabularx}
+\newcolumntype{b}{X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{z}{>{\hsize=.65\hsize}X}
+
+\usepackage{booktabs} % Top and bottom rules for tables
+\usepackage{xspace}
+
+\usepackage{tikz}
+\usepackage{chronology}
+\usetikzlibrary{arrows.meta}
+
+\usetikzlibrary{positioning, arrows, decorations, shapes, calc }
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+\tikzstyle{const} = [rectangle, draw, text centered, fill=orange!20]
+\tikzstyle{data} = [rectangle, draw, text centered, fill=green!20]
+
+\tikzstyle{block} = [rectangle, draw, text centered, fill=blue!20]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=6em,
+minimum height=2em]
+
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{positioning}
+\usetikzlibrary{backgrounds,scopes}   %<------- Load libraries
+
+
+
+
+
+
+%-----------------------------------------------------------
+% KNOWN ISSUE IN TIKZ MATH: tiny big symbols, like sum.
+%-----------------------------------------------------------
+
+% declare `cmex` to be arbitrary scalable
+\DeclareFontShape{OMX}{cmex}{m}{n}{
+  <-7.5> cmex7
+  <7.5-8.5> cmex8
+  <8.5-9.5> cmex9
+  <9.5-> cmex10
+}{}
+
+
+
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{positioning}
+
+\newcommand{\units}[1] {\:\text{#1}}%
+\newcommand{\SN}{S$_N$}%{S$_\text{N}$}%{$S_N$}%
+\DeclareMathOperator{\erf}{erf}
+%I need some complimentary error funcitons... 
+\DeclareMathOperator{\erfc}{erfc}
+%page numbers

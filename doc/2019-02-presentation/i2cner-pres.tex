@@ -21,10 +21,6 @@
 %\usepackage{bbding}
 \usepackage{amsfonts}
 \usepackage{amsmath}
-\usepackage{pifont}
-\usepackage{xcolor}
-\newcommand{\greencheck}{{\color{green}\checkmark}}
-\newcommand{\xmark}{{\color{red}\ding{55}}}
 \usepackage{xspace}
 \usepackage{graphicx}
 \usepackage{subfigure}
@@ -43,6 +39,14 @@
 \setbeamertemplate{caption}[numbered]
 %Those icons in the references are terrible looking
 \setbeamertemplate{bibliography item}[text]
+
+% ------------CHECK MARKS -------------------------
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{xcolor}
+\newcommand{\greencheck}{{\color{green}\checkmark}}
+\newcommand{\xmark}{{\color{red}\ding{55}}}
+%________________________________________________________
 
 %%%% Acronym support
 
@@ -122,12 +126,12 @@
 \input{acks}
 %%--------------------------------%%
 %%--------------------------------%%
-%\begin{frame}[allowframebreaks]
-%  \frametitle{References}
-%  \bibliographystyle{plain}
-%  {\footnotesize \bibliography{bibliography} }
-%
-%\end{frame}
+\begin{frame}[allowframebreaks]
+  \frametitle{References}
+  \footnotesize \bibliographystyle{ieeetr}
+  { \bibliography{2019-chaube-i2cner-poster} }
+
+\end{frame}
 
 %%--------------------------------%%
 
