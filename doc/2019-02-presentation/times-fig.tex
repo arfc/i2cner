@@ -1,0 +1,50 @@
+
+%=======================================================
+% FIGURE BEGINS
+%=========================================================
+
+% tell TikZ how to stack them (back to front)
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=2.5em, text badly centered, node distance=1cm, inner sep=0pt]
+
+\tikzstyle{const} = [rectangle, draw, text centered, fill=orange!20]
+\tikzstyle{data} = [rectangle, draw, text centered, fill=green!20]
+
+\tikzstyle{block} = [rectangle, draw, text centered, fill=blue!20]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=1em,
+minimum height=1em]
+
+\newlength{\figwidth}
+\setlength{\figwidth}{4cm}
+
+\begin{figure}
+    \centering
+    \scalebox{0.4}{\scalefont{2.25}
+                \begin{tikzpicture}[>={Latex[width=8mm,length=8mm]},
+                                node distance=0.5\figwidth,
+                                on grid,
+                                align=center,
+                                auto]
+% \tikzstyle{every node}=[font=\Large]       
+        % Place nodes
+        \node [block=1.5\figwidth and 2*\figwidth] (times) {\textbf{TIMES Model Generator}};
+        \node [cloud, below=\figwidth of times] (mod) {\texttt{MODEL} \\ heterogeneous \\ multi-technology \\ model of Japan};
+                \node [cloud, above left=1.5\figwidth and 2*\figwidth of times]
+                (dat) {\texttt{DATA}\\METI,EDMC,\\ IEA,EIA\\I$^2$CNER};
+        \node [cloud, above=\figwidth of times] (of) {\texttt{OBJECTIVE}\\\texttt{FUNCTION}};
+        \node [block, above=\figwidth of of] (min) {Minimize\\cost};
+        \node [cloud, above right=1.5*\figwidth and 2*\figwidth of times] (const) {\texttt{CONSTRAINTS} \\ CO$_2$ target \\ Demand \\ Initial condition (2013)};
+        \begin{scope}[on background layer]
+        \draw[->, ultra thick] let \p1=($(times)-(dat)$) in (dat) -- +(0,\y1)-- +(times);
+        \draw[->, ultra thick] (of) -- (times);
+        \draw[->, ultra thick] let \p2=($(times)-(const)$) in (const)-- +(0,\y2) -- + (times);
+                \draw[->, ultra thick] (times) -- (mod);
+        \draw[->, ultra thick] (min) -- (of);
+                \path[->] (mod) edge [ultra thick,out=330,in=0,looseness=10] (mod) node[above right=0.1\figwidth and 0.8\figwidth] {simulate\\2010-2050};                
+        \end{scope}
+ \end{tikzpicture}
+    }
+    \caption{Basic methodology for dynamic simulation of Japan's energy system.}
+\end{figure}
+
