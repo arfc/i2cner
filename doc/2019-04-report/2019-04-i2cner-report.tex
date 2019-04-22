@@ -1,0 +1,210 @@
+\documentclass[14pt,a4paper]{article} %openany
+\usepackage[affil-it]{authblk}
+\usepackage[english]{babel}
+\usepackage{graphicx}
+\usepackage{rotating}
+%\usepackage{bibtex}
+%\usepackage[utf8]{inputenc}
+%\usepackage[english]{babel}
+\usepackage{adjustbox}
+\usepackage{courier}
+\usepackage{verbatim}
+\usepackage{url}
+\usepackage{float}
+\usepackage{array}
+\usepackage{breakcites}
+\usepackage{gensymb}
+%\usepackage[backend=biber]{biblatex}
+\usepackage{booktabs,tabularx}
+\usepackage{listings}
+\usepackage{appendix}
+\usepackage{cite}
+\usepackage{blindtext}
+\usepackage[utf8]{inputenc} % Required for inputting international characters
+\usepackage[T1]{fontenc} % Output font encoding for international characters
+\usepackage{mathpazo} % Palatino font
+\usepackage{graphicx} % For the logo
+\usepackage{hyperref}
+\hypersetup{
+    colorlinks=true,
+    linkcolor=blue,
+    filecolor=magenta,      
+    urlcolor=cyan,
+}
+ 
+\urlstyle{same}
+ 
+%\bibliographystyle{numeric}
+
+\begin{document}
+
+%----------------------------------------------------------------------------------------
+%    TITLE PAGE
+%----------------------------------------------------------------------------------------
+
+\begin{titlepage} % Suppresses displaying the page number on the title page and the subsequent page counts as page 1
+    \newcommand{\HRule}{\rule{\linewidth}{0.5mm}} % Defines a new command for horizontal lines, change thickness here
+    
+    \center % Centre everything on the page
+
+    %------------------------------------------------
+    %    Title
+    %------------------------------------------------
+    
+    \HRule\\[0.2cm]
+    
+     \begin{minipage}{0.4\textwidth}
+        \includegraphics[width=\textwidth]{arfc-logo}
+        \end{minipage}%
+        \begin{minipage}{0.6\textwidth}
+        {\begin{flushright}\huge\bfseries Dynamic Transition Analysis With TIMES\end{flushright}}
+        {\begin{flushright}\large\textit{I\textsuperscript{2}CNER Project Report}\end{flushright}}
+
+        \end{minipage}
+
+    \vspace{0.2cm}
+    \HRule
+    \vspace{0.5cm}
+    
+    %------------------------------------------------
+    %    Author(s)
+    %------------------------------------------------
+    
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushleft}
+            \large
+            \textit{Author}\\
+            Anshuman \textsc{Chaube}\\
+        \end{flushleft}
+    \end{minipage}
+    ~
+    \begin{minipage}{0.4\textwidth}
+        \begin{flushright}
+            \large
+            \textit{Principal Investigator}\\
+            Kathryn D. \textsc{Huff} % Supervisor's name
+        \end{flushright}
+    \end{minipage}
+    
+    % If you don't want a supervisor, uncomment the two lines below and comment the code above
+    %{\large\textit{Author}}\\
+    %John \textsc{Smith} % Your name
+
+    %------------------------------------------------
+    %    Report Number
+    %------------------------------------------------
+    \vspace{1cm}
+    \textsc{\LARGE\bfseries UIUC-ARFC-2019-00} \textit{work in progress} % Replace YYYY with the year, NN with report index
+    \vspace{0.5cm}
+    
+    %------------------------------------------------
+    %    Date
+    %------------------------------------------------
+    
+    \vspace{0.5cm} % Position the date further down the remaining page
+    {\large\today} % Date, change the \today to a set date if you want to be precise
+    \vspace{0.5cm}
+
+%------------------------------------------------
+    %    Headings
+    %------------------------------------------------
+    
+    \textsc{\LARGE Advanced Reactors and Fuel Cycles}\\[0.25cm] % Research Group
+    
+    \textsc{\large Dept. of Nuclear, Plasma, \& Radiological Engineering}\\% Department
+    
+    \textsc{\large University of Illiois at Urbana-Champaign}\\ % University
+
+
+    
+    %------------------------------------------------
+    %    Logo
+    %------------------------------------------------
+    
+    
+    \vspace{0.5cm}
+    \includegraphics[scale=0.2]{arfc-logo}
+    \includegraphics[scale=0.3]{i2cner_logo}
+    \includegraphics[scale=0.2]{wpi_logo}
+    \includegraphics[scale=0.04]{ku_logo}\\[1cm] % Include a department/university logo - this will require the graphicx package
+     
+    %----------------------------------------------------------------------------------------
+
+    %------------------------------------------------
+    %   Funding 
+    %------------------------------------------------
+    % For this section, either use \vfill to fill the space 
+    % or insert funding acknowledgement
+    \textit{The authors gratefully acknowledge the support of the International Institute for Carbon
+Neutral Energy Research (WPI-I2CNER), sponsored by the Japanese Ministry of Education, Culture, Sports, Science and Technology.}  
+
+\end{titlepage}
+
+\section{Introduction}
+We initiated a project in January 2018 to simulate dynamic transition scenarios for the energy industry in Japan to suggest pathways for minimizing carbon emissions. This report is a summary of the progress we have made since the publication of the \href{https://github.com/arfc/i2cner/tree/master/doc/2018-09-report}{last report}, the challenges we currently face, and the future direction of this research. \\
+
+\subsection{Model details}
+The model's assumptions, workings, and the most current list of incorporated technologies is adequately described in the \href{https://github.com/arfc/i2cner/tree/master/doc/2018-09-report}{previous report}, and the I$^2$CNER Energy Analysis Division workshop \href{https://github.com/arfc/i2cner/tree/master/doc/2019-01-poster}{poster} and \href{https://github.com/arfc/i2cner/tree/master/doc/2019-02-presentation}{presentation}.
+
+\section{Progress Summary}
+
+\subsection{Accomplishments}
+
+The major tasks that were completed leading up to the I$^2$CNER 2019 Annual Symposium are:
+
+\begin{enumerate}
+\item \textbf{Changing simulation timeframe to 2013-2100} : As discussed in the previous report, it became impossible to find exact data for fossil fuels for the years 2010,2011 and 2012, and hence the total CO$_2$ emissions for those years were very slightly off the mark. We sidestepped this problem by changing the initial year to 2013, for which we have exact data from EDMC \cite{noauthor_energy_2018}.
+
+\item \textbf{Incorporation of semi-discrete investment sizes}: Discrete investment sizes were incorporated in most scenarios DSCINV files, whereas the slightly improved semi-discrete capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desirable that all DSCINV files in the remaining three models include a similar semi-discrete capacity installation/investment structure, as this helps eliminate \href{https://github.com/arfc/i2cner/issues/74}{the production-exceeding-demand bug}. \\
+
+\item \textbf{Incorporation of the contribution-to-peak (C2Peak) \citep{gargiulo_documentation_2005} factor:} This parameter is defined as the fraction of a resource's capacity that is guaranteed to be available during peak demand. This introduces a notion of an energy resource's reliability, thereby introducing a notion of the unreliability of wind and solar. The values in the model \cite{kato_energy_2016} may not be entirely accurate, since they are annually averaged.\\
+
+\item \textbf{Basic Carbon Capture and Sequestration (CCS) Implementation} : Some CCS data \cite{kato_energy_2016}  was incorporated into \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/i2cner-nonuc}{one of the models}. However, no CCS gets deployed in our models. We believe  it should be deployed for an intermediate time-period, since in the absence of nuclear, only CCS can provide reliable, clean energy. We have identified a few shortcomings in the CCS implementation, some of which contribute to this problem:
+\begin{itemize}
+
+\item Large amounts of wind can be deployed. While we were initially reluctant to hard-code things into our model, we have since realized that Japan will not reach its wind potential for a very long time, due to the unusually steep fall of the seabed away from the coast. JWPA projections \cite{heger_wind_2016} are already rather ambitious, and our models should be more closely aligned with them, allowing for at-most a 10-20 \% increase in deployment capacities.
+
+\item Wind is treated as any other energy source, with its variance not truly taken into account (discussed below). Its installed capacity should be matched by storage or natural gas. Possible ways to implement this are discussed later.
+
+\item The costs associated with CCS for Japan have been hard to find as Japan, instead of building CCS pipelines like the US or China, intends to build a shipping network for offshore storage of captured and compressed CO$_2$. Based on our interaction with our Energy Analysis Division colleagues at Kyushu university, the costs of this are still being explored by the Japanese government.
+
+\end{itemize}
+
+\end{enumerate}
+
+\section{Future Work} 
+
+\subsection{Critical Goals}
+
+\begin{itemize}
+
+\item \textbf{Restrict maximum wind capacity:} To align the model more closely with JWPA predictions \cite{heger_wind_2016}, the maximum allowed capacities for wind should be reduced in the respective MaxCAP files.
+
+\item \textbf{Associate wind (and solar) with natural gas/storage:} There may be two ways to accomplish this:
+
+\begin{itemize}
+
+\item Replace annually averaged capacity factors and/or C2Peak factors with seasonal(summer/winter) and diurnal (day/night) (i.e. SN,SD, WN, WD \cite{gargiulo_documentation_2005} ) capacity factors/C2Peak factors. The model may then automatically deploy natural gas to supplement wind and solar. \textbf{This seems to be a more straightforward solution.}
+
+\item Define a relationship between the capacities of wind and natural gas. Since no straightforward way to do this is described in the VEDA documentation \cite{gargiulo_documentation_2005}, this would require utilization of the TIMES documentation \cite{loulou_documentation_2005}, the VEDA attributes table, and quite possibly the assistance of the VEDA forum. \textbf{This is the more challenging fix to this problem.}
+
+\end{itemize}
+
+\item \textbf{Incorporation of Japan-specific costs for wind:} When incorporating JWPA predictions, it will be necessary to split off-shore wind into fixed and floating types. The \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs}{cost data} for this already exists in our repository thanks to Akari Minami, an undergraduate from Kyushu University who assisted with data collection and simulation during March 2019.
+
+\item \textbf{Revise CCS structure:}
+
+\item \textbf{Revise nuclear structure:}
+
+\end{itemize}
+
+
+\bibliographystyle{ieeetr}
+%\addbibresource{2018-chaube-i2cner-report-sept}
+\bibliography{2018-chaube-i2cner-report-sept}
+
+%\bibliographystyle{plain}
+
+%\printbibliography
+
+\end{document}
