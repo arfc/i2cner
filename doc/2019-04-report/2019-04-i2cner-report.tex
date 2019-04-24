@@ -37,6 +37,7 @@
 %\bibliographystyle{numeric}
 
 \begin{document}
+\sloppy
 
 %----------------------------------------------------------------------------------------
 %    TITLE PAGE
@@ -153,13 +154,14 @@ The model's assumptions, workings, and the most current list of incorporated tec
 The major tasks that were completed leading up to the I$^2$CNER 2019 Annual Symposium are:
 
 \begin{enumerate}
-\item \textbf{Changing simulation timeframe to 2013-2100} : As discussed in the previous report, it became impossible to find exact data for fossil fuels for the years 2010,2011 and 2012, and hence the total CO$_2$ emissions for those years were very slightly off the mark. We sidestepped this problem by changing the initial year to 2013, for which we have exact data from EDMC \cite{noauthor_energy_2018}.
+\item \textbf{Changing simulation timeframe to 2013-2100:} As discussed in the previous report, it became impossible to find exact data for fossil fuels for the years 2010,2011 and 2012, and hence the total CO$_2$ emissions for those years were very slightly off the mark. We sidestepped this problem by changing the initial year to 2013, for which we have exact data from EDMC \cite{noauthor_energy_2018}.
 
-\item \textbf{Incorporation of semi-discrete investment sizes}: Discrete investment sizes were incorporated in most scenarios DSCINV files, whereas the slightly improved semi-discrete capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desirable that all DSCINV files in the remaining three models include a similar semi-discrete capacity installation/investment structure, as this helps eliminate \href{https://github.com/arfc/i2cner/issues/74}{the production-exceeding-demand bug}. \\
+\item \textbf{Incorporation of semi-discrete investment sizes:} Discrete investment sizes were incorporated in most scenarios DSCINV files, whereas the slightly improved semi-discrete capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desirable that all DSCINV files in the remaining three models include a similar semi-discrete capacity installation structure, as this helps eliminate \href{https://github.com/arfc/i2cner/issues/74}{the production-exceeding-demand bug}.\\
 
-\item \textbf{Incorporation of the contribution-to-peak (C2Peak) \citep{gargiulo_documentation_2005} factor:} This parameter is defined as the fraction of a resource's capacity that is guaranteed to be available during peak demand. This introduces a notion of an energy resource's reliability, thereby introducing a notion of the unreliability of wind and solar. The values in the model \cite{kato_energy_2016} may not be entirely accurate, since they are annually averaged.\\
+\item \textbf{Incorporation of the contribution-to-peak \cite{gargiulo_documentation_2005} factor:} This parameter is defined as the fraction of a resource's capacity that is guaranteed to be available during peak demand. This introduces a notion of an energy resource's reliability, thereby introducing a notion of the unreliability of wind and solar. The values in the model \cite{kato_energy_2016} may not be entirely accurate, since they are annually averaged.\\
 
 \item \textbf{Basic Carbon Capture and Sequestration (CCS) Implementation} : Some CCS data \cite{kato_energy_2016}  was incorporated into \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/i2cner-nonuc}{one of the models}. However, no CCS gets deployed in our models. We believe  it should be deployed for an intermediate time-period, since in the absence of nuclear, only CCS can provide reliable, clean energy. We have identified a few shortcomings in the CCS implementation, some of which contribute to this problem:
+
 \begin{itemize}
 
 \item Large amounts of wind can be deployed. While we were initially reluctant to hard-code things into our model, we have since realized that Japan will not reach its wind potential for a very long time, due to the unusually steep fall of the seabed away from the coast. JWPA projections \cite{heger_wind_2016} are already rather ambitious, and our models should be more closely aligned with them, allowing for at-most a 10-20 \% increase in deployment capacities.
@@ -175,8 +177,11 @@ The major tasks that were completed leading up to the I$^2$CNER 2019 Annual Symp
 \section{Future Work} 
 
 \subsection{Critical Goals}
+These targets are urgent and necessary.
 
 \begin{itemize}
+
+\item \textbf{Remove pure oil from all models:} We do not think Japan will ever increase its dependence on oil due to its cost, emissions intensity and due to the Japanese goal of increasing energy independence. Current trends indicate the opposite. While a few models already exclude oil-based energy, other models should also exclude pure oil-based electricity generation for the sake of consistency.
 
 \item \textbf{Restrict maximum wind capacity:} To align the model more closely with JWPA predictions \cite{heger_wind_2016}, the maximum allowed capacities for wind should be reduced in the respective MaxCAP files.
 
@@ -184,7 +189,7 @@ The major tasks that were completed leading up to the I$^2$CNER 2019 Annual Symp
 
 \begin{itemize}
 
-\item Replace annually averaged capacity factors and/or C2Peak factors with seasonal(summer/winter) and diurnal (day/night) (i.e. SN,SD, WN, WD \cite{gargiulo_documentation_2005} ) capacity factors/C2Peak factors. The model may then automatically deploy natural gas to supplement wind and solar. \textbf{This seems to be a more straightforward solution.}
+\item Replace annually averaged capacity factors and/or C2Peak factors with seasonal(sumer/winter) and diurnal (day/night) (i.e. SN,SD, WN, WD \cite{gargiulo_documentation_2005} ) capacity factors/C2Peak factors. The model may then automatically deploy natural gas to supplement wind and solar. \textbf{This seems to be a more straightforward solution.}
 
 \item Define a relationship between the capacities of wind and natural gas. Since no straightforward way to do this is described in the VEDA documentation \cite{gargiulo_documentation_2005}, this would require utilization of the TIMES documentation \cite{loulou_documentation_2005}, the VEDA attributes table, and quite possibly the assistance of the VEDA forum. \textbf{This is the more challenging fix to this problem.}
 
@@ -192,9 +197,51 @@ The major tasks that were completed leading up to the I$^2$CNER 2019 Annual Symp
 
 \item \textbf{Incorporation of Japan-specific costs for wind:} When incorporating JWPA predictions, it will be necessary to split off-shore wind into fixed and floating types. The \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs}{cost data} for this already exists in our repository thanks to Akari Minami, an undergraduate from Kyushu University who assisted with data collection and simulation during March 2019.
 
-\item \textbf{Revise CCS structure:}
+\item \textbf{Revise CCS structure:} Simplified CCS needs to be implemented that emits only 5-10\% of the corresponding fossil fuel. In the model, this should look like any other fossil fuel electricity generation process, except it should be more expensive and have reduced emissions. Such an implementation should \textbf{not} include retrofitting of CCS (i.e. adding carbon capture to previously deployed fossil fuel capacity - discussed below). While we do not have Japan-specific data for CCS, we can simplify our model by using data from the US and:
+\begin{itemize}
 
-\item \textbf{Revise nuclear structure:}
+\item Neglect the difference between Japan and the US, assuming that the government will foot the bill of setting up the CCS shipping network and offshore storage sites.  Japan's shipping network is already well-developed, and further imprmay also tie into Japan's plans to import hydrogen from Australia, steel and fossil fuel from
+
+\item Roughly increase the cost by a small percentage, since the Japanese CCS shipping network and offshore storage sites will be more expensive.
+
+\item Attempt to conduct a rough ab-initio analysis, by find the cost of offshore-drilling to the depths necessary for CO$_2$ storage, the cost of pressurizing 1 ton of CO$_2$, and the cost of transporting a ton of cargo to offshore storage sites.
+
+\end{itemize}
+
+\item \textbf{Revise nuclear costs:} Current models include the ideal cost of nuclear, but actual costs are often higher due to delays in construction. This is accurately reflected in data from EIA, which already exists in our \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs/fossil-ccs-nuc.xlsx}{repository}. This needs to be incorporated into our models to reduce over-deployment of nuclear.
+
+\end{itemize}
+
+\subsection{Desired Goals}
+These targets are not urgent but are strongly recommended for improving our results.
+
+\begin{itemize}
+
+\item Make electricity demand process more realistic:
+
+\begin{itemize}
+\item At the very least demand should increase at +1.7 \% per year until 2030 as per METI projections \cite{noauthor_electricity_2017}, and should plateau afterwards until 2100.
+
+\item More accurate data for 2030-2050 should be sought to further improve upon this, if possible.
+
+\end{itemize}
+
+\item Cost Analysis - Some metric to compare the transition costs for each scenario should be calculated. For example, the levelized cost of electricity (LCoE) for each scenario for different years (say 2030,2050,2100) could be calculated, or quite simply the total cost of the transition (investment+generation) could be juxtaposed for each scenario.
+
+\item Incorporate more I$^2$CNER technology, such as perovskite solar cells, fuel cells for storage etc.
+
+
+\end{itemize}
+
+\subsection{Stretch Goals}
+These targets are neither urgent nor necessary.
+
+\begin{itemize}
+
+\item \textbf{Implement CCS retrofitting:} The modelling process for this is somewhat complicated. One would have to track CO$_2$ emitted from different fossil fuels separately by creating TIMES CO$_2$ commodities for coal, oil and petroleum. Next, the process that converts this CO$_2$ to captured CO$_2$ and atmospheric CO$_2$ would need to be defined. The total amount of CO$_2$ captured may not be greater than the total capacity of the reservoirs around Japan \cite{kato_energy_2016}.\\
+The data for retrofitting in Japan is not easily available. Generic CCS data from other countries may be used if necessary.\\
+
+\item \textbf{Sensitivity analysis:} To identify optimum thresholds for costs or parameters (like efficiency) of novel technologies, especially I$^2$CNER technology, to maximize their efficacy and penetration.
 
 \end{itemize}
 
