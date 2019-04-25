@@ -5,7 +5,7 @@ import matplotlib.pyplot as plt
 title='Electricity generation from different sources'
 yax='Electricity generated (GWh)'
 format='.png'
-fname='elc-2016'+fname
+fname='elc-2016'+format
 
 f1='energy2016.xlsx'
 
@@ -30,6 +30,7 @@ for i in range(1,c):
 fig, ax = plt.subplots()
 ax.stackplot(x,y)
 plt.legend(labels,loc='center left',bbox_to_anchor=(1,0.5),prop={'size': 10})
+ax.set_xlim(2011,2016)
 plt.xlabel('Years',fontsize='12')
 plt.ylabel(yax,fontsize='12')
 plt.title(title,fontsize='16')

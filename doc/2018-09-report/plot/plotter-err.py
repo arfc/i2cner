@@ -1,6 +1,8 @@
 import xlrd
 import numpy as np
 import matplotlib.pyplot as plt
+from matplotlib.ticker import FormatStrFormatter
+
 
 title='CO2 emission values relative error'
 yax='Error (%)'
@@ -30,8 +32,9 @@ for i in range(1,c):
 fig = plt.figure()
 ax1=fig.add_subplot(111)
 
-ax1.scatter(x,y[0,:],marker='o',color='red')
-plt.plot(x,y[0,:],linestyle='dashed',color='blue')
+ax1.scatter(x.astype(int),y[0,:],marker='o',color='red')
+plt.plot(x.astype(int),y[0,:],linestyle='dashed',color='blue')
+ax1.xaxis.set_major_formatter(FormatStrFormatter('%.0f'))
 #ax1.scatter(x,y[1,:],marker='o',color='red')
 #plt.plot(x,y[1,:],linestyle='dashed',color='red')
 #plt.legend(labels,loc='center left',bbox_to_anchor=(1,0.5),prop={'size': 14})
