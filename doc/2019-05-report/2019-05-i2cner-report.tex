@@ -157,13 +157,11 @@ While collecting this data, we noticed that the \gls{EDMC} databank that we have
 
 \item \textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel's energy cycle having different emission coefficients. We estimated the missing figures based on previous years' trends \cite{noauthor_energy_2018} \cite{noauthor_national_2018} and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.
 
-\item \textbf{October 2018 – April 2019:}
+\item \textbf{October 2018 – January 2019:}
 
 \begin{enumerate}
 
 \item \textbf{Changing simulation timeframe to 2013-2100:} As discussed in the previous report, it became impossible to find exact data for fossil fuels for the years 2010,2011 and 2012, and hence the total CO$_2$ emissions for those years were very slightly off the mark. We sidestepped this problem by changing the initial year to 2013, for which we have exact data from \gls{EDMC} \cite{noauthor_energy_2018}.\\
-
-\item \textbf{Incorporation of semi-discrete investment sizes:} Discrete investment sizes were incorporated in most scenarios \gls{DSCINV} files\cite{gargiulo_documentation_2005}, whereas the slightly improved semi-discrete capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desired that all \gls{DSCINV} files in the remaining three models include a similar semi-discrete capacity installation structure, as this helps eliminate \href{https://github.com/arfc/i2cner/issues/74}{the production-exceeding-demand bug}.\\
 
 \item \textbf{Incorporation of the contribution-to-peak \cite{gargiulo_documentation_2005} factor:} This parameter is defined as the fraction of a resource's capacity that is guaranteed to be available during peak demand. This introduces a notion of an energy resource's reliability, thereby reducing excessive deployment of wind and solar due to their unreliability. The values in the model \cite{kato_energy_2016} do not take into account the true daily or seasonal variation of wind and solar, as they are annually averaged.\\
 
@@ -178,6 +176,17 @@ While collecting this data, we noticed that the \gls{EDMC} databank that we have
 \item We may be overestimating \gls{CCS} costs. The costs associated with \gls{CCS} for Japan have been hard to find as Japan, instead of building \gls{CCS} pipelines like the US or China, intends to build a shipping network for offshore storage of captured and compressed CO$_2$. Based on our interaction with our Energy Analysis Division colleagues at Kyushu university, the costs of this are still being explored by the Japanese government.
 
 \end{itemize}
+
+\item \textbf{February 2019 – April 2019:}
+
+\begin{enumerate}
+
+\item \textbf{Gradual collection and replacement of \gls{LCoE} data with accurate cost structure:} The results presented at the \gls{I$^2$CNER} Annual \gls{EAD} workshop (see fig. \ref{some fig} ) were based entirely on \gls{LCoE} analysis, as \gls{LCoE} data and projections were readily available. However, it is more suitable to incorporate cost data in the recommended \gls{TIMES} format, that is with the investment/capital cost, fixed and variable operation and maintenance costs. This is due to the fact that when there is no investment cost associated with an energy source, the deplyment of a resource costs nothing, and hence the model may be retiring such capacity deployments before the end of their lifetime, which has been observed in a few bugs <ADD LINK/FIGURE>
+
+\item \textbf{Incorporation of semi-discrete investment sizes:} Discrete investment sizes were incorporated in most scenarios \gls{DSCINV} files\cite{gargiulo_documentation_2005}, whereas the slightly improved semi-discrete capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desired that all \gls{DSCINV} files in the remaining three models include a similar semi-discrete capacity installation structure, as this helps eliminate \href{https://github.com/arfc/i2cner/issues/74}{the production-exceeding-demand bug}.\\
+
+\end{enumerate}
+
 
 \end{enumerate}
 
@@ -237,10 +246,9 @@ The emitted CO\textsubscript{2} values for the period 2011-16 are as follows. Th
 
 \subsection{Post Hoc Analysis and Challenges} 
 
-The project was significantly delayed due to the quality of the documentation and customer support provided by the VEDA developers. The primitive, black-box like nature of the software often produces inexplicable, illogical results and inhibits efficient debugging. Therefore, while data acquisition and organization proceeded at the originally suggested pace, the incorporation of this data into the model has been behind schedule, by about three months. \\
+The project was significantly delayed due to the quality of the documentation and customer support provided by the VEDA developers. The primitive, black-box like nature of the software inhibits efficient debugging. Therefore, while data acquisition and organization proceeded at the originally suggested pace, the incorporation of this data into the model has been behind schedule. \\
 
-In addition to having incomplete/inaccurate data for 2011, 2012 and 2016, \gls{EDMC} has been eliminating data related to electricity generation from individual fossil fuels and lumping power from coal, oil, and natural gas into a category called "thermal" in its databank. This complicates the process of estimating CO\textsubscript{2} emissions from these energy sources, since each fossil fuel has a different emission coefficient. Losing the primary data that we have been relying on has affected our pace and the reproducibility of our research significantly. The \gls{EDMC} databank figures in GWh, instead of in tons of coal or oil, have influenced our model's simplistic design, as discussed previously. Our efforts to find similar data have been unsuccessful. Switching to data in terms of the quantity of raw fossil fuels consumed instead of GWh of electricity produced may require a substantial revision of our model. 
-
+The \gls{EDMC} is constantly being revised and updated, for both earlier (2010-2013) and later years(2016-). Hence, this data is not always consistent or complete, and often secondary sources must be used for verification.
 \section{Future Work} 
 
 \subsection{Critical Goals}
