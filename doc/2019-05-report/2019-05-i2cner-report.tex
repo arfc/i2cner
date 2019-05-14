@@ -10,7 +10,7 @@
 \usepackage{courier}
 \usepackage{verbatim}
 \usepackage{url}
-\usepackage{hyperref}
+\usepackage{hyperref}[hidelinks]
 \usepackage{float}
 \usepackage{array}
 \usepackage{breakcites}
@@ -27,6 +27,11 @@
 \usepackage{graphicx} % For the logo
 \usepackage[acronym,toc]{glossaries}
 \include{acros}
+\usepackage{amssymb}
+\usepackage{pifont}
+\usepackage{xcolor}
+\newcommand{\greencheck}{{\color{green}\checkmark}}
+\newcommand{\xmark}{{\color{red}\ding{55}}}
 
 %\bibliographystyle{numeric}
 
@@ -139,59 +144,82 @@ We initiated a project in January 2018 to simulate dynamic transition scenarios 
 
 \section{Progress Summary}
 
-The tasks that we performed can be divided into two categories: technical tasks associated with implementation of details and features in our model, and data collection and organization. Our accomplishments have been:
+The tasks that we performed can be divided into two categories: technical tasks associated with implementation of details and features in our model, and data collection and organization. Our accomplishments have been:\\
+
+\textbf{Installation of and familiarization with VEDA} (January – March 2018) : To model Japan's energy industry, we chose VEDA, a \gls{TIMES} \cite{loulou_documentation_2005,gargiulo_documentation_2005} generator. We found the format of the developer-prescribed model files restrictive and unsuitable for our purposes. Therefore, we took the time to develop our own model files, which we have progressively refined since then.
+
+At the same time, we collected data pertaining to electricity generation and carbon emissions.\\
+
+\textbf{Incorporation of fossil fuel-related data} (April – May 2018): We incorporated data for electricity generation from fossil fuels from the \gls{EDMC} databank\cite{noauthor_energy_2018}, along with creating a simplified demand process reflecting the recent trends in electricity demand in Japan. \\
+
+While collecting this data, we noticed that the \gls{EDMC} databank that we have been relying on has no data for the amount of electricity generated from individual fossil fuels for the years 2011-12. Instead, the amount of electricity generated from coal, oil, and natural gas is lumped together in one category titled "thermal". Further, the 2016 data seems slightly inconsistent across different data tables in the \gls{EDMC} databank. The source of variation in these numbers is likely to be the changes in the electricity distribution system of Japan since 2016.\\
+
+\textbf{Incorporation of nuclear, hydropower and renewables into the model} (June – August 2018): The process of incorporating these into the model was similar to the previous energy sources, but simpler, since the data obtained for these energy sources from \gls{EDMC} was consistent across \gls{EDMC} data tables and secondary sources \cite{noauthor_energy_2018,noauthor_iea_2017, noauthor_japan_2017}. We have also included processes for the projected growth of nuclear, solar and wind based on data from various studies, reports and articles. \cite{publicover_japan_2017, dincer_analysis_2011,noauthor_geothermal_2018,heger_wind_2016,noauthor_operational_2013,noauthor_electricity_2017}\\
+
+\textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel's energy cycle having different emission coefficients. We estimated the missing figures based on previous years' trends \cite{noauthor_energy_2018,noauthor_national_2018} and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.\\
+
+\paragraph{October 2018 – January 2019:} ~ \\
+
+\textbf{Changing simulation timeframe to 2013-2100:} As discussed previously, it became impossible to find exact data for fossil fuels for the years 2010,2011 and 2012. Hence the total CO$_2$ emissions for those years were very slightly off the mark. We sidestepped this problem by changing the initial year to 2013, for which we have exact data from \gls{EDMC} \cite{noauthor_energy_2018}.\\
+
+\textbf{Incorporation of the \gls{PEAK} factor \cite{gargiulo_documentation_2005} factor:} This parameter is defined as the fraction of a resource's installed  capacity that is guaranteed to be available during peak demand. This introduces a notion of an energy resource's reliability. Its incorporation reduced excessive deployment of wind and solar. The \gls{PEAK} factor values in the model \cite{kato_energy_2016} do not take into account the true daily or seasonal variation of wind and solar, as the factor is annually averaged.\\
+
+\textbf{Basic \gls{CCS} Implementation} : Some \gls{CCS} data \cite{kato_energy_2016}  was incorporated into \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/i2cner-nonuc}{one of the models}. However, no \gls{CCS} gets deployed in our models. We believe  it should be deployed for an intermediate time-period, since in the absence of nuclear, only \gls{CCS} can provide reliable, clean energy in conjunction with renewables. We have identified a few shortcomings in our model, some of which contribute to this problem:
 
 \begin{itemize}
 
-\item \textbf{Installation of and familiarization with VEDA} (January – March 2018) : To model Japan's energy industry, we chose VEDA, a \gls{TIMES} \cite{loulou_documentation_2005} \cite{gargiulo_documentation_2005} generator. We found the format of the developer-prescribed model files restrictive and unsuitable for our purposes. Therefore, we took the time to develop our own model files, which we have progressively refined since then.\\
-
-At the same time, we collected data pertaining to electricity generation and carbon emissions.
-
-\item \textbf{Incorporation of fossil fuel-related data} (April – May 2018): We incorporated data for electricity generation from fossil fuels from the \gls{EDMC} databank\cite{noauthor_energy_2018}, along with creating a simplified demand process reflecting the recent trends in electricity demand in Japan. \\
-
-While collecting this data, we noticed that the \gls{EDMC} databank that we have been relying on has no data for the amount of electricity generated from individual fossil fuels for the years 2011-12. Instead, the amount of electricity generated from coal, oil, and natural gas is lumped together in one category titled "thermal". Further, the 2016 data seems slightly inconsistent across different data tables in the \gls{EDMC} databank. The source of variation in these numbers is likely to be the changes in the electricity distribution system of Japan since 2016.
-
-\item \textbf{Incorporation of nuclear, hydropower and renewables into the model} (June – August 2018): The process of incorporating these into the model was similar to the previous energy sources, but simpler, since the data obtained for these energy sources from \gls{EDMC} was consistent across \gls{EDMC} data tables and secondary sources \cite{noauthor_energy_2018} \cite{noauthor_iea_2017} \cite{noauthor_japan_2017}. We have also included processes for the projected growth of nuclear, solar and wind based on data from various studies, reports and articles. \cite{publicover_japan_2017} \cite{dincer_analysis_2011} \cite{noauthor_geothermal_2018} \cite{heger_wind_2016} \cite{noauthor_operational_2013} \cite{noauthor_electricity_2017}
-
-\item \textbf{Refining CO\textsubscript{2} emission processes} (August – September 2018) : While we had been modelling CO\textsubscript{2} emission processes in parallel with the electricity processes, it was only after incorporating all conventional energy sources that we could move on to fine-tuning CO\textsubscript{2} emission values to ensure they match the actual emissions from Japan. The major obstacle we faced was the absence of data pertaining to electricity generation from individual fossil fuels, with each fossil fuel's energy cycle having different emission coefficients. We estimated the missing figures based on previous years' trends \cite{noauthor_energy_2018} \cite{noauthor_national_2018} and arrived at reasonable estimates of electricity generation, which result in CO\textsubscript{2} emission values that differ from actual values by about 5\% at most.
-
-\item \textbf{October 2018 – January 2019:}
-
-\begin{enumerate}
-
-\item \textbf{Changing simulation timeframe to 2013-2100:} As discussed previously, it became impossible to find exact data for fossil fuels for the years 2010,2011 and 2012. Hence the total CO$_2$ emissions for those years were very slightly off the mark. We sidestepped this problem by changing the initial year to 2013, for which we have exact data from \gls{EDMC} \cite{noauthor_energy_2018}.\\
-
-\item \textbf{Incorporation of the \gls{PEAK} factor \cite{gargiulo_documentation_2005} factor:} This parameter is defined as the fraction of a resource's capacity that is guaranteed to be available during peak demand. This introduces a notion of an energy resource's reliability. Its incorporation reduced excessive deployment of wind and solar. The \gls{PEAK} factor values in the model \cite{kato_energy_2016} do not take into account the true daily or seasonal variation of wind and solar, as the factor is annually averaged.\\
-
-\item \textbf{Basic \gls{CCS} Implementation} : Some \gls{CCS} data \cite{kato_energy_2016}  was incorporated into \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/i2cner-nonuc}{one of the models}. However, no \gls{CCS} gets deployed in our models. We believe  it should be deployed for an intermediate time-period, since in the absence of nuclear, only \gls{CCS} can provide reliable, clean energy in conjunction with renewables. We have identified a few shortcomings in our model, some of which contribute to this problem:
-
-\begin{enumerate}
-
-\item Large amounts of offshore wind can be deployed. While we were initially reluctant to hard-code strict capacity limits into our model, we have since realized that Japan's underdeveloped offshore wind industry will not reach its full potential for a very long time, as offshore wind is extremely expensive to deploy due to the unusually deep seabed that is very close to the Japanese coast. \gls{JWPA} projections \cite{heger_wind_2016} are already rather ambitious, and our models should be more closely aligned with them, allowing for at-most a 10-20 \% increase in deployment capacities.
+\item Large amounts of offshore wind can be deployed. While we were initially reluctant to hard-code strict installed  capacity limits into our model, we have since realized that Japan's underdeveloped offshore wind industry will not reach its full potential for a very long time, as offshore wind is extremely expensive to deploy due to the unusually deep seabed that is very close to the Japanese coast. \gls{JWPA} projections \cite{heger_wind_2016} are already rather ambitious, and our models should be more closely aligned with them, allowing for at-most a 10-20 \% increase in deployment capacities.
 
 \item Wind and solar are treated as any other energy source, with their daily or seasonal variance not truly taken into account (discussed below). Their installed capacity should be matched by storage or natural gas. Possible ways to implement this are discussed later.
 
 \item We may be overestimating \gls{CCS} costs. The costs associated with \gls{CCS} for Japan have been hard to find as Japan, instead of building \gls{CCS} pipelines like the US or China, intends to build a shipping network for offshore storage of captured and compressed CO$_2$. While this would make \gls{CCS} plants more expensive in Japan, we cannot arrive at an exact figure. Based on our interaction with our Energy Analysis Division colleagues at Kyushu university, the costs of this are still being explored by the Japanese government.
 
-\end{enumerate}
-
-\item \textbf{February 2019 – April 2019:}
-
-\begin{enumerate}
-
-\item \textbf{Gradual collection and replacement of \gls{LCoE} data with accurate cost structure:} The results presented at the \gls{I2CNER} Annual \gls{EAD} workshop \cite{chaube_dynamic_2019} were based entirely on \gls{LCoE} analysis, as \gls{LCoE} data and projections were readily available. However, it is more suitable to incorporate cost data in the recommended \gls{TIMES} format, that is with the investment/capital cost, and fixed and variable \gls{OM} costs. This is due to the fact that when there is no investment cost associated with an energy source, the deployment or premature retirement has no cost-penalty. This causes resource deployments for unreasonably brief periods (see fig. \ref{flatgood} ).
-
-\item \textbf{Incorporation of semi-discrete investment sizes:} Discrete investment sizes were incorporated in most scenarios' \gls{DSCINV} files\cite{gargiulo_documentation_2005}, whereas the slightly improved semi-discrete capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desired that all \gls{DSCINV} files in the remaining three models include a similar semi-discrete capacity installation structure, as this helps eliminate the production-exceeding-demand bug (see fig. \ref{flatbug} and fig. \ref{flatgood} ).\\
-
-\end{enumerate}
-
-
-\end{enumerate}
-
-
 \end{itemize}
 
+\paragraph{February 2019 – April 2019:} ~ \\
+
+
+\textbf{Gradual collection and replacement of \gls{LCOE} data with accurate cost structure:} The results presented at the \gls{I2CNER} Annual \gls{EAD} workshop \cite{chaube_dynamic_2019} were based entirely on \gls{LCOE} analysis, as \gls{LCOE} data and projections were readily available. However, it is more suitable to incorporate cost data in the recommended \gls{TIMES} format, that is with the investment/capital cost, and fixed and variable \gls{OM} costs. This is due to the fact that when there is no investment cost associated with an energy source, the deployment or premature retirement has no cost-penalty. This causes resource deployments for unreasonably brief periods (see fig. \ref{flatgood} ).
+
+\textbf{Incorporation of semi-discrete investment sizes:} Discrete investment sizes were incorporated in most scenarios' \gls{DSCINV} files\cite{gargiulo_documentation_2005}, whereas the slightly improved semi-discrete installed  capacity sizes are incorporated in the \href{https://github.com/arfc/i2cner/tree/master/JPN-Main-Model/active/co2-constrnt-conv-nonuc}{conventional-no-nuclear model}. It is desired that all \gls{DSCINV} files in the remaining three models include a similar semi-discrete installed  capacity installation structure, as this helps eliminate the production-exceeding-demand bug (see fig. \ref{flatbug} and fig. \ref{flatgood} ).\\
+
+
+
 \section{Model description}
+
+The objective function \cite{loulou_documentation_2005} for the simulation is the system cost, and the primary constraints are the demand and the CO$_2$ emissions. Hence, the simulations determine the energy mix most economically optimal for meeting Japan's future energy needs, when constrained by \gls{I2CNER} CO$_2$ emissions.
+
+\subsection{Key Simulation Parameters}
+
+\begin{tabular}{|c|c|}
+\hline
+Start year & 2013 \\
+\hline
+End Year & 2100 \\
+\hline
+Demand increase rate & +1.7\% p.a. \cite{noauthor_electricity_2017} \\
+\hline
+Conventional sources & Coal, Oil, Natural Gas, Combined Cycle, Nuclear \\
+\hline
+Renewables & Solar, Wind, Geothermal, Hydro \\
+\hline
+Novel tech. & H$_2$(photocatalytic), \gls{CCS} (point-capture)\\
+\hline
+\end{tabular}
+
+\vspace{7mm}
+
+\begin{tabular}{| c | c | c | c | c |}
+\hline
+\textbf{Models}& \textbf{Names}&\textbf{Conventional}&\textbf{Novel}&\textbf{New nuclear}\\
+                 &             &\textbf{technology}&\textbf{technology}&\textbf{reactors}\\
+                  \hline
+1               & conv-free &      \greencheck           &         \xmark       &      \greencheck     \\ 
+2               & conv-nonuc &      \greencheck           &         \xmark       &         \xmark       \\ 
+3               & i2cner-free &      \greencheck           &      \greencheck     &      \greencheck     \\ 
+4               & i2cner-nonuc &      \greencheck           &      \greencheck     &         \xmark       \\
+\hline
+\end{tabular}
 
 \subsection{Assumptions}
 
@@ -201,13 +229,13 @@ While collecting this data, we noticed that the \gls{EDMC} databank that we have
 
 \item All the energy generated by a given process is transferred to the grid without losses. Since the \gls{EDMC} data has values in terms of units of electrical energy produced (GWh), we have had no need for incorporating data about raw fossil fuel consumption, plant efficiency, and utilization factors for the initially deployed electricity generation sources.
 
-\item \gls{LCoE} for fossil fuels has been held constant throughout the simulation \cite{chapman_energy_2018} \cite{noauthor_lazards_2017} \cite{noauthor_iea_2017}. \gls{LCoE} projections for wind and solar have been incorporated \cite{noauthor_lazards_2017}.
+\item \gls{LCOE} for fossil fuels and nuclear has been held constant throughout the simulation \cite{chapman_energy_2018,noauthor_lazards_2017,noauthor_iea_2017}. \gls{LCOE} projections for wind and solar have been incorporated \cite{noauthor_lazards_2017}.
 
 \item Oil-based electricity is retired relatively quickly, and new oil-based electricity deployment is disabled, due to the emphasis of the Japanese government on energy self-sufficiency and minimizing costs, and due to a general trend in the \gls{EDMC} data \cite{noauthor_energy_2018} indicating declining use of oil.
 
-\item Nuclear capacity is increased in chunks equivalent to the capacity of GE-Hitachi's \gls{ABWR} \cite{ge_advanced_2007}, which are under consideration for construction \cite{noauthor_electricity_2017}.
+\item Nuclear installed  capacity is increased in chunks equivalent to the installed  capacity of GE-Hitachi's \gls{ABWR} \cite{ge_advanced_2007}, which are under consideration for construction \cite{noauthor_electricity_2017}.
 
-\item Solar – Any new solar capacity created by the model has been assumed to be non-tracking type.
+\item Solar – Any new solar installed  capacity created by the model has been assumed to be non-tracking type.
 
 \item Hydropower – held constant at current levels.
 
@@ -243,11 +271,11 @@ Hydropower & 11 \\
 \hline
 \end{tabular}
 
-\item \textbf{\gls{LCoE}}\cite{noauthor_lazards_2017} : \gls{LCoE} data is appropriate for use in processes where a fixed amount of capacity has already been deployed i.e. the initial capacity. The following \gls{LCoE} data (in million USD/GWh) was used :\\
+\item \textbf{\gls{LCOE}}\cite{noauthor_lazards_2017} : \gls{LCOE} data is appropriate for use in processes where a fixed amount of installed  capacity has already been deployed i.e. the initial installed  capacity. The following \gls{LCOE} data (in million USD/GWh) was used :\\
 
 \begin{tabular}{|c|c|}
 \hline
-\textbf{Electricity source} & \textbf{LCoE}\\
+\textbf{Electricity source} & \textbf{LCOE}\\
 \hline
 Coal & 0.06 \\
 \hline
@@ -261,9 +289,9 @@ Wind & 0.144 \\
 \hline
 Nuclear & 0.1 \\
 \hline
-Geothermal & 0(fixed capacity) \\
+Geothermal & 0(fixed installed  capacity) \\
 \hline
-Hydropower & 0 (fixed capacity) \\
+Hydropower & 0 (fixed installed  capacity) \\
 \hline
 \end{tabular}
 
@@ -288,7 +316,7 @@ Nuclear & 1600 & 0.0165 & 0.00933\\
 \hline
 \end{tabular}
 
-\item \textbf{Miscellaneous VEDA Parameters} \cite{kato_energy_2016} \cite{gargiulo_documentation_2005}:\\
+\item \textbf{Miscellaneous VEDA Parameters} \cite{kato_energy_2016,gargiulo_documentation_2005}:\\
 
 \begin{tabular}{|c|c|c|c|c|}
 \hline
@@ -312,7 +340,7 @@ Nuclear & 0.9 & 0.95 & 60 & 1.0 \\
 
 \section{Results}
 
-Based on these assumptions, the model yields the following results for the years 2011-16, which are very close to the actual electricity generation figures supplied by \gls{EDMC}. \gls{LCoE}-based results for the entire time-period are present in the poster presented at the \gls{I2CNER} symposium \cite{chaube_dynamic_2019}.
+Based on these assumptions, the model yields the following results for the years 2011-16, which are very close to the actual electricity generation figures supplied by \gls{EDMC}. \gls{LCOE}-based results for the entire time-period are present in the poster presented at the \gls{I2CNER} symposium \cite{chaube_dynamic_2019}.
 
 \begin{figure}[H]
 \centering
@@ -326,7 +354,7 @@ The emitted CO\textsubscript{2} values for the period 2011-16 are as follows. Th
 \begin{figure}[H]
 \centering
 \includegraphics[scale=0.6]{co2-2016}
-\caption{CO2 emissions from electricity generation compared with actual emissions reported by \gls{MoE}, Japan}
+\caption{CO2 emissions from electricity generation compared with actual emissions reported by \gls{MOE}, Japan}
 \label{co2ic}
 \end{figure}
 
@@ -360,39 +388,41 @@ The emitted CO\textsubscript{2} values for the period 2011-16 are as follows. Th
 
 \subsection{Post Hoc Analysis and Challenges} 
 
-The project was significantly delayed due to the quality of the documentation and customer support provided by the VEDA developers. The primitive, black-box like nature of the software inhibits efficient debugging. Therefore, while data acquisition and organization proceeded at the originally suggested pace, the incorporation of this data into the model has been behind schedule. \\
+The project has been delayed in part due to limited documentation and customer support available to VEDA users. The primitive, black-box like nature of the software inhibits efficient debugging. Therefore, while data acquisition and organization proceeded at the originally suggested pace, the incorporation of this data into the model has been behind schedule. \\
 
 The \gls{EDMC} is constantly being revised and updated, for both earlier (2010-2013) and later years(2016-). Hence, this data is not always consistent or complete, and often secondary sources must be used for verification.
 \section{Future Work} 
 
-\subsection{Critical Goals}
-These targets are urgent and necessary.
+\subsection{Next Steps}
 
-\begin{enumerate}
+\textbf{Remove pure oil based electricity generation from all models:} We do not think Japan will ever increase its dependence on oil due to its cost, emissions intensity and due to the Japanese goal of increasing energy independence. Current trends support this assumption. While a few models already exclude oil-based energy, other models should also replace it with combined-cycle electricity generation for the sake of consistency.\\
 
-\item \textbf{Replace \gls{LCoE} in all models with a detailed cost structure:} All models must incorporate investment and \gls{OM} costs.
+\textbf{Incorporate semi-discrete investment sizes:} As stated previously, all \gls{DSCINV} files must include semi-discrete installed  capacity installation sizes for consistency.\\
 
-\item \textbf{Remove pure oil based electricity generation from all models:} We do not think Japan will ever increase its dependence on oil due to its cost, emissions intensity and due to the Japanese goal of increasing energy independence. Current trends support this assumption. While a few models already exclude oil-based energy, other models should also replace it with combined-cycle electricity generation for the sake of consistency.
+\textbf{Restrict maximum wind installed  capacity:} To align the model more closely with JWPA predictions \cite{heger_wind_2016}, the maximum allowed capacities for wind should be reduced in the respective \gls{MaxCAP} files.\\
 
-\item \textbf{Incorporate semi-discrete investment sizes:} As stated previously, all \gls{DSCINV} files must include semi-discrete capacity installation sizes for consistency.
-
-\item \textbf{Restrict maximum wind capacity:} To align the model more closely with JWPA predictions \cite{heger_wind_2016}, the maximum allowed capacities for wind should be reduced in the respective \gls{MaxCAP} files.
-
-\item \textbf{Associate wind (and solar) with natural gas/storage:} There may be two ways to accomplish this:
+\textbf{Associate wind (and solar) with natural gas/storage:} There may be three ways to accomplish this:
 
 \begin{itemize}
 
 \item \textbf{Define load curves for solar and wind:} This is the approach suggested by VEDA developers on their forum. However, the details of implementation for this particular approach are lacking in the \gls{TIMES} documentation. A successful implementation should incorporate the daily and seasonal variation of these electricity sources, and force the model to deploy natural gas or electricity storage to supplement wind and solar.
 
-\item \textbf{Replace annually averaged capacity factors and/or \gls{PEAK} factors with seasonal (summer/winter) and diurnal (day/night) (i.e. SN,SD, WN, WD \cite{gargiulo_documentation_2005} ) capacity factors} : The model may then automatically deploy natural gas to supplement wind and solar. If seasonal versions of these factors exist, this would be the easiest solution. \gls{TIMES} Documentation Part II \cite{loulou_documentation_2005} may offer some insights in this regard.
+\item \textbf{Replace annually averaged installed  capacity factors and/or \gls{PEAK} factors with seasonal (summer/winter) and diurnal (day/night) (i.e. SN,SD, WN, WD \cite{gargiulo_documentation_2005} ) installed  capacity factors} : The model may then automatically deploy natural gas to supplement wind and solar. If seasonal versions of these factors exist, this would be the easiest solution. \gls{TIMES} Documentation Part II \cite{loulou_documentation_2005} may offer some insights in this regard.
 
-\item \textbf{Define a direct relationship between the capacities of wind and natural gas}:It might be possible to define a direct equation between the capacity of renewables and natural gas. Since no straightforward way to do this is described in the VEDA documentation \cite{gargiulo_documentation_2005}, this would require utilization of the \gls{TIMES} documentation \cite{loulou_documentation_2005}, the VEDA attributes table, and quite possibly the assistance of the VEDA forum.
+\item \textbf{Define a direct relationship between the capacities of wind and natural gas}:It might be possible to define a direct equation between the installed  capacity of renewables and natural gas. Since no straightforward way to do this is described in the VEDA documentation \cite{gargiulo_documentation_2005}, this would require utilization of the \gls{TIMES} documentation \cite{loulou_documentation_2005}, the VEDA attributes table, and quite possibly the assistance of the VEDA forum.
 
 \end{itemize}
 
-\item \textbf{Incorporation of Japan-specific costs for wind:} When incorporating \gls{JWPA} predictions, it will be necessary to split off-shore wind into fixed and floating types. The \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs}{cost data} for this already exists in our repository thanks to Akari Minami, an undergraduate from Kyushu University who assisted with data collection and simulation during March 2019. This data needs to be sifted through and incorporated into our model.
+\textbf{Cost Analysis} - Some metric to compare the transition costs for each scenario should be calculated and presented with our results. For example, the \gls{LCOE} for each scenario for different years (say 2030,2050,2100) could be calculated, or the total cost of the transition (investment+generation) could be juxtaposed for each scenario.\\
 
-\item \textbf{Revise \gls{CCS} costs:} Simplified \gls{CCS} electricity generation processes exist in our \gls{I2CNER} models. These emit only 10\% of the CO$_2$ that their corresponding fossil fuel technology emits \cite{kato_energy_2016}. In the model, these look like any other fossil fuel electricity generation process, except they are more expensive and have a significantly smaller emissions coefficient. Such an implementation does \textbf{not} include retrofitting of \gls{CCS} (i.e. adding point carbon capture capabilities to previously deployed fossil fuel capacity - discussed below). While we do not have Japan-specific data for \gls{CCS}, we can use cost data from the US and do one of the following:
+\textbf{Incorporate more \gls{I2CNER} technology}, such as perovskite solar cells, fuel cells for storage etc.\\
+
+\textbf{Sensitivity analysis:} To identify optimum thresholds for costs or parameters (like efficiency) of novel technologies, especially \gls{I2CNER} technology, to maximize their efficacy and penetration.\\
+
+\subsection{Potential improvements}
+
+\textbf{Revise \gls{CCS} costs:} Simplified \gls{CCS} electricity generation processes exist in our \gls{I2CNER} models. These emit only 10\% of the CO$_2$ that their corresponding fossil fuel technology emits \cite{kato_energy_2016}. In the model, these look like any other fossil fuel electricity generation process, except they are more expensive and have a significantly smaller emissions coefficient. Such an implementation does \textbf{not} include retrofitting of \gls{CCS} (i.e. adding point carbon capture capabilities to previously deployed fossil fuel installed  capacity - discussed below). While we do not have Japan-specific data for \gls{CCS}, we can use cost data from the US and do one of the following:
+
 \begin{itemize}
 
 \item Neglect the difference between Japan and the US, assuming that the government will foot the bill of setting up the \gls{CCS} shipping network and offshore storage sites.
@@ -403,16 +433,13 @@ These targets are urgent and necessary.
 
 \end{itemize}
 
-\item \textbf{Revise nuclear costs:} Current models include the ideal cost of nuclear, but actual costs are often higher due to delays in construction. This is accurately reflected in data from \gls{EIA} \cite{noauthor_eia_2019}, which already exists in our \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs/fossil-ccs-nuc.xlsx}{repository}. This needs to be incorporated into our models to reduce over-deployment of nuclear.
+\textbf{Replace \gls{LCOE} in all models with a detailed cost structure:} All models must incorporate investment and \gls{OM} costs.\\
 
-\end{enumerate}
+\textbf{Incorporation of Japan-specific costs for wind:} When incorporating \gls{JWPA} predictions, it will be necessary to split off-shore wind into fixed and floating types. The \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs}{cost data} for this already exists in our repository thanks to Akari Minami, an undergraduate from Kyushu University who assisted with data collection and simulation during March 2019. This data needs to be sifted through and incorporated into our model.\\
 
-\subsection{Desired Goals}
-These targets are not urgent but are required for improving our results.
+\textbf{Revise nuclear costs:} Current models include the ideal cost of nuclear, but actual costs are often higher due to delays in construction. This is accurately reflected in data from \gls{EIA} \cite{noauthor_eia_2019}, which already exists in our \href{https://github.com/arfc/i2cner/tree/master/data/japan_costs/fossil-ccs-nuc.xlsx}{repository}. This needs to be incorporated into our models to reduce over-deployment of nuclear.\\
 
-\begin{itemize}
-
-\item Make electricity demand process more realistic:
+\paragraph{Make electricity demand process more realistic:}
 
 \begin{itemize}
 \item At the very least, demand should increase at +1.7 \% per year until 2030 as per \gls{METI} projections \cite{noauthor_electricity_2017}, and should plateau afterwards until 2100.
@@ -421,24 +448,8 @@ These targets are not urgent but are required for improving our results.
 
 \end{itemize}
 
-\item Cost Analysis - Some metric to compare the transition costs for each scenario should be calculated and presented with our results. For example, the \gls{LCoE} for each scenario for different years (say 2030,2050,2100) could be calculated, or the total cost of the transition (investment+generation) could be juxtaposed for each scenario.
-
-\item Incorporate more \gls{I2CNER} technology, such as perovskite solar cells, fuel cells for storage etc.
-
-\end{itemize}
-
-\subsection{Stretch Goals}
-At this time, these targets are neither urgent nor necessary.
-
-\begin{itemize}
-
-\item \textbf{Implement \gls{CCS} retrofitting:} The modelling process for this is somewhat complicated. One would have to track CO$_2$ emitted from different fossil fuels separately by creating \gls{TIMES}  CO$_2$ commodities for coal, oil and petroleum, to ensure that CO$_2$ from non-fossil fuel sources is not captured by the model. Next, the process that converts this CO$_2$ to captured CO$_2$ and atmospheric CO$_2$ would need to be defined. The total amount of CO$_2$ captured may not be greater than the total capacity of the \gls{CCS} reservoirs around Japan \cite{kato_energy_2016}.\\
+\textbf{Implement \gls{CCS} retrofitting:} The modelling process for this is somewhat complicated. One would have to track CO$_2$ emitted from different fossil fuels separately by creating \gls{TIMES}  CO$_2$ commodities for coal, oil and petroleum, to ensure that CO$_2$ from non-fossil fuel sources is not captured by the model. Next, the process that converts this CO$_2$ to captured CO$_2$ and atmospheric CO$_2$ would need to be defined. The total amount of CO$_2$ captured may not be greater than the total installed capacity of the \gls{CCS} reservoirs around Japan \cite{kato_energy_2016}.\\
 The data for retrofitting in Japan is not easily available. Generic \gls{CCS} data from other countries may be used if necessary.\\
-
-\item \textbf{Sensitivity analysis:} To identify optimum thresholds for costs or parameters (like efficiency) of novel technologies, especially \gls{I2CNER} technology, to maximize their efficacy and penetration.
-
-\end{itemize}
-
 
 \bibliographystyle{ieeetr}
 %\addbibresource{2018-chaube-i2cner-report-sept}
