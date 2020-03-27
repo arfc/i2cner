@@ -1,0 +1,129 @@
+\documentclass[review]{elsarticle}
+\usepackage{lineno}
+\usepackage{xspace}
+\modulolinenumbers[5]
+
+\journal{Annals of Nuclear Energy}
+
+%% `Elsevier LaTeX' style
+
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% packages and definitions (optional)
+\usepackage{placeins}
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{longtable}
+\usepackage{microtype} % improves typography for PDF
+\usepackage{hhline}
+\usepackage{amsmath}
+\usepackage{pifont}
+\usepackage{mathrsfs}
+\usepackage{rotating}
+\usepackage{multirow}
+\usepackage{longtable}
+\usepackage{enumitem}
+\usepackage{mathtools}
+\usepackage{amssymb}
+\usepackage{footnote}
+\usepackage{slashbox}
+\newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
+%\usepackage{adjustbox}
+%\usepackage{cite}
+%\usepackage[demo]{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
+
+\usepackage{booktabs}
+\usepackage{threeparttable, tablefootnote}
+
+\usepackage{tabularx}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{x}{>{\hsize=.25\hsize}X}
+
+\graphicspath{{figures/}}
+
+% tikz %
+\usepackage{tikz}
+\usepackage{chronology}
+\usetikzlibrary{arrows.meta}
+
+\usetikzlibrary{positioning, arrows, decorations, shapes, calc }
+% Define block styles
+\tikzstyle{decision} = [diamond, draw, fill=blue!20, 
+text width=4.5em, text badly centered, node distance=3cm, inner sep=0pt]
+
+\tikzstyle{const} = [rectangle, draw, text centered, fill=orange!20]
+\tikzstyle{data} = [rectangle, draw, text centered, fill=green!20]
+
+\tikzstyle{block} = [rectangle, draw, text centered, fill=blue!20]
+\tikzstyle{line} = [draw, -latex']
+\tikzstyle{cloud} = [draw, ellipse,fill=red!20, node distance=6em,
+minimum height=2em]
+
+
+
+\usetikzlibrary{shapes.multipart}
+\usetikzlibrary{positioning}
+% hyperref %
+\usepackage[hidelinks]{hyperref}
+% after hyperref %
+\usepackage{cleveref}
+\usepackage{datatool}
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+\newcommand{\greencheck}{{\color{green}\checkmark}}
+\newcommand{\xmark}{{\color{red}\ding{55}}}
+
+
+\makeglossaries
+
+\begin{document}
+\begin{frontmatter}
+\title{Strategies for thorium fuel cycle transition in the SD-TMSR}
+
+\date{}                     %% if you don't need date to appear
+
+%% Authors
+\input{authors}
+
+% Institutes of the authors
+\input{institutions}
+	
+\begin{keyword}
+
+%moderated molten salt reactor \sep
+%single-fluid double-zone thorium molten salt reactor \sep
+%sd-tmsr \sep
+%nuclear fuel cycle \sep
+%salt treatment
+\end{keyword}
+
+
+\input{abstract}
+\end{frontmatter}
+\glsresetall
+
+\linenumbers
+
+%\printglossary[type=\acronymtype,title=Abbreviations]
+
+\input{introduction}
+\FloatBarrier
+\input{methods}
+\FloatBarrier
+\input{results}
+\FloatBarrier
+%\input{discussion}
+%\FloatBarrier
+\input{conclusion}
+\FloatBarrier
+\input{acks}
+\FloatBarrier
+\bibliographystyle{elsarticle-num}
+\bibliography{2019-Scenarios}
+\newpage
+\appendix
+\input{Appendix}
+\end{document}

@@ -1,0 +1,588 @@
+
+%
+% Copyright 2007, 2008, 2009 Elsevier Ltd
+%
+% This file is part of the 'Elsarticle Bundle'.
+% ---------------------------------------------
+%
+% It may be distributed under the conditions of the LaTeX Project Public
+% License, either version 1.2 of this license or (at your option) any
+% later version.  The latest version of this license is in
+%    http://www.latex-project.org/lppl.txt
+% and version 1.2 or later is part of all distributions of LaTeX
+% version 1999/12/01 or later.
+%
+% The list of all files belonging to the 'Elsarticle Bundle' is
+% given in the file `manifest.txt'.
+%
+
+% Template article for Elsevier's document class `elsarticle'
+% with numbered style bibliographic references
+% SP 2008/03/01
+%
+%
+%
+% $Id: elsarticle-template-num.tex 4 2009-10-24 08:22:58Z rishi $
+%
+%
+%\documentclass[preprint,12pt]{elsarticle}
+\documentclass[answers,11pt]{exam}
+
+% \documentclass[preprint,review,12pt]{elsarticle}
+
+% Use the options 1p,twocolumn; 3p; 3p,twocolumn; 5p; or 5p,twocolumn
+% for a journal layout:
+% \documentclass[final,1p,times]{elsarticle}
+% \documentclass[final,1p,times,twocolumn]{elsarticle}
+% \documentclass[final,3p,times]{elsarticle}
+% \documentclass[final,3p,times,twocolumn]{elsarticle}
+% \documentclass[final,5p,times]{elsarticle}
+% \documentclass[final,5p,times,twocolumn]{elsarticle}
+
+% if you use PostScript figures in your article
+% use the graphics package for simple commands
+% \usepackage{graphics}
+% or use the graphicx package for more complicated commands
+\usepackage{graphicx}
+% or use the epsfig package if you prefer to use the old commands
+% \usepackage{epsfig}
+
+% The amssymb package provides various useful mathematical symbols
+\usepackage{amssymb}
+% The amsthm package provides extended theorem environments
+% \usepackage{amsthm}
+\usepackage{amsmath}
+
+% The lineno packages adds line numbers. Start line numbering with
+% \begin{linenumbers}, end it with \end{linenumbers}. Or switch it on
+% for the whole article with \linenumbers after \end{frontmatter}.
+\usepackage{lineno}
+
+% I like to be in control
+\usepackage{placeins}
+
+% natbib.sty is loaded by default. However, natbib options can be
+% provided with \biboptions{...} command. Following options are
+% valid:
+
+%   round  -  round parentheses are used (default)
+%   square -  square brackets are used   [option]
+%   curly  -  curly braces are used      {option}
+%   angle  -  angle brackets are used    <option>
+%   semicolon  -  multiple citations separated by semi-colon
+%   colon  - same as semicolon, an earlier confusion
+%   comma  -  separated by comma
+%   numbers-  selects numerical citations
+%   super  -  numerical citations as superscripts
+%   sort   -  sorts multiple citations according to order in ref. list
+%   sort&compress   -  like sort, but also compresses numerical citations
+%   compress - compresses without sorting
+%
+% \biboptions{comma,round}
+
+% \biboptions{}
+
+
+% Katy Huff addtions
+\usepackage{xspace}
+\usepackage{color}
+
+\usepackage{multirow}
+\usepackage[hyphens]{url}
+
+
+\usepackage[acronym,toc]{glossaries}
+\include{acros}
+
+\makeglossaries
+
+%\journal{Annals of Nuclear Energy}
+
+\begin{document}
+
+%\begin{frontmatter}
+
+% Title, authors and addresses
+
+% use the tnoteref command within \title for footnotes;
+% use the tnotetext command for the associated footnote;
+% use the fnref command within \author or \address for footnotes;
+% use the fntext command for the associated footnote;
+% use the corref command within \author for corresponding author footnotes;
+% use the cortext command for the associated footnote;
+% use the ead command for the email address,
+% and the form \ead[url] for the home page:
+%
+% \title{Title\tnoteref{label1}}
+% \tnotetext[label1]{}
+% \author{Name\corref{cor1}\fnref{label2}}
+% \ead{email address}
+% \ead[url]{home page}
+% \fntext[label2]{}
+% \cortext[cor1]{}
+% \address{Address\fnref{label3}}
+% \fntext[label3]{}
+
+\title{Strategies for thorium fuel cycle transition in the SD-TMSR\\
+\large Response to Review Comments}
+\author{O. Ashraf, Andrei Rykhlevskii, G. V. Tikhomirov, Kathryn D. Huff}
+
+% use optional labels to link authors explicitly to addresses:
+% \author[label1,label2]{<author name>}
+% \address[label1]{<address>}
+% \address[label2]{<address>}
+
+
+%\author[uiuc]{Kathryn Huff}
+%        \ead{kdhuff@illinois.edu}
+%  \address[uiuc]{Department of Nuclear, Plasma, and Radiological Engineering,
+%        118 Talbot Laboratory, MC 234, Universicy of Illinois at
+%        Urbana-Champaign, Urbana, IL 61801}
+%
+% \end{frontmatter}
+\maketitle
+\section*{Review General Response}
+We would like to thank the reviewers for their detailed assessment of
+this paper. Your suggestions, clarifications, and comments have resulted in 
+changes which certainly improved the paper.
+
+
+\begin{questions}
+        \section*{Reviewer 1}
+
+        \question This work investigates the fuel cycle and neutronics performance of the Single-fluid Double-zone Thorium-based Molten Salt Reactor (SD-TMSR) with different fissile material based on an extended SERPENT-2 code. The whole paper states clearly.
+
+        \begin{solution}
+                Thank you very much for these comments. We appreciate your detailed review, which has certainly improved the paper. The manuscript has been enhanced and more detail is described regarding these changes in the specific comment responses below.
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question In the SD-TMSR burnup calculation, how are the depletion regions and burnup time step defined?
+        \begin{solution}
+        		  
+        		  Thank you for the excellent point.
+        		  
+        		  About depletion regions definition: we used the depletion mode 1 in SERPENT-2 (i.e. burn 1), which means that the fuel material
+        		  is treated as a single depletion zone. The liquid fuel is well-mixed all the time due to turbulent flow and mixing in the pump.
+        		  
+        		  About burnup time step definition: it is time interval given in days. During burnup time step, the SD-TMSR core was maintained critical and total fuel mass was almost constant (dm $\leq$ 0.1\%). We started our calculations by 30 days' time step but we do not find significant changes in $k_{eff}$ when we increased the time step to 365 days. The difference in $k_{eff}$ between $\Delta t=1$ year and $\Delta t=30$ days was $\leq$ 0.02\%; thus, we adopted a constant, 365-day-long time step for all simulation in this work.
+        		  
+        		      
+        		  We changed the paragraph as follows:\\
+        		  
+        		  The liquid fuel is well-mixed all the time due to turbulent flow and mixing in the pump. We used the depletion mode 1 in SERPENT-2 (i.e. burn 1), which means that the fuel material is treated as a single depletion zone.
+        		  
+        		  We changed the paragraph as follows:\\
+        		  During the depletion step, the core was maintained critical and total fuel mass was almost constant (dm $\leq$ 0.1\%). To determine the appropriate depletion step size, we conducted a time step refinement study. We started with $\Delta t=30$ days and gradually increased the depletion time step until the error in $k_{eff}$ became significant. The difference in $k_{eff}$ between $\Delta t=1$ year and $\Delta t=30$ days was $\leq$ 0.02\%; thus, we adopted a constant, 365-day-long time step for all simulation in this work.
+        		    
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        \question During the molten salt reactor operation, part of fuel salt flows outside of reactor core then the fission reaction is not happened in external loop, however the decay reactions happens everywhere. In other words, during one burnup step, the fission reactions occur in only part of the time (depends on the ratio of time taken in fuel salt passing reactor core and external loop), and nuclides' decay or other reactions occur in the whole burnup step time. Have you considered this in SERPENT calculation?  
+        \begin{solution}
+		          
+		          Thank you for your insightful comment. We used total fuel 
+		          salt inventory in the primary loop to define the fuel 
+		          material in the SERPENT input. Moreover, we accordingly 
+		          adjusted power density in SERPENT burnup calculations 
+		          because fission takes place only in the core region. But we did not consider processes, such as decay, which occurs outside of the core. Also, the drift of the delayed neutron precursors is not examined in this paper, but discussion about this can be found in Zhang et al. (2018) \cite{zhang2018review}.
+		          
+		          We changed the paragraph as follows:\\    
+		          
+		          During the molten salt reactor operation, part of fuel salt flows outside of the reactor core then the fission reaction has not happened in the external loop, however, the decay reactions happen everywhere. We used total fuel salt inventory in the primary loop to define the fuel material in the SERPENT input. Moreover, we accordingly adjusted power density in SERPENT burnup calculations because fission takes place only in the core region. But we did not consider processes, such as decay, which occurs outside of the core. Also, the drift of the delayed neutron precursors is not examined in this paper, but discussion about this can be found in \cite{zhang2018review}.     
+        \end{solution}
+
+        %---------------------------------------------------------------------
+	
+        \section*{Reviewer 2}
+
+        %---------------------------------------------------------------------
+        \question Strategies for thorium fuel cycle transition by employing different startup fissile material and feed mechanisms were investigated for the single-fluid double-zoned thorium-based molten salt reactor (SD-TMSR) in this study, and some specific conclusions were obtained. While, realizing thorium fuel cycle transition by using different startup fissile material has already been well studied in the previous studies for different types of MSR, including SD-TMSR. The motivation (e.g., improvement from previous studies) for conducting this study is not clear. In addition, some statements in the paper are inaccurate and more interpretations should be provided to explain some obtained results. Therefore, a major revision is required to improve the manuscript.
+        
+        \begin{solution}
+                Thank you very much for these comments. We appreciate your detailed review, which has certainly improved the paper. The manuscript has been enhanced and more detail is described regarding these changes in the specific comment responses below.
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question SD-TMSR concept development does not correctly described in the section "introduction", where it states that the SD-TMSR was introduced by the Chinese Academy of Sciences. Actually, SD-TMSR concept was proposed by ORNL as early as in the 1960s, which was called Molten salt breeding reactor (MSBR) (see Ref.: Tech. Rep. ORNL-4541). In addition, the study of reference 7 which was cited to illustrate SD-TMSR concept actually adopted the single-flow single-zone MSR rather than SD-TMSR.
+        
+        \begin{solution}
+                 Thank you for catching this. Just small correction: this ORNL 
+                 concept was called \emph{Molten Salt Breeder Reactor (MSBR)}. 
+                 The whole statement has been 
+                 modified to read:\\
+                 
+                 The Single-fluid Double-zone Thorium-based Molten Salt Reactor (SD-TMSR) with a thermal power of 2,250
+                 MW$_{th}$ was proposed for the first time by ORNL as early as 
+                 in the 1960s, which was called Molten Salt Breeder Reactor 
+                 (MSBR) \cite{robertson_conceptual_1971}.
+                 
+                 Thank you for catching this. Reference 7 has been removed from the paragraph.
+                 
+        \end{solution}
+
+        %---------------------------------------------------------------------
+
+        \question The authors did not conduct a sufficient literature survey on the fuel cycle transition studies for the SD-TMSR concept. Cui. et al., have made an extensive study on fuel cycle transition for SD-TMSR by employing LEU and Pu as the startup fissile materials and two transition modes (in-core transition and ex-core transition) (see Ref.: Transition toward thorium fuel cycle in a molten salt reactor by using plutonium, NUCL SCI TECH (2017) 28:152; Possible scenarios for the transition to thorium fuel cycle in molten salt reactor by using enriched uranium. Progress in Nuclear Energy 104 (2018) 75-84). The state "For the SD-TMSR concept, simulating the fissile core startup and fuel cycle transition with other fissile materials (except U-233) has not studied before" in page 3 is therefore inaccurate.
+        \begin{solution}
+                Thank you for your helpful review. The statement "For the SD-TMSR 
+                concept, simulating the fissile core startup and fuel cycle 
+                transition with other fissile materials (except$^{233}$U) has 
+                not studied before" in page 3, has been removed. 
+                The following paragraphs have been added to the manuscript:\\
+                
+                The research effort described in \cite{cui2017transition} and
+                \cite{cui2018possible} is most similar to the work
+                presented in this paper. Cui \emph{et al.} analyzed the fuel 
+                transition from 
+                enriched $^{235}$U/Th and Pu/Th to $^{233}$U/Th for the 
+                MSBR-like design. Cui 
+                \emph{et al.} found that the fuel transition can be achieved 
+                by using: (1) 
+                enriched uranium with greater than 40\% enrichment 
+                \cite{cui2018possible}; (2) 
+                Pu from LWR (burn-up of 60 GWd/t) spent nuclear fuel 
+                \cite{cui2017transition, 
+                	cui2018possible}.
+                
+                However, a few major differences follow: 
+                (1) Cui \emph{et al.} employed an in-house tool named MSR 
+                Reprocessing 
+                Sequence (MSR-RS) \cite{ZOU2015114} which couples with SCALE 
+                and employs a 
+                batch-wise approach while we used built-in truly continuous 
+                fuel depletion 
+                capabilities in SERPENT-2 \cite{aufiero2013extended}; 
+                (2) Cui \emph{et al.} studied a high-enriched uranium ($>$40\% 
+                of $^{235}$U) 
+                and plutonium partitioned from light water reactors spent fuel 
+                as the startup 
+                fissile materials while we considered different loading cases: 
+                HALEU, Pu 
+                mixed with HALEU, reactor-grade plutonium, TRU and $^{233}$U;
+                (3) we adopted the SD-TMSR core geometry optimized by Li 
+                \emph{et al.} 
+                \cite{li_optimization_2018} which is different from the 
+                MSBR-like geometry by 
+                Mathieu \emph{et al.} \cite{mathieu_possible_2009} adopted by 
+                Cui \emph{et 
+                	al.}; 
+                (4) Cui \emph{et al.} introduced two scenarios for thorium 
+                fuel cycle 
+                transition: a Breeding and Burning (B\&B) scenario and a 
+                Pre-breeding scenario 
+                while we adopting different approach by introducing two 
+                different feed 
+                mechanisms: thorium and non-thorium.
+                
+                Comparing with Cui \emph{et al.}, we used different reactor 
+                design (geometry, 
+                volumes, densities, fuel salt compositions) and computation 
+                method (continuous 
+                online reprocessing instead of batch-wise approach). In Cui's 
+                scenarios, the 
+                amount of thorium is kept constant. $^{233}$U is fed only in 
+                (B\&B) scenario 
+                and extra fissile materials would have to be added into the 
+                core if the 
+                produced $^{233}$U is not enough to maintain the reactor 
+                criticality. In the 
+                Pre-breeding scenario, all the $^{233}$U produced from the 
+                decay of the 
+                extracted $^{233}$Pa stored outside the core until it reaches 
+                the required 
+                startup mass for a new reactor. Thus, the criticality of the 
+                core is 
+                maintained by refueling external fissile material. In the 
+                current work, using 
+                the thorium feed mechanism, we simultaneously feed thorium and 
+                all or fraction 
+                of produced $^{233}$U from the \texttt{Pa-decay tank} into the 
+                core. The 
+                excess $^{233}$U (if exists) is stored outside the core. In 
+                the non-thorium 
+                feed mechanism, we continuously inject external heavy metals 
+                (HALEU, Pu mixed 
+                with HALEU, reactor-grade Pu, or TRU) and fraction of produced 
+                $^{233}$U from 
+                the \texttt{Pa-decay tank}. For the non-thorium mechanism, we 
+                feed a part of 
+                produced $^{233}$U because in some cases (e.g., TRU) refueling 
+                only external 
+                heavy metals failed to maintain the core criticality 
+                (limitation is 
+                dm$_{salt}$ $\leq$ 0.1\%). 
+                
+        \end{solution}
+
+        %---------------------------------------------------------------------
+        
+
+        \question More details should be provided to illustrate the heavy metal addition for the thorium feed mechanism and non-thorium feed mechanism in page 11. It is hard to understand why the mass of Th / external heavy metals (excluding Th) is approximately equal to the mass of extracted Pa.
+        \begin{solution}
+               Thank you for the comment. Actually, in page 11, we mention 
+               that the mass of Th / external heavy metals is approximately 
+               equal to the mass of extracted Fission products (FPs) and not 
+               Pa. Because in both feed mechanisms (thorium and non-thorium) 
+               we continuously added $^{233}$U and the mass of injected 
+               $^{233}$U is equal to the mass of extracted Pa ($^{233}$Pa 
+               decays to $^{233}$U after $\approx$ 27 d). To keep the total 
+               fuel mass almost constant, for \textbf{thorium feed mechanism}, 
+               the mass of injected thorium must be equal to the mass of 
+               extracted FPs and for \textbf{non-thorium feed mechanism}, the 
+               mass of injected fuel (i.e., HALEU, Pu mixed with HALEU, 
+               reactor-grade Pu, or TRU) must be equal to the mass of 
+               extracted FPs. We rewrite the paragraph on page 11 to clarify 
+               this point:\\
+               
+               \begin{enumerate}
+               	\item The simulation starts without injecting refueling materials (i.e. only removing FPs and Pa).
+               	\item After the first depletion calculation step, we check the total mass density of FPs and Pa in the \texttt{FP-waste tank} and \texttt{Pa-decay tank}, respectively.
+               	\item A simple calculation yields the amount of heavy metal that must be added during this cycle:
+               	\subitem 3a. \textbf{Thorium feed mechanism}: mass of injected 
+               	$^{233}$U $\approx$ mass of extracted Pa and mass of injected 
+               	$^{232}$Th $\approx$ mass of extracted FPs to maintain the 
+               	total fuel mass constant.
+               	\subitem 3b. \textbf{Non-thorium feed mechanism}: mass of injected $^{233}$U $\approx$ mass of extracted Pa and mass of injected fuel (i.e., HALEU, Pu mixed with HALEU, reactor-grade Pu, or TRU) $\approx$ mass of extracted FPs to maintain the total fuel mass constant.
+               	\item Dividing this mass by time and inventory of refueling material gives the corresponding feed constant (1/s).
+               \end{enumerate}
+               In both feed mechanisms (thorium and non-thorium) we 
+               continuously added $^{233}$U and the mass of injected $^{233}$U 
+               is equal to the mass of extracted Pa ($^{233}$Pa decays to 
+               $^{233}$U after $\approx$ 27 d). To keep the total fuel mass 
+               almost constant, for \textbf{thorium feed mechanism}, the mass 
+               of injected thorium must be equal to the mass of extracted FPs 
+               and for \textbf{non-thorium feed mechanism}, the mass of 
+               injected fuel (i.e., HALEU, Pu mixed with HALEU, reactor-grade 
+               Pu, or TRU) must be equal to the mass of extracted FPs.
+               
+        \end{solution}
+
+        %--------------------------------------------------------------------
+
+        \question Phenomenons presented in Figure 3 that K-eff for the case of Pu+HALEU firstly increases and then decreases, and the time to become subcritical for the case of reactor-grade Pu is longest (except the case of U-233) should be explained.
+        \begin{solution}
+                 Thank you for your insightful comment. Phenomenons presented 
+                 in Figure 3 have been described in the manuscript.
+                 The following paragraph and additional Figure~4 has been added to the manuscript:\\
+                 
+                 For the Pu+HALEU case, $k_{eff}$ firstly increases during the 
+                 first $\approx$ $3$ EFPY and then gradually decreases. This 
+                 is due to the conversion of $^{238}$U from HALEU into fissile 
+                 plutonium, which often produces the majority of the neutrons 
+                 until the transition to Th/$^{233}$U fuel cycle. Figure~4 
+                 shows the variation in fissile plutonium isotopes ($^{239}$Pu 
+                , $^{241}$Pu, and $^{243}$Pu) inventory during reactor 
+                 operation. For TRU and reactor-grade Pu, the fissile 
+                 plutonium isotopes are gradually depleted, during operating 
+                 (the fissile material is dominated by Pu in these cases). For 
+                 the HALEU case, the fissile material is dominated by 
+                 $^{235}$U, 
+                 however, $^{238}$U is converted into fissile plutonium. 
+                 Therefore, the mass of fissile plutonium increases during 
+                 operating but its value still relatively low. For the 
+                 Pu+HALEU case, the mass of the fissile plutonium isotopes 
+                 increases 
+                 within the first $\approx$ $3$ EFPY and then decreases. The 
+                 reactivity from the produced Pu is much greater than the 
+                 depletion of the initial reactivity (due to the depletion of 
+                 initial fissile isotopes), consequently, $k_{eff}$ increases 
+                 during the first $\approx$ $3$ years and then decreases; the 
+                 amount of $^{233}$U generated in the Pu+HALEU case is 
+                 insufficient to maintain the reactor criticality and 
+                 counteract neutron absorption in non-fissile isotopes.\\
+                 
+                 Figure~3 shows that the decrease in $k_{eff}$ for reactor-grade Pu case occurs at the much later operating time than for other cases because the neutron spectrum in the reactor-grade Pu initial core is hardened; more $^{232}$Th is being converted to $^{233}$U. Nevertheless, this amount of the $^{233}$U is not enough to counteract the neutron absorption in the non-fissile Pu isotopes after much of the $^{239}$Pu and $^{241}$Pu is depleted.
+                 
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question In page 19, why the Pa extraction time was selected to be 30s since Pa is neither the gaseous FPs nor the non-dissolved metals?
+        \begin{solution}
+                  Thank you for the question. Specifically, Pa is removed from the fuel by chemical reprocessing into the \texttt{Pa-decay tank} to decay and produce $^{233}$U. The target is to maintain the core criticality for a long period of time without any external feed of $^{233}$U. Figure~8 shows how Reprocessing Period (RP) affects the $k_{eff}$ and amount of $^{233}$U in the \texttt{Pa-decay tank} for the TRU-started SD-TMSR. The faster extraction of Pa from the core (RP = $30$ $s$) is required to achieve suitable core lifetime. Also, the greater production of $^{233}$U can be obtained with RP = $30$ $s$ instead of $10.59$ $d$. The RP equal to $10.59$ $d$ is not suitable for TRU and reactor-grade Pu cases because additional $^{233}$U was required to supply the core after startup. Therefore, we selected the RP = $30$ $s$. This produces $^{233}$U in the \texttt{Pa-decay tank} barely enough to operate the TRU-started SD-TMSR for a long period of time ($\approx$ 40 years). For reactor-grade Pu case, the produced $^{233}$U is sufficient to maintain the core criticality within the 60-years of operation (see Figure~5).
+                  
+                  The following paragraph and additional Figure~8 has been added to the manuscript:\\
+                  
+                  The target is to maintain the core criticality for a long period of time without any external feed of $^{233}$U. Figure~8 shows how Reprocessing Period (RP) affects the $k_{eff}$ and amount of $^{233}$U in the \texttt{Pa-decay tank} for the TRU-started SD-TMSR. The faster extraction of Pa from the core (RP = $30$ $s$) is required to achieve suitable core lifetime. Also, the greater production of $^{233}$U can be obtained with RP = $30$ $s$ instead of $10.59$ $d$. The RP equal to $10.59$ $d$ is not suitable for TRU and reactor-grade Pu cases because additional $^{233}$U was required to supply the core after startup. Therefore, we selected the RP = $30$ $s$. This produces $^{233}$U in the \texttt{Pa-decay tank} barely enough to operate the TRU-started SD-TMSR for a long period of time ($\approx$ 40 years). For reactor-grade Pu case, the produced $^{233}$U is sufficient to maintain the core criticality within the 60-years of operation (see Figure~5).
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question For Figure 9, it is inaccurate to state that the mass of U-233 reaches equilibrium after ~30 years, apparently from the figure, we can observe that the mass of U-233 for three of the cases still increase/decrease after 30 years.
+        
+        \begin{solution}
+                Thank you for the excellent point. The statement has been removed from the text.
+                Moreover, we rewrite the paragraph to clarify this point:\\
+                
+                Figure~11 demonstrates the mass of $^{233}$U in the fuel salt for the $^{233}$U, reactor-grade Pu, and TRU cases. For $^{233}$U case, the mass of $^{233}$U increases with operating time and reaches $\approx$ $1.7$ $t$ at the EOL. For reactor-grade Pu and TRU cases, the mass of $^{233}$U firstly, increases and after $\approx$ $35$ and $45$ years for Pu and TRU cases, respectively, decreases. The neutron spectrum shift during operating affects the inventory of $^{233}$U in the fuel salt. Harder neutron spectrum enhance $^{233}$U breeding from $^{232}$Th. For the reactor-grade Pu and TRU cases, during operating, the fissile Pu is depleted and the $^{233}$U becomes the major fissile isotope; the neutron spectrum softens (low conversation of $^{233}$U from $^{232}$Th). However, for $^{233}$U case, the neutron spectrum is hardened at EOL due to the accumulation of Pu isotopes.                
+                
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question Regarding to Figure 10, reasons should be provided to explain why the time achieving Pu solubility limit for the case of TRU is shorter than that of the case of reactor-grade Pu.
+        \begin{solution}
+                 This has now been clarified in the text.
+                 We rewrite the paragraph to clarify this point:\\
+                 
+                 Notably, for TRU case, the time achieving Pu solubility limit is shorter than that for reactor-grade Pu case. The reason for this is the relatively high concentration of Pu in the initial heavy metal for the TRU-started SD-TMSR ($\approx$ $29.26$ \% compared with $14.31$ \% for Pu-started SD-TMSR, see Table 5).
+                 
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question It is hard to understand that the neutron spectrum of TRU case at BOL is softer than U-233 case since TRU has a greater amount of thermal neutron absorbers and the fissile material is dominated by Pu which would generate hard neutron spectrum.
+        
+        \begin{solution}
+                 We appreciate your detailed review.                   
+                 The following paragraph has been added to the manuscript:\\
+                 
+                 The neutron spectrum of TRU case at BOL is softer than $^{233}$U case because $^{232}$Th inventory is much lower for the TRU case: $54.4$ $t$ instead of $76.9$ $t$ for the $^{233}$U. $^{232}$Th has a very high absorption cross section in the thermal region ($\approx$ $10^2$ b). Moreover, $^{232}$Th has resonance region between $10^{-5}$ and $10^{-3}$ which justify relatively low energy of neutrons for the TRU case in this energy range (see Figure~14). 
+                 
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question More details should be provided to explain the radial 
+        neutron flux distribution for the cases of Pu reactor-grade and TRU 
+        presented in Fig.13 and 14. For both the radial fast and thermal 
+        neutron flux change from BOL to EOL, why it is much larger for Pu 
+        reactor-grade case compared with TRU case. In addition, the state "In 
+        contrast, for the reactor-grade Pu and TRU cases, significant changes 
+        are observed for thermal neutron flux in the outer core zone and 
+        reactor" is inaccurate, apparently from Figure 14, it can be seen that 
+        the Pu reactor-grade (initial) case has a small change in the outer 
+        core zone and reflector. 
+        \begin{solution}
+				Thank you for pointing it out. 
+				At the EOL the fuel salt composition is more or less the same 
+				(``equilibrium'' composition), hence, both fast and thermal 
+				fluxes looks very similar for plutonium and TRU cases.
+				At the BOL, this difference is caused by different $^{232}$Th 
+				inventory at BOL for Pu reactor-grade (67.5t) and TRU (54.4t). 
+				 $^{232}$Th is a strong absorber in the thermal and 
+				 intermediate energy range, so, it causes such a significant  
+				 difference in the flux: reactor-grade Pu composition provides 
+				 much harder spectrum (see Figure~14) at BOL.
+				
+                Figure 15 shows 
+				significant changes \textbf{during reactor operation} in the 
+				outer core zone for the Pu (green line) and almost no changes 
+				for the TRU (orange). However, we are agree that thermal flux 
+				drop in the reflector is more dramatic for the TRU (initial 
+				and equilibrium compositions) and the Pu (equilibrium) cases 
+				than for the U-233 case. We think it happens because of 
+				non-optimal geometry of the core for the Pu and TRU initial 
+				loading.			
+				
+				The following paragraphs have been added to the manuscript for 
+				clarification:\\
+				
+				Notably, the neutron flux change for both the fast and thermal 
+				energies is much larger for the reactor-grade Pu case than for 
+				TRU case (Figures~15 and 16). The reason is the much softer 
+				neutron spectrum for the TRU initial loading compared with the 
+				reactor-grade Pu as shown in Figure~14: peak thermal neutron 
+				flux is about 4 times larger for the TRU case. The neutron 
+				spectrum in the SD-TMSR core initially loaded by TRU is much 
+				softer than the reactor-grade Pu case and even than the U-233 
+				case because $^{232}$Th inventory is the lowest for the TRU 
+				case: $54.4$ $t$ instead of $67.5$ $t$ and $76.9$ $t$ for the reactor-grade  
+				Pu and U-233 cases, respectively (Table~5). $^{232}$Th greatly 
+				affects the neutron energy spectrum due to its large 
+				absorption cross section in the thermal energy range and 
+				resonance region between $10^{-5}$ and $10^{-3}$. Finally, 
+				when the TRU and the reactor-grade Pu cases reached 
+				equilibrium fuel salt composition ($\approx 30$ years after 
+				startup), the radial fast and thermal neutron flux 
+				distribution became similar in both shape and magnitude.
+				
+				More changes in thermal neutron flux shape and magnitude 
+				during the reactor operation for the $^{233}$U case are 
+				observed in the inner core zone ($R\lesssim150$) than in the 
+				outer core zone. In the outer core zone, significant changes 
+				during reactor operation are observed for the thermal 
+				neutron flux for the reactor-grade Pu case. In contrast, for 
+				the TRU case, thermal neutron flux change in the outer core 
+				zone is almost negligible. Additionally, 
+				Figure~16 shows relatively significant changes in thermal flux 
+				leakage from the core for the Pu (equilibrium composition) and 
+				TRU (initial and equilibrium composition) cases. The SD-TMSR 
+				core design was optimized for $^{233}$U  				
+				\cite{li_optimization_2018}; thus, the core geometry (e.g., 
+				channel lattice pitch) must be re-optimized for another type 
+				of fuel to obtain better neutronics performance.
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question Regarding to the FTC for three different cases, reasons should be provided to explain why spectrum softening will positively affects the FTC since generally harder neutron spectrum would benefit FTC.
+        \begin{solution}
+                Thank you for your insightful comment.  Indeed, the Doppler 
+                effect coefficient ($\alpha_{D,F}$) is usually stronger for 
+                harder spectrum (see Table~8, ``Fuel salt temperature''), so, 
+                spectrum softening negatively affects $\alpha_{D,F}$ (it is 
+                decreasing by value but still negative). But we additionally 
+                considered the fuel salt density coefficient 
+                ($\alpha_{\rho,F}$), which is usually positive in thermal MSRs 
+                (e.g., $+1.09$ $pcm/K$ for the \gls{MSBR}           
+                \cite{robertson_conceptual_1971}) and \textbf{softer} neutron 
+                spectrum benefit $\alpha_{\rho,F}$ \cite{li_effects_2018-1, 
+                rykhlevskii2019modeling}. More analysis on this topic:
+            Li, X., Ma, Y., Yu, C. et al. Effects of fuel salt composition on 
+            fuel salt temperature coefficient (FSTC) for an under-moderated 
+            molten salt reactor (MSR). NUCL SCI TECH 29, 110 (2018). 
+            https://doi.org/10.1007/s41365-018-0458-1.     
+	            
+	            The following paragraphs have been added to the manuscript:\\
+
+	            The \gls{FTC} is a combination of the Doppler effect 
+	            coefficient ($\alpha_{D,F}$) and density coefficient 
+	            ($\alpha_{\rho,F}$) and significantly affected by the neutron 
+	            spectrum. Li \emph{et al.} reported that 	            
+	            $\alpha_{D,F}$ in thermal \gls{MSR} is always negative and 
+	            increases by magnitude when spectrum hardening (see Table~8, 
+	            first raw). In contrast, $\alpha_{\rho,F}$ is a combination of 
+	            moderator-to-fuel volume ratio, absorption cross section of 
+	            heavy metal, and the core leakage. When the fuel salt 
+	            temperature increases, the salt becomes less dense, 
+	            causing a reduction in the fuel concentration and the neutron 
+	            spectrum become softer. Such spectrum softening is leading to 
+	            a rise in macroscopic absorption cross section of the fissile 
+	            isotopes. Moreover, the spectrum softening may leads to 
+	            a larger fast fission reaction rate \cite{li_effects_2018-1}. 
+	            Thus, spectrum softening positively affects the density 
+	            coefficient ($\alpha_{\rho,F}$): $+1.54$ $pcm/K$ and $-1.58$ 
+	            $pcm/K$ at the startup and equilibrium for the 
+	            reactor-grade Pu case, respectively. More discussion about 
+	            effects of fuel salt composition in the \gls{FTC} can be found 
+	            elsewhere 
+	            \cite{li_effects_2018-1}.
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question It seems unclear why (what is the purpose) to conduct the study of six factor analysis.
+        \begin{solution}
+                 Thank you for bringing our attention to the point. Usually, 
+                 six factor analysis helps to understand reasons of changes in 
+                 TCs and control rod worths during reactor operation. But in 
+                 this case, considering many various cases, such analysis is 
+                 outmoded.           
+                  The section has been removed from the manuscript completely.
+        \end{solution}
+
+        %--------------------------------------------------------------------
+        \question Making the full definition for abbreviation through the whole paper is not necessary, such as SD-TMSR, first time is enough.
+        
+        \begin{solution}
+                Thank you for the information. The full definition for abbreviation through the whole paper has been removed as requested.
+        \end{solution}
+
+        %--------------------------------------------------------------------
+
+        
+        
+\end{questions}
+\bibliographystyle{elsarticle-num}
+\bibliography{../2019-Scenarios}
+\end{document}
+
+%
+% End of file `elsarticle-template-num.tex'.
