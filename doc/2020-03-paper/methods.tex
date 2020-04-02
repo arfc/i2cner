@@ -2,25 +2,37 @@
 
 \subsection{TIMES Model Description}
 Objective function.
-Constraints.
-CO2 constraint interpolation.
-\subsection{Initial condition}
+Constraints - CO2 emissions reduction targets, increasing demand, CO2 tax.
+Important parameters.
+\subsection{Initial condition and constraints}
+The initial condition is based on energy generation data from EDMC(-> GLS) for the years 2013 , and emission data for electricity generation from National Carbon Trust.
 
+\begin{tabular}{ c c c c c c c c c c}
+\textbf{Year} & \textbf{Coal} & \textbf{LNG} & \textbf{Oil} & \textbf{Nuclear} & \textbf{Hydro} & \textbf{Solar} & \textbf{Wind} & \textbf{Geo} & \textbf{Total} \\
+ & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} & \textbf{GWh} \\
+2013 & 259,514 & 449,271 & 108,135 & 9,302 & 84,885 & 162 & 85 & 2,435 & 913,792 \\
+\end{tabular}
 
-
-
+\begin{tabular}{ c c c }
+\textbf{Year} &  \textbf{Model Emissions} & \textbf{Actual Emissions} \\
+ &  \textbf{Mt-CO$_2$-eq.} & \textbf{Mt-CO$_2$-eq.} \\
+2013 & 593.6 & 592.4 \\
+2013 & 593.6 & 592.4 \\
+2013 & 593.6 & 592.4 \\
+2013 & 593.6 & 592.4 \\
+\end{tabular}
 
 \begin{tabular}{| c | c | c | c | c |}
 \hline
-\textbf{Scenario}& \textbf{Figures}&\textbf{Conventional}&\textbf{Emerging technologies}&\textbf{New nuclear}\\
-                 &             &\textbf{technology}&\textbf{technology}&\textbf{reactors}\\
+\textbf{Scenario}& \textbf{Emerging tech.} & \textbf{New nuclear} \\
+                 & \textbf{enabled} & \textbf{enabled} \\
                   \hline
-1               &   &      \greencheck           &         \xmark       &      \greencheck     \\ 
-2               &   &      \greencheck           &         \xmark       &         \xmark       \\ 
-3               &  &      \greencheck           &      \greencheck     &      \greencheck     \\ 
-4               &  &      \greencheck           &      \greencheck     &         \xmark       \\
+1               &   \xmark       &      \greencheck     \\ 
+2               & \xmark       &         \xmark       \\ 
+3               &   \greencheck     &      \greencheck     \\ 
+4               &   \greencheck     &         \xmark       \\
 \hline
-
+\end{tabular}
 \subsection{Existing technology}
 
 \subsection{Emerging technologies}
@@ -30,4 +42,3 @@ CO2 constraint interpolation.
 \subsection{Sensitivity analysis}
 %approach, goal, what are we hoping to learn
 
-\end{tabular}
