@@ -4,10 +4,33 @@
 Objective function.
 Constraints - CO2 emissions reduction targets, increasing demand, CO2 tax.
 Important parameters.
-\subsection{Initial condition and common constraints}
+
+\subsection{Common Features - Initial condition and constraints}
+
 The initial condition is based on energy generation data from \gls{EDMC} for the years 2013-2016 , and emission data for electricity generation from National Carbon Trust (see Fig. \ref{ic-elc}). As the \gls{EDMC} database has been evolving over the course of this work, the focus of our model was to recreate the 2013-2016 emission levels with low error, instead of recreating the \gls{EDMC} electricity generation data. A tolerance of 1\% was allowed for each electricity generation technology in order to avoid specifying an overly rigorous initial condition that slows the model down. The error in the CO$_2$ emission levels is minimal, as seen in Table \ref{ic-co2}.
 
-All existing fossil fuels are gradually retired by 2025. This aggressive retirement is enabled to simulate the necessary premature retirement required to meet the challenging CO$_2$ constraints, and to not saddle the model with technologies that make the CO$_2$ constraints unattainable. As mentioned in the next section, if the model still feels the need to deploy fossil fuel-based technology, it can deploy natural gas and coal with a 10 year lifetime (to simulate premature retirement). In practice, this would represent premature retirement of fossil fuel plants or retrofitting them with \gls{CCS} technology.
+The economic data for initially deployed capacity is associated with the respective \gls{lcoe} of each electricity supply source, substituted for variable \gls{OM} costs. The \gls{lcoe} data and the emission factors for the technologies used in defining the initial condition are listed in table \ref{init-eco}. All existing fossil fuels are gradually retired by 2025. This aggressive retirement is enabled to simulate the necessary premature retirement required to meet the challenging CO$_2$ constraints, and to not saddle the model with technologies that make the CO$_2$ constraints unattainable. As mentioned in the next section, if the model still feels the need to deploy fossil fuel-based technology, it can deploy natural gas and coal with a 10 year lifetime (to simulate premature retirement). In practice, this would represent premature retirement of fossil fuel plants or retrofitting them with \gls{CCS} technology.
+
+\begin{table}[!ht]
+	\caption{Data for initial condition.}
+	\vspace{0.1in}
+	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth}}
+		\hline
+\textbf{Technology} & \textbf{\gls{lcoe}} & \textbf{Emission} & \textbf{Year of total}\\
+  & (USD/kWh) & \textbf{Coefficients} (gCO$_2$-eq. /kWh) & \textbf{retirement} \\
+\hline
+Coal & 0.06 & 943 & 2030 \\
+\gls{lng} & 0.08 & 599 & 2030 \\
+Oil & 0.39 & 738 & 2030 \\
+Nuclear & 0.11 & 21 & 2069 \\
+Hydro & 0.05 & 11 & N.A. \\
+Geothermal & 0.12 & 13 & N.A. \\
+Wind & 0.11 & 25 & 2040 \\
+Solar & 0.15 & 37 & 2040 \\
+\hline 
+\end{tabularx}
+\label{init-eco}
+\end{table}
 
 \begin{figure}[h] 
 \centering
@@ -53,9 +76,9 @@ The CO$_2$ constraints common to all the models are as shown in table \ref{co2-l
 \begin{table}[!ht]
 	\caption{CO$_2$ constraints.}
 	\vspace{0.1in}
-	\begin{tabularx}{\textwidth}{p{0.1\textwidth} p{0.5\textwidth}p{0.1\textwidth} p{0.2\textwidth}}
+	\begin{tabularx}{\textwidth}{p{0.1\textwidth} p{0.22\textwidth}p{0.16\textwidth} p{0.4\textwidth}}
 		\hline
-\textbf{Year} & \textbf{Absolute Emission limit} & \textbf{Base Year} & \textbf{Reduction from Based Year} \\
+\textbf{Year} & \textbf{Emission limit} & \textbf{Base Year} & \textbf{Reduction from base year} \\
 \hline
 2030 & 438 Mt CO$_2$-eq. & 2013 & 26 \% \\
 2050 & 75 Mt CO$_2$-eq. & 1990 & 80 \% \\
@@ -67,33 +90,162 @@ The CO$_2$ constraints common to all the models are as shown in table \ref{co2-l
 
 \subsection{Existing technologies}
 
-For time periods excluding the initial condition, the model can choose to deploy various renewables and base-load electricity generation technologies. The economic data and growth rates for these technologies are defined in tables \ref{existing-eco} and . The capital and \gls{OM} costs of offshore wind are significantly greater due to Japan's unusually deep seabed and the generally underdeveloped wind sector.
+For time periods excluding the initial condition, the model can choose to deploy various renewables and base-load electricity generation technologies. The economic data, such as capital costs, \gls{OM} costs, lifetime and capacity factors have been compiled from data sources into table \ref{existing-eco}. Dynamic trends are incorporated where available. The capital and \gls{OM} costs of offshore wind are significantly greater due to Japan's unusually deep seabed and the generally underdeveloped wind sector. Upper limits for growth rates are based on existing data, but with a generous margin of 5-20\%, as the trends in growth seen in the recent past may not represent the growth rates required to achieve the dramatic reduction in emissions we are aiming for.
 
 \begin{table}[!ht]
 	\caption{Economic data for existing technologies.}
 	\vspace{0.1in}
-	\begin{tabularx}{\textwidth}{p{0.2\textwidth} p{0.16\textwidth} p{0.16\textwidth} p{0.16\textwidth}  p{0.1\textwidth} p{0.1\textwidth}}
+	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth}}
 		\hline
-\textbf{Technology} & \textbf{Investment Cost} & \textbf{Fixed \gls{OM} costs} & \textbf{Variable \gls{OM} costs} & \textbf{Lifetime} & \textbf{Capacity Factor}\\
-  & USD/kW & USD/kW & USD/MWh & Years & \\
+\textbf{Technology} & \textbf{Investment} & \textbf{Fixed \gls{OM}} & \textbf{Variable \gls{OM}} \\
+  & \textbf{cost}(USD/kW) & \textbf{costs}(USD/kW) & \textbf{costs}(USD/MWh)\\
 \hline
-Nuclear & 6317 & 121.13 & 2.36 & 60 & 0.90\\
-Solar & 1307 (2017) & 15.19 & 0 & 25 & 0.14\\
-Onshore Wind & 3454 (2017) & 136.37 & 0 & 25 & 0.4\\
-Offshore Wind(Fixed) & 7772.73 & 341 & 0 & 25 & 0.44\\
-Offshore Wind(Floating) & 12897 & 423 & 0 & 25 & 0.44\\
-Li-ion Storage & 1876 (2017) & 10 & 0.3 & 10 & 4h/24h \\
-Natural Gas &  1079 & 14 & 2.54 & 10 & 0.55 \\
-\gls{USC} & 3661 & 40.41 & 4.48 & 10 & 0.55 \\
+Nuclear(2027 onwards) & 6317 & 121.13 & 2.36  \\
+Solar & 1307(2017) & 15.19 & 0 \\
+  & 1086(2040) &  &  \\
+  & 615(2050) & &  \\
+Onshore Wind & 3454(2017) & 136.37 & 0 \\
+ & 3110(2040) &  &   \\
+ & 2800(2050) & &   \\
+Offshore Wind(Fixed) & 7772(2017) & 341 & 0 \\
+ & 5438(2040) & & \\
+Offshore Wind(Floating) & 12897(2017) & 423 & 0 \\
+ & 9023(2040) &  &   \\
+Li-ion Storage & 1876 (2017) & 10 & 0.3  \\
+& 1446 (2025) &  &  \\
+Natural Gas &  1079 & 14 & 2.54 \\
+\gls{USC} & 3661 & 40.41 & 4.48 \\
 \hline 
 \end{tabularx}
 \label{existing-eco}
 \end{table}
 
+\begin{table}[!ht]
+	\caption{Miscellaneous \gls{TIMES} data for existing technologies.}
+	\vspace{0.1in}
+	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.10\textwidth} p{0.25\textwidth} p{0.2\textwidth}  p{0.2\textwidth}}
+		\hline
+\textbf{Technology} &  \textbf{Lifetime} & \textbf{Capacity Factor/}  & \textbf{Availability} & \textbf{Emission}\\
+  & (years) &  \textbf{Efficiency} & \textbf{Factor} & \textbf{Coefficient}(gCO$_2$-eq./kWh)\\
+\hline
+Nuclear & 60 & 0.90 (CF) & 1 & 21\\
+Solar & 25 & 0.14 (CF) & 1 & 37\\
+Onshore Wind & 25 & 0.4 (CF) & 1 & 25\\
+Offshore Wind (Fixed) & 25 & 0.44 (CF) & 1 & 25\\
+Offshore Wind (Floating) & 25 & 0.44 (CF) & 1 & 25\\
+Li-ion Storage & 10 & 0.688 (Eff.) & 4h/24h & 50 \\
+Natural Gas &  10 & 0.55 (CF) & 1 & 599  \\
+\gls{USC} & 10 & 0.55 (CF) & 1 & 943  \\
+\hline 
+\end{tabularx}
+\label{existing-misc}
+\end{table}
+
+\begin{table}[!ht]
+	\caption{Installed capacity growth rate limits and capacity limits for existing technologies.}
+	\vspace{0.1in}
+	\begin{tabularx}{\textwidth}{p{0.4\textwidth} p{0.3\textwidth} p{0.2\textwidth} }
+		\hline
+\textbf{Technology} & \textbf{Annual Growth} & \textbf{Net Capacity} \\
+  & \textbf{Rate}  & \textbf{Limit} (GW) \\
+\hline
+Nuclear (2027 onwards) & +5 reactors & 60 GW \\
+Solar & 30\% per year & None  \\
+Onshore Wind & 50\% & 3.75 (2017) \\
+ &  & 15.3 (2020) \\
+ &  & 39.9 (2030) \\
+ &  & 57.0 (2040) \\
+ &  & 114.0 (2100) \\
+Offshore Wind(Fixed) & 50\% & 1 (2017) \\
+ &  & 8.70 (2030) \\
+ &  & 22.50 (2040) \\
+ &  & 28.50 (2050) \\
+ &  & 57.00 (2100) \\
+Offshore Wind(Floating) & 50\% & 1 (2017) \\
+ &  & 5.70 (2030) \\
+ &  & 19.35 (2040) \\
+ &  & 27.00 (2050) \\
+ &  & 54.00 (2100) \\
+Li-ion Storage & 100\% (2017-2029) & None  \\
+ & 30\% (2030-2100) & None  \\
+Natural Gas &  100\% & None \\
+\gls{USC} & 50\% & None \\
+\hline 
+\end{tabularx}
+\label{existing-gro}
+\end{table}
+
+
 \subsection{Emerging technologies}
+
+\begin{table}[!ht]
+	\caption{Economic data for emerging technologies.}
+	\vspace{0.1in}
+\centering
+	\begin{tabularx}{1.3\textwidth}{p{0.35\textwidth} p{0.15\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth} }
+		\hline
+\textbf{Technology} & \textbf{First} & \textbf{Investment} & \textbf{Fixed \gls{OM}} & \textbf{Variable \gls{OM}} \\
+  & \textbf{Deployment}& \textbf{Cost}(USD/kW) & \textbf{Costs}(USD/kW) & \textbf{Costs}(USD/MWh)\\
+\hline
+CCS-LNG(90\%) & 2025 & 2569 & 27.48 & 5.82 \\
+CCS-\gls{USC}(90\%) & 2025 & 5997 & 59.29 & 10.93 \\
+Perovskite & 2022 & 1307 (2022) & 27.48 & 15.19 \\
+& & 1086 (2040) &  &  \\
+& & 615 (2050) &  &  \\
+\gls{PEMFC} & 2025 & 7399 & 30.65 & 0.59 \\
+LNG steam reforming & 2025 & 491 & 6.14 & 40.4 \\
+LNG steam reforming with CCS(90\%) & 2025 & 848.5 & 5.704 & 55.7 \\
+Electrolysis & 2025 & 1100 & 6.87 & 0.9 \\
+\hline 
+\end{tabularx}
+\label{emerging-eco}
+\end{table}
+
+
+\begin{table}[!ht]
+	\caption{Miscellaneous \gls{TIMES} data for emerging technologies.}
+	\vspace{0.1in}
+	\begin{tabularx}{1.2\textwidth}{p{0.3\textwidth} p{0.10\textwidth} p{0.25\textwidth} p{0.2\textwidth}  p{0.2\textwidth}}
+		\hline
+\textbf{Technology} &  \textbf{Lifetime} & \textbf{Capacity Factor/}  & \textbf{Availability} & \textbf{Emission}\\
+  & (years) &  \textbf{Efficiency} & \textbf{Factor} & \textbf{Coefficient}(gCO$_2$-eq./kWh)\\
+\hline
+CCS-LNG(90\%) & 40 & 0.45 (CF) & 1 & 59.9\\
+CCS-\gls{USC}(90\%) & 40 & 0.45 (CF) & 1 & 94.3\\
+Perovskite & 20 & 0.14 (CF) & 1 & 37\\
+\gls{PEMFC} & 10 & 0.5 (Eff.) & 0.5 & 0.57(2025),0.34(2030)\\
+LNG steam reforming & 20 & 0.44 (CF) & 1 & 313.2\\
+LNG steam reforming with CCS(90\%) & 20 & 0.55(Eff.) & 1 & 31.32  \\
+Electrolysis & 10 & 0.65 (Eff.) & 1 &  39.4(2025),16.31 (2030) \\
+\hline 
+\end{tabularx}
+\label{emerging-misc}
+\end{table}
+
+\begin{table}[!ht]
+	\caption{Installed capacity growth rate limits and capacity limits for emerging technologies.}
+	\vspace{0.1in}
+	\begin{tabularx}{\textwidth}{p{0.4\textwidth} p{0.3\textwidth} p{0.2\textwidth} }
+		\hline
+\textbf{Technology} & \textbf{Annual Growth} & \textbf{Net Capacity} \\
+  & \textbf{Rate}  & \textbf{Limit} (GW) \\
+\hline
+Perovskite & 100\% (2022-2029) & None \\
+ & 80\% (2030-2034) &  \\
+ & 50\% (2035-2039) & \\
+ & 30\% (2040-2100) & \\
+All CCS, H$_2$ & 100\% (2025-29) & None \\
+technologies & 80\% (2030-2034) &  \\
+ & 50\% (2035-2039) & \\
+ & 30\% (2040-2100) & \\
+\hline 
+\end{tabularx}
+\label{emerging-gro}
+\end{table}
 
 \subsection{Base scenarios}
 %approach, goal, what are we hoping to learn
+
 \begin{table}[!ht]
 	\caption{Scenario definition.}
 	\vspace{0.1in}
@@ -115,6 +267,9 @@ Natural Gas &  1079 & 14 & 2.54 & 10 & 0.55 \\
 	\end{tabularx}
 \label{scen-table}
 \end{table}
+
+
+
 \subsection{Sensitivity analysis}
 %approach, goal, what are we hoping to learn
 
