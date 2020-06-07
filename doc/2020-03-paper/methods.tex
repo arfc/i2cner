@@ -92,158 +92,127 @@ The CO$_2$ constraints common to all the models are as shown in table \ref{co2-l
 
 For time periods excluding the initial condition, the model can choose to deploy various renewables and base-load electricity generation technologies. The economic data, such as capital costs, \gls{OM} costs, lifetime and capacity factors have been compiled from data sources into table \ref{existing-eco}. Dynamic trends are incorporated where available. The capital and \gls{OM} costs of offshore wind are significantly greater due to Japan's unusually deep seabed and the generally underdeveloped wind sector. Upper limits for growth rates are based on existing data, but with a generous margin of 5-20\%, as the trends in growth seen in the recent past may not represent the growth rates required to achieve the dramatic reduction in emissions we are aiming for.
 
-\begin{table}[!ht]
-	\caption{Economic data for existing technologies.}
-	\vspace{0.1in}
-	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth}}
-		\hline
-\textbf{Technology} & \textbf{Investment} & \textbf{Fixed \gls{OM}} & \textbf{Variable \gls{OM}} \\
-  & \textbf{cost}(USD/kW) & \textbf{costs}(USD/kW) & \textbf{costs}(USD/MWh)\\
+\gls{PEMFC} \gls{PEMEC} \gls{AEC} \gls{USC} \gls{SOEC} \gls{SOFC} \gls{PWS}.
+
+
+\begin{landscape}
+\begin{longtable}{ |*{8}{c|} }
+\caption{Economic data for modelled technologies.}\\
 \hline
-Nuclear(2027 onwards) & 6317 & 121.13 & 2.36  \\
-Solar & 1307(2017) & 15.19 & 0 \\
-  & 1086(2040) &  &  \\
-  & 615(2050) & &  \\
-Onshore Wind & 3454(2017) & 136.37 & 0 \\
- & 3110(2040) &  &   \\
- & 2800(2050) & &   \\
-Offshore Wind(Fixed) & 7772(2017) & 341 & 0 \\
- & 5438(2040) & & \\
-Offshore Wind(Floating) & 12897(2017) & 423 & 0 \\
- & 9023(2040) &  &   \\
-Li-ion Storage & 1876 (2017) & 10 & 0.3  \\
-& 1446 (2025) &  &  \\
-Natural Gas &  1079 & 14 & 2.54 \\
-\gls{USC} & 3661 & 40.41 & 4.48 \\
-\hline 
-\end{tabularx}
-\label{existing-eco}
-\end{table}
+\textbf{Technology} & \textbf{Capital} & \textbf{Fixed} & \textbf{Variable} & \textbf{Lifespan} & \textbf{Capacity Factor/} & \textbf{Emission} & \textbf{Year} \\
+\textbf{name} & \textbf{Cost} & \textbf{\gls{OM}} & \textbf{\gls{OM}} &  & \textbf{Efficiency} & \textbf{Coefficient} & \textbf{available} \\
+ & MUSD/GW & MUSD/GW & MUSD/GWh & Years  &  & gCO$_2$/kWh  &  \\
+\hline
+\endhead  % header material
+\hline
+\endfoot  % footer material
+\hline
+\endlastfoot
+\gls{USC} & 3661 & 40.41 & 4.48 & 40 & CF=0.55 & 943 & 2017 \\
+\gls{lng} & 1079 & 14 & 2.54 & 30 & CF=0.55 & 599 & 2017 \\
+Nuclear & 6317 & 121.13 & 2.36 & 60 & CF=0.6-0.95 & 943 & 2017 \\
+Li-ion Storage & 1876 (2017) & 10 & 0.3 & 10 & Eff=0.86 & 52 & 2017 \\
+ & 1446 (2025) &  &  &  &  & &  \\
+Solar & 1307(2017) & 15.19 & 0  & 25 & CF=0.14 & 37 & 2017 \\
+ & 1086(2040) & & & & &  & \\
+ & 615(2050) & & & & & &  \\
+Onshore Wind & 3454(2017) & 136.37 & 0 & 25 & CF=0.25(2017) & 20(2017) & 2017 \\
+ & 3110(2040) &  &  &  & CF=0.3(2040) & 7(2040) &  \\
+ & 2800(2050) &  &  &  & CF=0.35(2050) &  &  \\
+Offshore Wind(Fixed) & 7772(2017) & 341 & 0 & 25 & CF=0.3(2017) & 25(2017) & 2017 \\
+ & 5438(2040) &  &  & & CF=0.35(2040) & 11(2040) &  \\
+ &  &  &  & & CF=0.4(2050) &  &  \\
+Offshore Wind(Floating) & 12897(2017) & 423 & 0 & 25 & CF=0.35(2017) & 25(2017) & 2017 \\
+ & 9023(2040) &  &  &  & CF=0.4(2040) & 11(2040)  &  \\
+ &  &  &  &  & CF=0.45(2050) &  &  \\
+CCS-LNG(90\%) & 5088(2022) & 33(2022) & 0.0631(2022) & 30 & CF=0.12-0.4(2017) & 42(2022) & 2022 \\
+ & 2313(2050) & 14(2050) & 0.044(2050) &  & CF=0.35(2017) &  & \\
+CCS-USC(90\%) & 6816(2023) & 84(2023) & 0.093(2023) & 40 & CF=0.27-0.3(2017) & 94.3(2022) & 2023 \\
+ & 3552(2050) & 69(2050) & 0.058(2050) &  &  &  & \\
+Emerging Solar & 4600(2017) & 15.19(2017) & 0 & 25 & Eff=0.22(2017) & 22(2017) & 2017 \\
+ & 4600(2017) & 15.19 & 0 & 25 & Eff=0.22(2017) & 22(2017) & 2017 \\
+ & 3822(2030) &  &  &  & Eff=0.25(2025) &  13(2040) &  \\
+ & 2164(2035) &  &  &  & Eff=0.3(2030) &  &  \\
+  & 1086(2040) &  &  &  &  &  &  \\
+ & 615(2050) &  &  &  &  &  &  \\
+  & 600(2051) &  &  &  &  &  &  \\
+\gls{PEMFC} & 7399(2022) & 30.65 & 0.59 & 7 (CF=0.9) & Eff=0.6 & 0.408(2022) & 2022\\
+ & 4000(2030) &  &  &  &  & 0.245(2030) &  \\
+ & 3000(2030) &  &  &  &  & 0.245(2030) &  \\
+\gls{AEC} & 1500(2022) & 6.87 & 0.0009 & 10(CF=0.9) & Eff=0.82 & 3.19 & 2022\\
+ & 850(2030) &  &  &  &  & &  \\
+\gls{PEMEC} & 3500(2022) & 30.65 & 0.006 & 7 (CF=0.9) & Eff=0.78(2022) & 38.17(2022) & 2022\\
+ & 2200(2025) &  &  &  &  & 16(2050) &  \\
+ & 1500(2030) &  &  &  &  &  &  \\
+ & 1000(2035) &  &  &  &  &  &  \\
+ & 500(2040) &  &  &  &  &  &  \\
+\gls{SOEC} & 3500(2022) & 30.65 & 0.006 & 7 (CF=0.9) & Eff=0.78(2022) & 38.17(2022) & 2050\\
+\gls{SOFC} & 3500(2022) & 30.65 & 0.006 & 7 (CF=0.9) & Eff=0.78(2022) & 38.17(2022) & 2030\\
+\gls{PWS} & 3500(2022) & 30.65 & 0.006 & 7 (CF=0.9) & Eff=0.78(2022) & 38.17(2022) & 2050\\
+\label{eco}
+\end{longtable}
+\end{landscape}
+
 
 \begin{table}[!ht]
-	\caption{Miscellaneous \gls{TIMES} data for existing technologies.}
-	\vspace{0.1in}
-	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.10\textwidth} p{0.25\textwidth} p{0.2\textwidth}  p{0.2\textwidth}}
-		\hline
-\textbf{Technology} &  \textbf{Lifetime} & \textbf{Capacity Factor/}  & \textbf{Availability} & \textbf{Emission}\\
-  & (years) &  \textbf{Efficiency} & \textbf{Factor} & \textbf{Coefficient}(gCO$_2$-eq./kWh)\\
-\hline
-Nuclear & 60 & 0.90 (CF) & 1 & 21\\
-Solar & 25 & 0.14 (CF) & 1 & 37\\
-Onshore Wind & 25 & 0.4 (CF) & 1 & 25\\
-Offshore Wind (Fixed) & 25 & 0.44 (CF) & 1 & 25\\
-Offshore Wind (Floating) & 25 & 0.44 (CF) & 1 & 25\\
-Li-ion Storage & 10 & 0.688 (Eff.) & 4h/24h & 50 \\
-Natural Gas &  10 & 0.55 (CF) & 1 & 599  \\
-\gls{USC} & 10 & 0.55 (CF) & 1 & 943  \\
-\hline 
-\end{tabularx}
-\label{existing-misc}
-\end{table}
-
-\begin{table}[!ht]
+%\begin{minipage}{\textwidth} 
 	\caption{Installed capacity growth rate limits and capacity limits for existing technologies.}
 	\vspace{0.1in}
 	\begin{tabularx}{\textwidth}{p{0.4\textwidth} p{0.3\textwidth} p{0.2\textwidth} }
 		\hline
-\textbf{Technology} & \textbf{Annual Growth} & \textbf{Net Capacity} \\
-  & \textbf{Rate}  & \textbf{Limit} (GW) \\
+\textbf{Technology} & \textbf{Max. Annual} & \textbf{Net Capacity} \\
+  & \textbf{Growth Rate}  & \textbf{Limit} (GW) \\
 \hline
-Nuclear (2027 onwards) & +5 reactors & 60 GW \\
-Solar & 30\% per year & None  \\
-Onshore Wind & 50\% & 3.75 (2017) \\
+Nuclear (2027 onwards) & +5 reactors & 50 GW (with new tech)  \\
+ & & 100 GW (without new tech)  \\
+  & & (see Sec. \ref{scendef} ) \\
+Solar & 40\% & 300 \\
+Onshore Wind & 25\% & 3.75 (2017) \\
  &  & 15.3 (2020) \\
  &  & 39.9 (2030) \\
  &  & 57.0 (2040) \\
  &  & 114.0 (2100) \\
-Offshore Wind(Fixed) & 50\% & 1 (2017) \\
+Offshore Wind(Fixed) & 20\% & 1 (2017) \\
  &  & 8.70 (2030) \\
  &  & 22.50 (2040) \\
  &  & 28.50 (2050) \\
  &  & 57.00 (2100) \\
-Offshore Wind(Floating) & 50\% & 1 (2017) \\
+Offshore Wind(Floating) & 20\% & 1 (2017) \\
  &  & 5.70 (2030) \\
  &  & 19.35 (2040) \\
  &  & 27.00 (2050) \\
  &  & 54.00 (2100) \\
-Li-ion Storage & 100\% (2017-2029) & None  \\
- & 30\% (2030-2100) & None  \\
-Natural Gas &  100\% & None \\
+Li-ion Storage & 30\% & None  \\
+Natural Gas &  50\% & None \\
 \gls{USC} & 50\% & None \\
 \hline 
 \end{tabularx}
 \label{existing-gro}
+%\end{minipage}
 \end{table}
 
 
 \subsection{Emerging technologies}
 
 \begin{table}[!ht]
-	\caption{Economic data for emerging technologies.}
-	\vspace{0.1in}
-\centering
-	\begin{tabularx}{1.3\textwidth}{p{0.35\textwidth} p{0.15\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth} }
-		\hline
-\textbf{Technology} & \textbf{First} & \textbf{Investment} & \textbf{Fixed \gls{OM}} & \textbf{Variable \gls{OM}} \\
-  & \textbf{Deployment}& \textbf{Cost}(USD/kW) & \textbf{Costs}(USD/kW) & \textbf{Costs}(USD/MWh)\\
-\hline
-CCS-LNG(90\%) & 2025 & 2569 & 27.48 & 5.82 \\
-CCS-\gls{USC}(90\%) & 2025 & 5997 & 59.29 & 10.93 \\
-Perovskite & 2022 & 1307 (2022) & 27.48 & 15.19 \\
-& & 1086 (2040) &  &  \\
-& & 615 (2050) &  &  \\
-\gls{PEMFC} & 2025 & 7399 & 30.65 & 0.59 \\
-LNG steam reforming & 2025 & 491 & 6.14 & 40.4 \\
-LNG steam reforming with CCS(90\%) & 2025 & 848.5 & 5.704 & 55.7 \\
-Electrolysis & 2025 & 1100 & 6.87 & 0.9 \\
-\hline 
-\end{tabularx}
-\label{emerging-eco}
-\end{table}
-
-
-\begin{table}[!ht]
-	\caption{Miscellaneous \gls{TIMES} data for emerging technologies.}
-	\vspace{0.1in}
-	\begin{tabularx}{1.2\textwidth}{p{0.3\textwidth} p{0.10\textwidth} p{0.25\textwidth} p{0.2\textwidth}  p{0.2\textwidth}}
-		\hline
-\textbf{Technology} &  \textbf{Lifetime} & \textbf{Capacity Factor/}  & \textbf{Availability} & \textbf{Emission}\\
-  & (years) &  \textbf{Efficiency} & \textbf{Factor} & \textbf{Coefficient}(gCO$_2$-eq./kWh)\\
-\hline
-CCS-LNG(90\%) & 40 & 0.45 (CF) & 1 & 59.9\\
-CCS-\gls{USC}(90\%) & 40 & 0.45 (CF) & 1 & 94.3\\
-Perovskite & 20 & 0.14 (CF) & 1 & 37\\
-\gls{PEMFC} & 10 & 0.5 (Eff.) & 0.5 & 0.57(2025),0.34(2030)\\
-LNG steam reforming & 20 & 0.44 (CF) & 1 & 313.2\\
-LNG steam reforming with CCS(90\%) & 20 & 0.55(Eff.) & 1 & 31.32  \\
-Electrolysis & 10 & 0.65 (Eff.) & 1 &  39.4(2025),16.31 (2030) \\
-\hline 
-\end{tabularx}
-\label{emerging-misc}
-\end{table}
-
-\begin{table}[!ht]
 	\caption{Installed capacity growth rate limits and capacity limits for emerging technologies.}
 	\vspace{0.1in}
 	\begin{tabularx}{\textwidth}{p{0.4\textwidth} p{0.3\textwidth} p{0.2\textwidth} }
 		\hline
-\textbf{Technology} & \textbf{Annual Growth} & \textbf{Net Capacity} \\
-  & \textbf{Rate}  & \textbf{Limit} (GW) \\
+\textbf{Technology} & \textbf{Max. Annual} & \textbf{Net Capacity} \\
+  & \textbf{Growth Rate}  & \textbf{Limit} (GW) \\
 \hline
-Perovskite & 100\% (2022-2029) & None \\
- & 80\% (2030-2034) &  \\
- & 50\% (2035-2039) & \\
- & 30\% (2040-2100) & \\
-All CCS, H$_2$ & 100\% (2025-29) & None \\
-technologies & 80\% (2030-2034) &  \\
- & 50\% (2035-2039) & \\
- & 30\% (2040-2100) & \\
+Emerging Solar & 40\% & None \\
+All CCS, H$_2$ & 40\% (Year 1-5) & None \\
+technologies & 60\% (Year 6-10) &  \\
+ & 40\% (Year 11-15) & \\
+ & 30\% (Year 16-) & \\
 \hline 
 \end{tabularx}
 \label{emerging-gro}
 \end{table}
 
-\subsection{Base scenarios}
+\subsection{Base scenarios} \label{scendef}
 %approach, goal, what are we hoping to learn
 
 \begin{table}[!ht]
