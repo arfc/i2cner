@@ -1,16 +1,15 @@
-\section{Model description} \label{Model-description}
+\section{Methodology} \label{method}
 
 \subsection{TIMES Model Description}
-Objective function.
-Constraints - CO2 emissions reduction targets, increasing demand, CO2 tax.
-Important parameters.
+The \gls{TIMES} model generator is designed to model dynamic energy systems and simulate transition scenarios as a mixed-integer programming linear optimization problem that is subject to a primary objective function and additional constraints. The generation, trade, refinement, storage, and supply of energy commodities across multiple sectors and multiple regions is modeled using a wide variety of in-built commodity and process types. Emissions can be associated with energy commodities or processes as emission coefficient per unit commodity produced or consumed. 
 
-\subsection{Common Features - Initial condition and constraints}
+The objective function in our simulations is the overall cost of the transition, hence the primary objective of the solver is to minimize said cost.The major constrains in our simulations are the overall demand for electricity, emission constraints based on Japan's \gls{NDC}, and feasible nameplate capacity deployment limits.
+
+
 
 The initial condition is based on energy generation data from \gls{EDMC} for the years 2013-2016 , and emission data for electricity generation from National Carbon Trust (see Fig. \ref{ic-elc}). As the \gls{EDMC} database has been evolving over the course of this work, the focus of our model was to recreate the 2013-2016 emission levels with low error, instead of recreating the \gls{EDMC} electricity generation data. A tolerance of 1\% was allowed for each electricity generation technology in order to avoid specifying an overly rigorous initial condition that slows the model down. The error in the CO$_2$ emission levels is minimal, as seen in Table \ref{ic-co2}.
 
 The economic data for initially deployed capacity is associated with the respective \gls{lcoe} of each electricity supply source, substituted for variable \gls{OM} costs. The \gls{lcoe} data and the emission factors for the technologies used in defining the initial condition are listed in table \ref{init-eco}. All existing fossil fuels are gradually retired by 2025. This aggressive retirement is enabled to simulate the necessary premature retirement required to meet the challenging CO$_2$ constraints, and to not saddle the model with technologies that make the CO$_2$ constraints unattainable. As mentioned in the next section, if the model still feels the need to deploy fossil fuel-based technology, it can deploy natural gas and coal with a 10 year lifetime (to simulate premature retirement). In practice, this would represent premature retirement of fossil fuel plants or retrofitting them with \gls{CCS} technology.
-
 
 The electricity demand in the near term is expected to increase by 1.7\% per year (cite electricity review). However, in the long run, the demand should eventually plateau, if not decrease altogether, due to the ageing population of Japan. In the absence of long term projections, our model approximates the gradual reduction in the annual demand increase rate, and its eventual reduction to 0\% per year, as shown in table \ref{demand}. The demand increases linearly for all intermediate years.
 
