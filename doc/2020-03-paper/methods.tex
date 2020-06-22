@@ -1,17 +1,12 @@
 \section{Methodology} \label{method}
-
+% what is TIMES, what are we doing, common features of all scenarios(obj, constraints, time frame, technology details, how are results presented/assessed
 \subsection{TIMES Model Description}
 The \gls{TIMES} model generator is designed to model dynamic energy systems and simulate transition scenarios as a mixed-integer programming linear optimization problem that is subject to a primary objective function and additional constraints. The generation, trade, refinement, storage, and supply of energy commodities across multiple sectors and multiple regions is modeled using a wide variety of in-built commodity and process types. Emissions can be associated with energy commodities or processes as emission coefficient per unit commodity produced or consumed. 
 
-The objective function in our simulations is the overall cost of the transition, hence the primary objective of the solver is to minimize said cost.The major constrains in our simulations are the overall demand for electricity, emission constraints based on Japan's \gls{NDC}, and feasible nameplate capacity deployment limits.
+The objective function in our simulations is the overall cost of the transition. The major constrains in our simulations are the demand for electricity (see table \ref{demand}), emission constraints based on Japan's \gls{INDC} (see table \ref{co2-limits}), and feasible nameplate capacity deployment limits (see table \ref{caplim}). Hence each simulation is focused on minimizing the transition cost while attempting to meet the increasing electricity demand and achieving the required emission cuts using, a combination of technologies of various readiness levels. 
 
+While electricity demand in the near term is expected to grow, long term electricity demand is expected to plateau, or even decrease, due to Japan's aging population. However, precisely quantifying this rate of decrease is challenging as there is potential for increased electrification of  transportation and industrial sectors. Hence, post-2030, we have assumed a demand curve based on the likelihood of increased electrification resulting in increasing demand for electricity, but the demand eventually plateaus due to the aging population. The unique initial condition of the post-Fukushima Japanese electricity supply system is captured using \gls{EDMC} data from 2013-2016. Long term impacts of factors such as the retirement of the existing nuclear fleet and the new deployment of emerging, potentially disruptive technology is assessed by simulating the system until 2100. The carbon cost of each technology is accounted for using an emission coefficient that incorporates both direct emissions and life cycle emissions (averaged over the entire lifetime output) for every technology, as applicable.
 
-
-The initial condition is based on energy generation data from \gls{EDMC} for the years 2013-2016 , and emission data for electricity generation from National Carbon Trust (see Fig. \ref{ic-elc}). As the \gls{EDMC} database has been evolving over the course of this work, the focus of our model was to recreate the 2013-2016 emission levels with low error, instead of recreating the \gls{EDMC} electricity generation data. A tolerance of 1\% was allowed for each electricity generation technology in order to avoid specifying an overly rigorous initial condition that slows the model down. The error in the CO$_2$ emission levels is minimal, as seen in Table \ref{ic-co2}.
-
-The economic data for initially deployed capacity is associated with the respective \gls{lcoe} of each electricity supply source, substituted for variable \gls{OM} costs. The \gls{lcoe} data and the emission factors for the technologies used in defining the initial condition are listed in table \ref{init-eco}. All existing fossil fuels are gradually retired by 2025. This aggressive retirement is enabled to simulate the necessary premature retirement required to meet the challenging CO$_2$ constraints, and to not saddle the model with technologies that make the CO$_2$ constraints unattainable. As mentioned in the next section, if the model still feels the need to deploy fossil fuel-based technology, it can deploy natural gas and coal with a 10 year lifetime (to simulate premature retirement). In practice, this would represent premature retirement of fossil fuel plants or retrofitting them with \gls{CCS} technology.
-
-The electricity demand in the near term is expected to increase by 1.7\% per year (cite electricity review). However, in the long run, the demand should eventually plateau, if not decrease altogether, due to the ageing population of Japan. In the absence of long term projections, our model approximates the gradual reduction in the annual demand increase rate, and its eventual reduction to 0\% per year, as shown in table \ref{demand}. The demand increases linearly for all intermediate years.
 
 \begin{table}[!ht]
 	\caption{Demand increase over time.}
@@ -28,7 +23,7 @@ The electricity demand in the near term is expected to increase by 1.7\% per yea
 	\end{tabularx}
 \label{demand}
 \end{table}
-The CO$_2$ constraints common to all the models are as shown in table \ref{co2-limits}. The CO$_2$ limit for intervening years is linearly interpolated to ensure gradual transitions. 
+
 \begin{table}[!ht]
 	\caption{CO$_2$ constraints.}
 	\vspace{0.1in}
@@ -44,24 +39,11 @@ The CO$_2$ constraints common to all the models are as shown in table \ref{co2-l
 \label{co2-limits}
 \end{table}
 
-\subsection{Existing technologies}
+To explore possible pathways to curbing \gls{GHG} emissions, we simulated different transition scenarios with different combinations of technologies enabled for deployment. The first set of technologies includes conventional technologies such as  \gls{USC},\gls{lng}, solar photovoltaic, wind energy (with onshore, offshore-fixed and offshore-floating considered separately) and utility-scale lithium-ion battery storage. New deployments of oil-fuelled power plants are disabled due to the declining use of oil for electricity generation in Japan, as it is contrary to Japan's goal of energy security and independence under the Basic Energy Plan. The second set of technologies considered includes emerging carbon-neutral technologies, namely \gls{CCS} and utility-scale hydrogen power. Based on their technological readiness and scalability, \gls{CCS}-based coal and natural gas,\gls{AEC},\gls{PEMEC},\gls{PEMFC}, and \gls{SOFC} were selected for simulation. It is also important to consider the impact of nuclear energy as it has extremely low life-cycle emissions and a high capacity factor,thereby being more reliable than renewables. However, nuclear power faces extremely low public acceptance in Japan after the Fukushima Daiichi accident, and its future in Japan is highly uncertain. Hence, scenarios where new nuclear reactor deployment is enabled and disabled must be juxtaposed to assess the potential role of nuclear in decarbonization of the electricity generation sector. Finally, the long-term impact of nascent technologies on the hydrogen economy is considered in an additional scenario. In this scenario, the potential of the commercialization of \gls{SOEC} and \gls{PWS} post-2050 is explored.
 
-For time periods excluding the initial condition, the model can choose to deploy various renewables and base-load electricity generation technologies. The economic data, such as capital costs, \gls{OM} costs, lifetime and capacity factors have been compiled from data sources into table \ref{existing-eco}. Dynamic trends are incorporated where available. The capital and \gls{OM} costs of offshore wind are significantly greater due to Japan's unusually deep seabed and the generally underdeveloped wind sector. Upper limits for growth rates are based on existing data, but with a generous margin of 5-20\%, as the trends in growth seen in the recent past may not represent the growth rates required to achieve the dramatic reduction in emissions we are aiming for.
-
-\gls{PEMFC} \gls{PEMEC} \gls{AEC} \gls{USC} \gls{SOEC} \gls{SOFC} \gls{PWS}.
+ADD TECH PARAMS,ASSUMPTIONS.
 
 
-
-
-
-
-
-
-\subsection{Emerging technologies}
-
-
-
-\subsection{Base scenarios} \label{scendef}
 %approach, goal, what are we hoping to learn
 
 \begin{table}[!ht]
