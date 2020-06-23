@@ -42,6 +42,7 @@ While electricity demand in the near term is expected to grow, long term electri
 To explore possible pathways to curbing \gls{GHG} emissions, we simulated different transition scenarios with different combinations of technologies enabled for deployment. The first set of technologies includes conventional technologies such as  \gls{USC},\gls{lng}, solar photovoltaic, wind energy (with onshore, offshore-fixed and offshore-floating considered separately) and utility-scale lithium-ion battery storage. New deployments of oil-fuelled power plants are disabled due to the declining use of oil for electricity generation in Japan, as it is contrary to Japan's goal of energy security and independence under the Basic Energy Plan. The second set of technologies considered includes emerging carbon-neutral technologies, namely \gls{CCS} and utility-scale hydrogen power. Based on their technological readiness and scalability, \gls{CCS}-based coal and natural gas,\gls{AEC},\gls{PEMEC},\gls{PEMFC}, and \gls{SOFC} were selected for simulation. It is also important to consider the impact of nuclear energy as it has extremely low life-cycle emissions and a high capacity factor,thereby being more reliable than renewables. However, nuclear power faces extremely low public acceptance in Japan after the Fukushima Daiichi accident, and its future in Japan is highly uncertain. Hence, scenarios where new nuclear reactor deployment is enabled and disabled must be juxtaposed to assess the potential role of nuclear in decarbonization of the electricity generation sector. Finally, the long-term impact of nascent technologies on the hydrogen economy is considered in an additional scenario. In this scenario, the potential of the commercialization of \gls{SOEC} and \gls{PWS} post-2050 is explored. Thus, five scenarios are simulated to explore possible transition pathways under the aforementioned conditions, and these are detailed in table \ref{scen-table}.
 
 ADD TECH PARAMS,ASSUMPTIONS, FIX TABLE.
+The economic data, emission coefficients, nameplate capacity limits and growth rates incorporated in the model are detailed in tables \ref{eco}, \ref{caplim}, and \ref{growrate} respectively. 
 
 
 %approach, goal, what are we hoping to learn
@@ -49,20 +50,20 @@ ADD TECH PARAMS,ASSUMPTIONS, FIX TABLE.
 \begin{table}[!ht]
 	\caption{Scenario definition.}
 	\vspace{0.1in}
-	\begin{tabularx}{\textwidth}{p{0.33\textwidth} p{0.33\textwidth} p{0.33\textwidth}}
+	\begin{tabularx}{\textwidth}{p{0.15\textwidth} p{0.25\textwidth} p{0.25\textwidth} p{0.35\textwidth}}
 \hline 
-\textbf{Scenario}& \textbf{Emerging tech.} & \textbf{New nuclear} \\
-                 & \textbf{enabled} & \textbf{enabled} \\
+\textbf{Scenario}& \textbf{Emerging tech.} & \textbf{New nuclear} & \textbf{Nascent tech.}\\
+                 & \textbf{enabled} & \textbf{enabled} & \textbf{enabled}\\
                   \hline
 %1               &   \xmark       &      \greencheck     \\ 
 %2               & \xmark       &         \xmark       \\ 
 %3               &   \greencheck     &      \greencheck     \\ 
 %4               &   \greencheck     &         \xmark       \\
-1               &   No       &      Yes     \\ 
-2               &  No       &         No       \\ 
-3               &   Yes     &      Yes     \\ 
-4               &   Yes     &         No       \\
-
+1               &  No       &         No     &     No  \\ 
+2               &   No       &      Yes     &     No  \\ 
+3               &   Yes     &         No      &     No   \\
+4               &   Yes     &      Yes     &     No  \\ 
+5               &   Yes     &      Yes     &     Yes  \\ 
 \hline
 	\end{tabularx}
 \label{scen-table}
