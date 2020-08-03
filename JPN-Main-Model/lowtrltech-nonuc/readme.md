@@ -1,0 +1,1 @@
+I2CNER scenario with new technologies(CCS,H2,emerging solar) without new nuclear deployment disabled.
