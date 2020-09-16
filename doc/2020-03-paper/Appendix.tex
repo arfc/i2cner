@@ -5,8 +5,8 @@
 	\vspace{0.1in}
 	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth}}
 		\hline
-\textbf{Technology} & \textbf{\gls{lcoe}} & \textbf{Emission} & \textbf{Year of total}\\
-  & (USD/kWh) & \textbf{Coefficients} (gCO$_2$-eq. /kWh) & \textbf{retirement} \\
+\textbf{Technology} & \textbf{\gls{lcoe}} \cite{lazard_lazards_2016} & \textbf{Emission} & \textbf{Year of total}\\
+  & (USD/kWh) & \textbf{Coefficients} \cite{the_federation_of_electric_power_companies_of_japan_electricity_2019} (gCO$_2$-eq. /kWh) & \textbf{retirement} \\
 \hline
 Coal & 0.06 & 943 & 2030 \\
 \gls{lng} & 0.08 & 599 & 2030 \\
@@ -29,7 +29,7 @@ Solar & 0.15 & 37 & 2040 \\
 \end{figure}
 
 \begin{table}[!ht]
-	\caption{Initial condition CO$_2$ emissions compared to the model and data from the Carbon Trust.}
+	\caption{Initial condition CO$_2$ emissions compared to the model and data from the Carbon Trust\cite{carbon_brief_carbon_2018}.}
 	\vspace{0.1in}
 	\begin{tabularx}{\textwidth}{p{0.08\textwidth} p{0.35\textwidth} p{0.35\textwidth} p{0.15\textwidth}}
 		\hline
@@ -50,7 +50,7 @@ Solar & 0.15 & 37 & 2040 \\
 \caption{Economic data for modelled technologies.}\\
 \hline
 \textbf{Technology} & \textbf{Capital} & \textbf{Fixed} & \textbf{Variable} & \textbf{Lifespan} & \textbf{Capacity Factor/} & \textbf{Emission} & \textbf{Year} \\
-\textbf{name} & \textbf{Cost} & \textbf{\gls{OM}} & \textbf{\gls{OM}} &  & \textbf{Efficiency} & \textbf{Coefficient} & \textbf{available} \\
+ & \textbf{Cost} & \textbf{\gls{OM}} & \textbf{\gls{OM}} &  & \textbf{Efficiency} & \textbf{Coefficient} & \textbf{available} \\
  & MUSD/GW & MUSD/GW & MUSD/GWh & Years  &  & gCO$_2$/kWh  &  \\
 \hline
 \endhead  % header material
@@ -58,42 +58,44 @@ Solar & 0.15 & 37 & 2040 \\
 \endfoot  % footer material
 \hline
 \endlastfoot
-\gls{USC} & 3661 & 40.41 & 0.045 & 40 & CF=0.55 & 820 & 2017 \\
-\gls{lng} & 1079 & 14 & 0.0025 & 30 & CF=0.55 & 490 & 2017 \\
-Nuclear & 6317 & 121.13 & 2.36 & 60 & CF=0.6-0.95 & 12 & 2017 \\
-Li-ion Storage & 1876 (2017) & 10 & 0.3 & 10 & Eff=0.86 & 151(2017) & 2017 \\
+\gls{USC} \cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014} & 3661 & 40.41 & 0.045 & 40 & CF=0.55 & 820 & 2017 \\
+\gls{lng}\cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014} & 1079 & 14 & 0.0025 & 30 & CF=0.55 & 490 & 2017 \\
+Nuclear \cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014,lokhov_load-following_2011} & 6317 & 121.13 & 2.36 & 60 & CF=0.6-0.95 & 12 & 2017 \\
+Li-ion Storage \cite{mongird_energy_2019,emilsson_lithium-ion_2019} & 1876 (2017) & 10 & 0.3 & 10 & Eff=0.86 & 151(2017) & 2017 \\
  & 1446 (2025) &  &  &  &  & 87(2050) &  \\
-Solar & 1307(2017) & 15.19 & 0  & 25 & CF=0.14 & 37 & 2017 \\
+Solar \cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014} & 1307(2017) & 15.19 & 0  & 25 & CF=0.14 & 37 & 2017 \\
  & 615(2050) & & & & & &  \\
 Onshore Wind & 3454(2017) & 136.37 & 0 & 25 & CF=0.25(2017) & 20(2017) & 2017 \\
- & 2406(2050) &  &  &  & CF=0.35(2050) & 7 (2040) &  \\
+\cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016} & 2406(2050) &  &  &  & CF=0.35(2050) & 7 (2040) &  \\
 Offshore Wind(Fixed) & 7772(2017) & 341 & 0 & 25 & CF=0.3(2017) & 25(2017) & 2017 \\
- & 3381(2050) &  &  & & CF=0.40(2050) & 11(2050) &  \\
+\cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016} & 3381(2050) &  &  & & CF=0.40(2050) & 11(2050) &  \\
 Offshore Wind(Floating) & 12897(2017) & 423 & 0 & 25 & CF=0.35(2017) & 25(2017) & 2017 \\
- & 5610(2050) &  &  &  & CF=0.45(2050) & 11(2050) &  \\
+\cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016} & 5610(2050) &  &  &  & CF=0.45(2050) & 11(2050) &  \\
 LNG-CCS(90\%) & 2626(2022) & 27.484 & 0.0494 & 30 & CF=0.12-0.4(2017) & 94 & 2022 \\
- & 1422(2050) &  & &  &  &  & \\
+ \cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014} & 1422(2050) &  & &  &  &  & \\
 USC-CCS(90\%) & 5252(2023) & 59 & 0.078 & 40 & CF=0.27-0.32(2017) & 236.5 & 2023 \\
- & 4091(2050) &  &  &  &  &  & \\
+ \cite{eia_cost_2020,intergovernmental_panel_on_climate_change_climate_2014} & 4091(2050) &  &  &  &  &  & \\
 Emerging Solar & 4600(2017) & 15.19 & 0 & 25 & Eff=0.22(2017) & 22(2017) & 2017 \\
-  & 600(2050) &  &  &  &Eff=0.3(2030)  & 13(2040) &  \\
-\gls{AEC} & 1500(2022) & 8 & 0.0004 & 11(CF=0.9) & Eff=0.7 & 1.29 & 2022\\
- & 850(2030) &  &  &  &  & &  \\
+ \cite{irena_solar_2012,peng_review_2013} & 600(2050) &  &  &  &Eff=0.3(2030)  & 13(2040) &  \\
+\gls{AEC}  & 1500(2022) & 8 & 0.0004 & 11(CF=0.9) & Eff=0.7 & 1.29 & 2022\\
+\cite{iea_technology_2015, bhandari_life_2014, cetinkaya_life_2012, burkhardt_hydrogen_2016} & 850(2030) &  &  &  &  & &  \\
 \gls{PEMEC} & 3500(2022) & 8 & 0.0004 & 7 (2022)(CF=0.9) & Eff=0.75(2022) & 8.7(2022) & 2022\\
- & 1500(2030) &  & 11(2050)  &  & Eff=0.82(2030) & 0.456(2050)  &  \\
+\cite{iea_technology_2015, bareis_life_2019, carmo_comprehensive_2013,ayers_research_2010,siracusano_influence_2017,schmidt_future_2017,mayyas_manufacturing_2019} & 1500(2030) &  & 11(2050)  &  & Eff=0.82(2030) & 0.456(2050)  &  \\
  & 400(2050) &  &  &  & &  &  \\
 \gls{SOEC} & 6000(2030) & 8 & 0.0004 & 2 (2030)(CF=0.9) & Eff=0.9 & 5.4(2030) & 2030\\
- & 1000(2050) &  &  & 7 (2050) &  & 1.08(2050) & \\
+\cite{iea_technology_2015,schmidt_future_2017,hafele_life_2016} & 1000(2050) &  &  & 7 (2050) &  & 1.08(2050) & \\
  & 400(2070) &  &  & 11 (2070) &  & 0.72(2070) & \\
-Gas Reforming & 763 & 6.21 & 0.04 & 30  & Eff=0.7 & 356.6 & 2022\\
+Gas Reforming  & 763 & 6.21 & 0.04 & 30  & Eff=0.7 & 356.6 & 2022\\
+\cite{iea_technology_2015,mehmeti_life_2018,keipi_economic_2018} & & & & & &  & \\
 Gas Reforming-CCS(70\%) & 1200 & 8 & 0.065 & 30 & Eff=0.56 & 179 & 2022\\
-\gls{PEMFC} & 7399(2022) & 30.65 & 0.59 & 7 (CF=0.9) & Eff=0.49 & 1.087(2022) & 2022\\
+\cite{iea_technology_2015,keipi_economic_2018,cormos_ana-maria_economic_2018} &  &  &  &  &  &  & \\
+\gls{PEMFC} \cite{iea_technology_2015,simons_life-cycle_2015,kannan_life_2007} & 7399(2022) & 30.65 & 0.59 & 7 (CF=0.9) & Eff=0.49 & 1.087(2022) & 2022\\
  & 4000(2030) &  &  &  &  & 0.65(2030) &  \\
  & 3000(2035) &  &  &  &  &  &  \\
-\gls{SOFC} & 7399(2030) & 30.65 & 0.59 & 10 (CF=0.9) & Eff=0.7 & 2.11(2030) & 2030\\
+\gls{SOFC} \cite{iea_technology_2015,simons_life-cycle_2015,rillo_life_2017,tu_advances_2004} & 7399(2030) & 30.65 & 0.59 & 10 (CF=0.9) & Eff=0.7 & 2.11(2030) & 2030\\
  & 4000(2035) &  &  &  &  & 1.27(2040) &  \\
  & 3000(2040) &  &  &  &  & &  \\
-\gls{PWS} & 14706  & 236.5 & 0 & 20(CF=0.9) & Eff=0.15(2050) & Unknown & 2050
+\gls{PWS} \cite{pinaud_technical_2013} & 14706  & 236.5 & 0 & 20(CF=0.9) & Eff=0.15(2050) & Unknown & 2050
 \label{eco}
 \end{longtable}
 \end{landscape}
@@ -107,13 +109,13 @@ Gas Reforming-CCS(70\%) & 1200 & 8 & 0.065 & 30 & Eff=0.56 & 179 & 2022\\
 		\hline
 \textbf{Technology} & \textbf{Net Capacity} \textbf{Limit} (GW)\\
 \hline
-Photovoltaic & 332 \\
-Onshore wind & 180 \\
-Offshore wind (fixed) & 130 \\
-Offshore wind (floating) & 260 \\
+Photovoltaic \cite{isep_53_2018} & 332 \\
+Onshore wind \cite{heger_wind_2016,kato_energy_2016} & 180 \\
+Offshore wind (fixed) \cite{heger_wind_2016,kato_energy_2016}& 130 \\
+Offshore wind (floating) \cite{heger_wind_2016,kato_energy_2016}& 260 \\
 Nuclear & 50 (Scenarios 3 \& 4) \\
  & 100 (Scenario 2) \\
-\gls{PWS} & 100 (Scenario 5) \\
+\gls{PWS} \cite{pinaud_technical_2013} & 100 (Scenario 5) \\
 \hline 
 \end{tabularx}
 \label{caplim}
@@ -129,10 +131,10 @@ Nuclear & 50 (Scenarios 3 \& 4) \\
   & \textbf{Growth Rate}   \\
 \hline
 Nuclear (2027 onwards) & +5 reactors \\
-Solar and Emerging Solar & 40\%  \\
-Onshore Wind & 25\% \\
-Offshore Wind(Fixed) & 20\% \\
-Offshore Wind(Floating) & 20\% \\
+Solar and Emerging Solar \cite{irena_renewable_2020} & 40\%  \\
+Onshore Wind \cite{irena_renewable_2020} & 25\% \\
+Offshore Wind(Fixed) \cite{irena_renewable_2020} & 20\% \\
+Offshore Wind(Floating) \cite{irena_renewable_2020} & 20\% \\
 Li-ion Storage & 30\% \\
 Natural Gas &  50\% \\
 \gls{USC} & 50\% \\
@@ -157,10 +159,10 @@ Currency & MUSD 2015 \\
 Activity unit & GWh\\
 Discount rate & 5\% \\
 Transmission efficiency & 90 \% \\
-Li-ion discharge time & 4h \\
-Li-ion E/P ratio & 4 \\
-Li-ion depth-of-discharge & 80\% \\
-Li-ion lifetime cycles & 3500  \\
+Li-ion discharge time \cite{mongird_energy_2019} & 4h \\
+Li-ion E/P ratio \cite{mongird_energy_2019} & 4  \\
+Li-ion depth-of-discharge \cite{mongird_energy_2019} & 80\% \\
+Li-ion lifetime cycles \cite{mongird_energy_2019} & 3500  \\
 \hline 
 	\end{tabularx}
 \label{misc-assump}
