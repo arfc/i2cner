@@ -1,4 +1,4 @@
-\section{Data and assumptions for scenarios} \label{Appendix}
+\section{Model data, assumptions, and secondary results} \label{Appendix}
 
 \begin{table}[!ht]
 	\caption{Data for initial condition.}
@@ -44,7 +44,6 @@ Solar & 0.15 & 37 & 2040 \\
 	\end{tabularx}
 \label{ic-co2}
 \end{table}
-
 \begin{landscape}
 \begin{longtable}{ |*{8}{c|} }
 \caption{Economic data for modelled technologies.}\\
@@ -58,23 +57,23 @@ Solar & 0.15 & 37 & 2040 \\
 \endfoot  % footer material
 \hline
 \endlastfoot
-\gls{USC} \cite{eia_cost_2020,ipcc_2014} & 3661 & 40.41 & 0.045 & 40 & CF=0.55 & 820 & 2017 \\
-\gls{lng}\cite{eia_cost_2020,ipcc_2014} & 1079 & 14 & 0.0025 & 30 & CF=0.55 & 490 & 2017 \\
-Nuclear \cite{eia_cost_2020,ipcc_2014,lokhov_load-following_2011} & 6317 & 121.13 & 2.36 & 60 & CF=0.6-0.95 & 12 & 2017 \\
+\gls{USC} \cite{eia_cost_2020,ipcc_climate_2014} & 3661 & 40.41 & 0.045 & 40 & CF=0.55 & 820 & 2017 \\
+\gls{lng}\cite{eia_cost_2020,ipcc_climate_2014} & 1079 & 14 & 0.0025 & 30 & CF=0.55 & 490 & 2017 \\
+Nuclear \cite{eia_cost_2020,ipcc_climate_2014,lokhov_load-following_2011} & 6317 & 121.13 & 2.36 & 60 & CF=0.6-0.95 & 12 & 2017 \\
 Li-ion Storage \cite{mongird_energy_2019,emilsson_lithium-ion_2019} & 1876 (2017) & 10 & 0.3 & 10 & Eff=0.86 & 151(2017) & 2017 \\
  & 1446 (2025) &  &  &  &  & 87(2050) &  \\
-Solar \cite{eia_cost_2020,ipcc_2014} & 1307(2017) & 15.19 & 0  & 25 & CF=0.14 & 37 & 2017 \\
+Solar \cite{eia_cost_2020,ipcc_climate_2014} & 1307(2017) & 15.19 & 0  & 25 & CF=0.14 & 37 & 2017 \\
  & 615(2050) & & & & & &  \\
 Onshore Wind & 3454(2017) & 136.37 & 0 & 25 & CF=0.25(2017) & 20(2017) & 2017 \\
-\cite{eia_cost_2020,ipcc_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016} & 2406(2050) &  &  &  & CF=0.35(2050) & 7 (2040) &  \\
+\cite{eia_cost_2020,ipcc_climate_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016,bonou_life_2016} & 2406(2050) &  &  &  & CF=0.35(2050) & 7 (2040) &  \\
 Offshore Wind(Fixed) & 7772(2017) & 341 & 0 & 25 & CF=0.3(2017) & 25(2017) & 2017 \\
-\cite{eia_cost_2020,ipcc_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016} & 3381(2050) &  &  & & CF=0.40(2050) & 11(2050) &  \\
+\cite{eia_cost_2020,ipcc_climate_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016,bonou_life_2016} & 3381(2050) &  &  & & CF=0.40(2050) & 11(2050) &  \\
 Offshore Wind(Floating) & 12897(2017) & 423 & 0 & 25 & CF=0.35(2017) & 25(2017) & 2017 \\
-\cite{eia_cost_2020,ipcc_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016} & 5610(2050) &  &  &  & CF=0.45(2050) & 11(2050) &  \\
+\cite{eia_cost_2020,ipcc_climate_2014,kato_energy_2016,govindji_appraisal_2012,heger_wind_2016,bonou_life_2016} & 5610(2050) &  &  &  & CF=0.45(2050) & 11(2050) &  \\
 LNG-CCS(90\%) & 2626(2022) & 27.484 & 0.0494 & 30 & CF=0.12-0.4(2017) & 94 & 2022 \\
- \cite{eia_cost_2020,ipcc_2014} & 1422(2050) &  & &  &  &  & \\
+ \cite{eia_cost_2020,ipcc_climate_2014} & 1422(2050) &  & &  &  &  & \\
 USC-CCS(90\%) & 5252(2023) & 59 & 0.078 & 40 & CF=0.27-0.32(2017) & 236.5 & 2023 \\
- \cite{eia_cost_2020,ipcc_2014} & 4091(2050) &  &  &  &  &  & \\
+ \cite{eia_cost_2020,ipcc_climate_2014} & 4091(2050) &  &  &  &  &  & \\
 Emerging Solar & 4600(2017) & 15.19 & 0 & 25 & Eff=0.22(2017) & 22(2017) & 2017 \\
  \cite{irena_solar_2012,peng_review_2013} & 600(2050) &  &  &  &Eff=0.3(2030)  & 13(2040) &  \\
 \gls{AEC}  & 1500(2022) & 8 & 0.0004 & 11(CF=0.9) & Eff=0.7 & 1.29 & 2022\\
@@ -167,3 +166,11 @@ Li-ion lifetime cycles \cite{mongird_energy_2019} & 3500  \\
 	\end{tabularx}
 \label{misc-assump}
 \end{table}
+
+\begin{figure}[h] 
+\centering
+\hspace*{-3cm}
+\includegraphics[scale=0.07]{figures/useless}
+\caption{Sensitivity analysis results for \gls{PEMFC} and \gls{CCS} coal.}
+\label{sa-useless}
+\end{figure}

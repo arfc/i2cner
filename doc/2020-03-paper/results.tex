@@ -2,7 +2,7 @@
 
 \subsection{Transition Scenarios}
 
-\begin{figure}[htb] 
+\begin{figure}[H] 
 \centering
 \vspace*{-3cm}
 \includegraphics[scale=0.42]{figures/conv_nonuc}
@@ -10,7 +10,7 @@
 \label{scen1}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
 \vspace*{-3cm}
 \includegraphics[scale=0.42]{figures/conv_nuc}
@@ -18,7 +18,7 @@
 \label{scen2}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
 \vspace*{-3cm}
 \includegraphics[scale=0.41]{figures/newtechs_nonuc}
@@ -26,7 +26,7 @@
 \label{scen3}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
 \vspace*{-3cm}
 \includegraphics[scale=0.41]{figures/newtechs_nuc}
@@ -34,7 +34,7 @@
 \label{scen4}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
 \vspace*{-3cm}
 \includegraphics[scale=0.41]{figures/lowtrltech_nonuc}
@@ -57,30 +57,49 @@ The fifth scenario's results (Fig. \ref{scen5}) closely resemble those of the th
 
 \subsection{Sensitivity analysis}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
-\hspace*{-3cm}
-\includegraphics[scale=0.14]{figures/techs}
-\caption{Sensitivity analysis of selected model parameters. Red dots indicate points that are zero values, while blue dots indicate non-zero values. Plots with a grey background represent false correlations with characteristics of technologies that were not deployed (i.e. PEM FC and CCS Coal). }
-\label{sa-techs}
+\hspace*{-1cm}
+\includegraphics[scale=0.09]{figures/pws}
+\caption{Sensitivity analysis of Photochemical Water Splitting. Red dots indicate points that are zero values, while blue dots indicate non-zero values.}
+\label{pws}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
-\hspace*{-3cm}
-\includegraphics[scale=0.2]{figures/syscost}
-\caption{Sensitivity analysis of the model's overall transition cost between 2013-2100 with respect to selected model parameters.  Red dots indicate points that are zero values, while blue dots indicate non-zero values. Plots with a grey background represent false correlations with characteristics of technologies that were not deployed (i.e. PEM FC and CCS Coal).}
-\label{sa-syscost}
+%\hspace*{-3cm}
+\includegraphics[scale=0.12]{figures/satechsh2}
+\caption{Sensitivity analysis of hydrogen generation technologies \gls{SOEC} and \gls{PEMEC}}.
+\label{satechs-h2}
 \end{figure}
 
-\begin{figure}[h] 
+\begin{figure}[H] 
 \centering
-\hspace*{-3cm}
-\includegraphics[scale=0.2]{figures/co2emi}
-\caption{Sensitivity analysis of the model's cumulative emissions over 2013-2100 with respect to selected model parameters. Red dots indicate points that are zero values, while blue dots indicate non-zero values. Plots with a grey background represent false correlations with characteristics of technologies that were not deployed (i.e. PEM FC and CCS Coal).}
-\label{sa-co2}
+%\hspace*{-3cm}
+\includegraphics[scale=0.12]{figures/satechselc}
+\caption{Sensitivity analysis of electricity generation technologies \gls{SOFC} and \gls{CCS} gas.}
+\label{satechs-elc}
 \end{figure}
 
-As the first set of sensitivity analysis results (Fig. \ref{sa-techs}) indicate, \gls{PEMFC}s are never utilized due to their efficiency being lower than that of \gls{SOFC}s, and \gls{CCS} coal plants are never deployed due to their high emission coefficient. \gls{PWS} plays a minor role in generating 0-20 TWh of hydrogen over the entire simulation's time-period, as opposed to \gls{SOEC}s which generate 19,500-22,500 TWh of hydrogen, and \gls{PEMEC}s, which generate 12,000-16,000 TWh. The share of \gls{PWS} was found to be strongly correlated to its investment cost, with \$3300/kW the approximate threshold at which this technology ceases to be deployed. It's deployment is also weakly correlated with the splitting efficiency, wherein values greater than 21\% seem most favourable for its deployment. The emission coefficient is too small to have an impact on the overall emissions from the system considering \gls{PWS}'s small deployment, hence it does not appreciably affect its deployment. \gls{SOEC}'s share is most strongly correlated with their investment cost, however they play a non-trivial role over the range of perturbation applied to said parameter. Their deployment is largely insensitive to their emission coefficient as their cost and high efficiency trumps any increase in emissions due to their deployment, which is likely to be small due to their small emission coefficient. \gls{PEMEC} and \gls{SOFC} deployment is also most noticeably affected by their respective investment costs. The share of \gls{CCS}-Gas is relatively small, about 2-3\%, due to its emission coefficient being much larger than that of all hydrogen technologies. Its deployment is most strongly correlated with the investment cost of \gls{SOFC}s as a reduction in the deployment of fuel cells forces the model to marginally increase CCS Gas deployment to achieve its emission goals.
 
-The second set of results (Fig. \ref{sa-syscost} and \ref{sa-co2}) indicate that system's total transition cost and total emissions are tightly correlated with the investment cost of \gls{SOFC}s. This follows from the large share of \gls{SOFC}s, and the fact that they are the most important technology in the model in terms of reducing emissions and converting excess power from renewables into electricity, yet they are the most expensive technology available to the model.
+\begin{figure}[H] 
+\centering
+%\hspace*{-3cm}
+\includegraphics[scale=0.15]{figures/syscost}
+\caption{Sensitivity analysis of the model's overall transition cost between 2013-2100 with respect to selected model parameters.}
+\label{syscost}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+%\hspace*{-3cm}
+\includegraphics[scale=0.15]{figures/co2emi}
+\caption{Sensitivity analysis of the model's cumulative emissions over 2013-2100 with respect to selected model parameters.}
+\label{co2emi}
+\end{figure}
+
+Preliminary assessment of our sensitivity analysis data (Fig. \ref{sa-useless}) indicates that \gls{PEMFC}s are never utilized due to their efficiency being lower than that of \gls{SOFC}s, and \gls{CCS} coal plants are never deployed due to their high emission coefficient. \gls{PWS} plays a minor role in generating 0-20 TWh of hydrogen over the entire simulation's time-period (Fig. \ref{pws}), as opposed to \gls{SOEC}s which generate 19,500-22,500 TWh of hydrogen, and \gls{PEMEC}s, which generate 12,000-16,000 TWh. The share of \gls{PWS} was found to be strongly correlated to its investment cost, with \$3300/kW the approximate threshold at which this technology ceases to be deployed. It's deployment is also weakly correlated with the splitting efficiency, wherein values greater than 21\% seem most favourable for its deployment. The emission coefficient is too small to have an impact on the overall emissions from the system considering \gls{PWS}'s small deployment, hence it does not appreciably affect its deployment. Since \gls{PEMFC}s, \gls{CCS} coal, and \gls{PWS} are not deployed in quantities significant enough to affect the model's performance, they are omitted as potential dependent variables for the rest of the sensitivity analysis.
+
+\gls{SOEC}'s share is most strongly correlated with their investment cost, however they play a non-trivial role over the range of perturbation applied to said parameter (Fig. \ref{satechs-h2}). Their deployment is largely insensitive to their emission coefficient as their cost and high efficiency trumps any increase in emissions due to their deployment, which will be negligible due to their small emission coefficient. \gls{PEMEC} (Fig. \ref{satechs-elc}) and \gls{SOFC} (Fig. \ref{satechs-elc}) deployment is also most noticeably affected by their respective investment costs. The share of \gls{CCS}-Gas (Fig. \ref{satechs-elc}) is relatively small, about 2-3\%, due to its emission coefficient being much larger than that of all hydrogen technologies. Its deployment is most strongly correlated with the investment cost of \gls{SOFC}s as a reduction in the deployment of fuel cells forces the model to marginally increase CCS Gas deployment to achieve its emission goals.
+
+The final set of results (Fig. \ref{syscost} and \ref{co2emi}) indicate that system's total transition cost and total emissions are tightly correlated with the investment cost of \gls{SOFC}s. This follows from the large share of \gls{SOFC}s, and the fact that they are the most important technology in the model in terms of reducing emissions and converting excess power from renewables into electricity, yet they are the most expensive technology available to the model.
