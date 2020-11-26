@@ -1,6 +1,6 @@
 \section{Model data, assumptions, and secondary results} \label{Appendix}
 
-\begin{table}[!ht]
+\begin{table}[H]
 	\caption{Data for initial condition.}
 	\vspace{0.1in}
 	\begin{tabularx}{1.2\textwidth}{p{0.35\textwidth} p{0.25\textwidth} p{0.2\textwidth} p{0.25\textwidth}}
@@ -28,7 +28,7 @@ Solar & 0.15 & 37 & 2040 \\
 \caption{Electricity generation that defines the initial condition of the model.}
 \end{figure}
 
-\begin{table}[!ht]
+\begin{table}[H]
 	\caption{Initial condition CO$_2$ emissions compared to the model and data from the Carbon Trust\cite{carbon_brief_carbon_2018}.}
 	\vspace{0.1in}
 	\begin{tabularx}{\textwidth}{p{0.08\textwidth} p{0.35\textwidth} p{0.35\textwidth} p{0.15\textwidth}}
@@ -101,7 +101,7 @@ Gas Reforming-CCS(70\%) & 1200 & 8 & 0.065 & 30 & Eff=0.56 & 179 & 2022\\
 
 
 
-\begin{table}[!ht]
+\begin{table}[H]
 	\caption{Capacity limits.}
 	\vspace{0.1in}
 	\begin{tabularx}{\textwidth}{p{0.5\textwidth} p{0.5\textwidth} }
@@ -120,7 +120,7 @@ Nuclear & 50 (Scenarios 3 \& 4) \\
 \label{caplim}
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[H]
 %\begin{minipage}{\textwidth} 
 	\caption{Capacity growth rates.}
 	\vspace{0.1in}
@@ -147,7 +147,7 @@ All emerging technologies & 40\% (Years 1-5) \\
 %\end{minipage}
 \end{table}
 
-\begin{table}[!ht]
+\begin{table}[H]
 	\caption{Miscellaneous model parameters and assumptions.}
 	\vspace{0.1in}
 	\begin{tabularx}{\textwidth}{p{0.5\textwidth} p{0.5\textwidth}}
@@ -166,6 +166,43 @@ Li-ion lifetime cycles \cite{mongird_energy_2019} & 3500  \\
 	\end{tabularx}
 \label{misc-assump}
 \end{table}
+ 
+\pagebreak 
+ 
+\subsection{Sensitivity analysis secondary results}
+
+\begin{figure}[H] 
+\centering
+\hspace*{-1cm}
+\includegraphics[scale=0.09]{figures/pws}
+\caption{Sensitivity analysis of Photochemical Water Splitting. Red dots indicate points that are zero values, while blue dots indicate non-zero values.}
+\label{pws}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+%\hspace*{-3cm}
+\includegraphics[scale=0.12]{figures/satechsh2}
+\caption{Sensitivity analysis of hydrogen generation technologies \gls{SOEC} and \gls{PEMEC}}.
+\label{satechs-h2}
+\end{figure}
+
+\begin{figure}[H] 
+\centering
+%\hspace*{-3cm}
+\includegraphics[scale=0.12]{figures/satechselc}
+\caption{Sensitivity analysis of electricity generation technologies \gls{SOFC} and \gls{CCS} gas.}
+\label{satechs-elc}
+\end{figure}
+
+
+\begin{figure}[H] 
+\centering
+%\hspace*{-3cm}
+\includegraphics[scale=0.15]{figures/syscost}
+\caption{Sensitivity analysis of the model's overall transition cost between 2013-2100 with respect to selected model parameters.}
+\label{syscost}
+\end{figure}
 
 \begin{figure}[h] 
 \centering
@@ -173,4 +210,5 @@ Li-ion lifetime cycles \cite{mongird_energy_2019} & 3500  \\
 \includegraphics[scale=0.07]{figures/useless}
 \caption{Sensitivity analysis results for \gls{PEMFC} and \gls{CCS} coal.}
 \label{sa-useless}
+
 \end{figure}
