@@ -24,9 +24,12 @@
 %\let\raggedleft\raggedright % Pushes the date (at the top) to the left, comment this line to have the date on the right
 %\usepackage{everypage}
 %\usepackage{blindtext}
-%\usepackage{eso-pic,graphicx}
+\usepackage{eso-pic}
+\usepackage{graphicx}
+
  \begin{document}
-%\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{background.pdf}}
+%\ClearShipoutPicture
+\AddToShipoutPictureBG*{\includegraphics[width=\paperwidth,height=\paperheight]{background.pdf}}
 
 %----------------------------------------------------------------------------------------
 %       ADDRESSEE SECTION
