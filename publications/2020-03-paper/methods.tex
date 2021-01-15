@@ -11,9 +11,10 @@ While Japanese electricity demand is expected to grow in the near future  \cite{
 \begin{table}[!ht]
 	\caption{Electricity demand increase over the simulation time frame.}
 	\vspace{0.1in}
-	\begin{tabularx}{\textwidth}{p{0.5\textwidth} p{0.5\textwidth}}
+	\begin{tabularx}{0.4\textwidth}{p{0.15\textwidth} p{0.25\textwidth}}
 		\hline
-\textbf{Year} & \textbf{Annual demand increase} \\
+\textbf{Year} & \textbf{Annual demand} \\
+ & \textbf{increase} \\
 \hline
 2017-2030 & 1.7 \% \cite{noauthor_electricity_2019} \\
 2031-2050 & 1.0 \% \\
@@ -27,9 +28,10 @@ While Japanese electricity demand is expected to grow in the near future  \cite{
 \begin{table}[!ht]
 	\caption{Emission constraints.}
 	\vspace{0.1in}
-	\begin{tabularx}{\textwidth}{p{0.1\textwidth} p{0.22\textwidth}p{0.16\textwidth} p{0.4\textwidth}}
+	\begin{tabularx}{0.6\textwidth}{p{0.05\textwidth} p{0.2\textwidth}p{0.05\textwidth} p{0.3\textwidth}}
 		\hline
-\textbf{Year} & \textbf{Emission limit} & \textbf{Base year} & \textbf{Reduction from base year} \\
+\textbf{Year} & \textbf{Emission limit} & \textbf{Base} & \textbf{Reduction} \\
+ & & \textbf{year} & \textbf{from base year} \\
 \hline
 2030 & 438 Mt CO$_2$-eq. & 2013 & 26 \% \\
 2050 & 75 Mt CO$_2$-eq. & 1990 & 80 \% \\
@@ -48,17 +50,20 @@ Exogenous variables such as economic data, emission coefficients, nameplate capa
 All hydrogen storage devices are operated with a maximum availability factor of 90\%, making them extremely flexible for load-following. Long-term storage of hydrogen is also available using hydrogen tanks with appropriate loss factors \cite{iea_technology_2015}. For hydrogen electrolysers and fuel cells, life-cycle emissions from just the stack are considered, as balance-of-plant emissions from utility scale hydrogen depend strongly on the type of plant and the source of energy used for electrolysis. Our assumptions about the reduction in the investment costs and life-cycle emissions of batteries are conservative due to the rising cost of cobalt and nickel, and lithium-ion battery manufacturing being concentrated in high \gls{GHG}-emitting nations, respectively \cite{oliveira_environmental_2015,emilsson_lithium-ion_2019,turcheniuk_ten_2018,simon_potential_2015}. 
 
 \begin{table}[!ht]
-	\caption{Electricity supply transition scenario definition.}
+	\caption{Electricity supply transition scenario definition based on enabled technologies.}
 	\vspace{0.1in}
-	\begin{tabularx}{\textwidth}{p{0.15\textwidth} p{0.25\textwidth} p{0.25\textwidth} p{0.35\textwidth}}
+	\begin{tabularx}{0.65\textwidth}{p{0.1\textwidth} p{0.18\textwidth} p{0.15\textwidth} p{0.18\textwidth}}
 \hline 
-\textbf{Scenario}& \textbf{Emerging tech.} & \textbf{New nuclear} & \textbf{Nascent tech.}\\
-                 & \textbf{enabled} & \textbf{enabled} & \textbf{enabled}\\
+\textbf{Scenario}& \textbf{Emerging} & \textbf{New} & \textbf{Nascent}\\
+ & \textbf{tech.} & \textbf{nuclear} & \textbf{tech.}\\
+
+%                 & \textbf{enabled} & \textbf{enabled} & \textbf{enabled}\\
                   \hline
-%1               &   \xmark       &      \greencheck     \\ 
-%2               & \xmark       &         \xmark       \\ 
-%3               &   \greencheck     &      \greencheck     \\ 
-%4               &   \greencheck     &         \xmark       \\
+%1               &   \xmark       &      \xmark     &   \xmark     \\ 
+%2               &   \xmark       &      \greencheck     &   \xmark     \\ 
+%3               &   \greencheck       &      \xmark     &   \xmark     \\ 
+%4               &   \greencheck       &      \greencheck     &   \xmark     \\ 
+%5               &   \greencheck       &      \xmark     &   \greencheck     \\ 
 1               &  No       &         No     &     No  \\ 
 2               &   No       &      Yes     &     No  \\ 
 3               &   Yes     &         No      &     No   \\
@@ -81,7 +86,7 @@ While there is significant uncertainty in the investment cost of nuclear power p
 \begin{table}[!ht]
 	\caption{Candidate parameters and their variation in our sensitivity analysis.}
 	\vspace{0.1in}
-	\begin{tabularx}{1.1\textwidth}{p{0.3\textwidth} p{0.25\textwidth} p{0.25\textwidth}p{0.3\textwidth}}
+	\begin{tabularx}{0.9\textwidth}{p{0.3\textwidth} p{0.15\textwidth} p{0.15\textwidth}p{0.3\textwidth}}
 \hline 
 \textbf{Technology}  & \textbf{Sampled} & \textbf{Distribution}& \textbf{Distribution}\\
 \textbf{Parameter} & \textbf{Distribution} & \textbf{Mean}& \textbf{Range}\\
