@@ -2,6 +2,8 @@
 \biboptions{numbers,sort&compress}
 \usepackage{lineno}
 \usepackage{xspace}
+\usepackage[T1]{fontenc}
+\usepackage{lmodern}
 \modulolinenumbers[5]
 
 \journal{Applied Energy}
@@ -77,18 +79,20 @@ minimum height=2em]
 % after hyperref %
 \usepackage{cleveref}
 \usepackage{datatool}
-\usepackage[acronym,toc]{glossaries}
+%\usepackage[nonumberlist,nopostdot,nonumberlist,acronym,toc,section]{glossaries}
+\usepackage[xindy,nonumberlist]{glossaries}
 \include{acros}
+\makeglossaries
+
 \newcommand{\greencheck}{{\color{green}\checkmark}}
 \newcommand{\xmark}{{\color{red}\ding{55}}}
 \usepackage[includefoot,bottom=8pt]{geometry}
 
 
-\makeglossaries
 
 \begin{document}
 \begin{frontmatter}
-\title{The role of current and emerging technologies in meeting mid- to long-term carbon reduction goals for Japan}
+\title{The role of current and emerging technologies in meeting Japan's mid- to long-term carbon reduction goals}
 
 \date{}                     %% if you don't need date to appear
 
@@ -110,11 +114,12 @@ carbon capture
 
 \input{abstract}
 \end{frontmatter}
-\glsresetall
+%\glsresetall
+\glsaddall
 
 \linenumbers
 
-%\printglossary[type=\acronymtype,title=Abbreviations]
+\printglossary[title=Abbreviations]
 
 \input{introduction}
 \FloatBarrier
