@@ -1,7 +1,7 @@
 \section{Methodology} \label{method}
 % what is TIMES
 \subsection{TIMES Model Description}
-\gls{TIMES} models dynamic energy systems and simulates transition scenarios as a mixed-integer linear optimisation problem that is subject to a primary objective function and additional constraints \cite{loulou_etsap-tiam_2008}. The generation, refinement, supply, storage, and trade of energy commodities across multiple sectors and multiple regions are modeled using a wide variety of in-built commodity and process types. Emissions can be associated with energy commodities or processes as an emission coefficient per unit commodity produced or consumed. 
+\gls{TIMES} models dynamic energy systems and simulates transition scenarios as a mixed-integer linear optimisation problem that is subject to a primary objective function and additional constraints \cite{loulou_etsap-tiam_2008}. The generation, refinement, supply, storage, and trade of energy commodities are modelled across multiple sectors and multiple regions using a wide variety of in-built commodity and process types. Emissions can be associated with energy commodities or processes as an emission coefficient per unit commodity produced or consumed. 
 
 %basic features of model
 The objective function in our single-region model is the overall cost of the transition. The major constraints in our simulations are the demand for electricity (Table \ref{demand}), emission constraints on the electricity-generation sector based on Japan's \gls{INDC} (Table \ref{co2-limits}), and feasible nameplate capacity deployment limits (Table \ref{caplim}). Miscellaneous assumptions are summarised in Table \ref{misc-assump}. In other words, our model minimises the transition cost while meeting the increasing electricity demand and achieving the required emission cuts using a combination of generation and storage technologies. 
@@ -91,13 +91,13 @@ While there is significant uncertainty in the investment cost of nuclear power p
 \textbf{Technology}  & \textbf{Sampled} & \textbf{Distribution}& \textbf{Distribution}\\
 \textbf{Parameter} & \textbf{Distribution} & \textbf{Mean}& \textbf{Range}\\
 \hline
-\gls{PWS} Investment Cost       & Gaussian    & 3088 \$/kW & $\pm$20\% of mean. \\                  
-\gls{SOEC} Investment Cost      & Gaussian    & 1388 \$/kW & $\pm$20\% of mean.\\                  
-\gls{PEMEC} Investment Cost     & Gaussian    & 3800 \$/kW & $\pm$20\% of mean.\\                  
-\gls{SOFC} Investment Cost      & Gaussian    & 7399 \$/kW & $\pm$20\% of mean.\\                  
-\gls{PEMFC} Investment Cost     & Gaussian    & 7399 \$/kW & $\pm$20\% of mean.\\                  
-\gls{CCS} Gas Investment Cost   & Gaussian    & 2626 \$/kW & $\pm$20\% of mean.\\                  
-\gls{CCS} Coal Investment Cost  & Gaussian    & 5252 \$/kW & $\pm$20\% of mean.\\
+\gls{PWS} Investment Cost       & Gaussian    & 3088 \$/kW & $\pm$20\%. \\                  
+\gls{SOEC} Investment Cost      & Gaussian    & 1388 \$/kW & $\pm$20\%.\\                  
+\gls{PEMEC} Investment Cost     & Gaussian    & 3800 \$/kW & $\pm$20\%.\\                  
+\gls{SOFC} Investment Cost      & Gaussian    & 7399 \$/kW & $\pm$20\%.\\                  
+\gls{PEMFC} Investment Cost     & Gaussian    & 7399 \$/kW & $\pm$20\%.\\                  
+\gls{CCS} Gas Investment Cost   & Gaussian    & 2626 \$/kW & $\pm$20\%.\\                  
+\gls{CCS} Coal Investment Cost  & Gaussian    & 5252 \$/kW & $\pm$20\%.\\
 \gls{PWS} Emission Coefficient  & Triangular  & 1.08 g/kWh & 0.2-5.405 g/kWh. \\                  
 \gls{SOEC} Emission Coefficient & Triangular  & 1.08 g/kWh & 0.2-5.405 g/kWh. \\
 \gls{PWS} Efficiency            & Triangular  & 0.525 & 0.5-0.58. \\                               

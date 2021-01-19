@@ -4,27 +4,7 @@
 
 The transition simulations' results are shown in Figures \ref{scen1}-\ref{scen5}, and summarised in Table \ref{tab:results_summary} (see Table \ref{scen-table} for scenario definitions). The results of each scenario are reported as annually aggregated plots of (i) the electricity that is directly supplied to the end user, (ii) the active nameplate capacities of generation and storage technologies, and (iii) the resulting emissions (direct and life cycle) from each technology. The first plot of each scenario shows a large degree of variation as generated electricity is diverted from multiple sources to storage technologies instead of being supplied directly to the end user. The output of some technologies also varies due to their ability to load-follow. The second plot describes the transitions in terms of capacities, highlighting the effect of the capacity factor of intermittent versus base-load technologies. The third plot details the sources of direct and averaged life-cycle emissions from each source.
 
-\begin{table}[!ht]
-	\caption{Summary of decarbonisation simulations' results.}
-	\vspace{0.1in}
-	\begin{tabularx}{0.9\textwidth}{p{0.1\textwidth} p{0.2\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.2\textwidth}}
-		\hline
-\textbf{Scenario} & \textbf{Enabled} & \textbf{Meets} & \textbf{Meets} & \textbf{Emissions} & \textbf{Cost} \\
- & \textbf{Technologies} & \textbf{2030} & \textbf{2050} & \textbf{between} & (USD 2015) \\
- &  & \textbf{emission} & \textbf{emission} & \textbf{2050-2100} &  \\
- &  & \textbf{goals} & \textbf{goals} & &  \\
-\hline
-1 & Conventional tech., no new nuclear & Yes & No & +25 Mt & 3.51 trillion. \\
-2 & Conventional tech., with new nuclear & Yes & Yes & -12 Mt & 2.66 trillion. \\
-3 & Emerging tech., no new nuclear & Yes & Yes & No change & 3.19 trillion. \\
-4 & Emerging tech., with new nuclear & Yes & Yes & -32 Mt & 2.80 trillion. \\
-5 & Nascent tech., no new nuclear & Yes & Yes & No change & 3.18 trillion. \\
-\hline 
-	\end{tabularx}
-\label{tab:results_summary}
-\end{table}
-
-In Scenario 1 (Figure \ref{scen1}), the model is able to meet 2030 emission goals but fails to achieve the 2050 target by a margin of 25 Mt. Emissions continue to increase by another 25 Mt by 2100, primarily due to life cycle emissions from lithium-ion storage. As in all other scenarios, coal and oil must be retired by 2030. Natural gas sees rapid growth in the near-term, but complete retirement by 2055. Once deep emission cuts have been achieved, new natural gas is deployed again from 2071 onwards for its load-following capabilities. All existing nuclear power plants must be restarted by 2022 at full operating capacity. With renewable energy as the only option for decarbonisation, significant investments in solar, onshore wind, offshore wind (both fixed-bottom and floating), and lithium-ion storage are necessary. The presence of a large share of renewables results in significant overgeneration of electricity during some years. The amount of electricity diverted to storage technologies over the entire simulation time frame is 46,342 TWh, primarily from solar (36\%), onshore wind (22\%), fixed-bottom offshore wind (22\%),and floating offshore wind (12\%). The total cost of this transition is \textbf{3.51 trillion USD} (in 2015 USD).
+In Scenario 1 (Figure \ref{scen1}), the model is able to meet 2030 emission goals but fails to achieve the 2050 target by a margin of 25 Mt. Emissions continue to increase by another 25 Mt by 2100, primarily due to life cycle emissions from lithium-ion storage. As in all other scenarios, coal and oil must be retired by 2030. Natural gas sees rapid growth in the near-term, but complete retirement by 2055. Once deep emission cuts have been achieved, new natural gas is deployed again from 2071 onwards for its load-following capabilities. All existing nuclear power plants must be restarted by 2022 at full operating capacity. With renewable energy as the only option for decarbonisation, significant investments in solar, onshore wind, offshore wind (both fixed-bottom and floating), and lithium-ion storage are necessary. The presence of a large share of renewables results in significant overgeneration of electricity during some years. The amount of electricity diverted to storage technologies over the entire simulation time frame is 46,342 TWh, primarily from solar (36\%), onshore wind (22\%), fixed-bottom offshore wind (22\%),and floating offshore wind (12\%). The total cost of this transition is \textbf{3.51 trillion USD}.
 
 \begin{figure}[b!] 
 \centering
@@ -74,6 +54,26 @@ The fifth scenario's results (Figure \ref{scen5}) closely resemble those of the 
 \caption{Scenario 5 results (emerging technologies and nascent hydrogen technologies without new nuclear). The plot at the top shows the electricity generation mix used to meet the demand, the bottom-left figure shows the nameplate capacities of electricity generation and storage technologies that are deployed to meet the demand, and the bottom-right figure shows the sources of emission(direct and life cycle) resulting from this energy mix.}
 \label{scen5}
 \end{figure}
+
+\begin{table}[!ht]
+	\caption{Summary of decarbonisation simulations' results.}
+	\vspace{0.1in}
+	\begin{tabularx}{0.9\textwidth}{p{0.1\textwidth} p{0.2\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.1\textwidth}p{0.2\textwidth}}
+		\hline
+\textbf{Scenario} & \textbf{Enabled} & \textbf{Meets} & \textbf{Meets} & \textbf{Emissions} & \textbf{Cost} \\
+ & \textbf{Technologies} & \textbf{2030} & \textbf{2050} & \textbf{between} & (USD) \\
+ &  & \textbf{emission} & \textbf{emission} & \textbf{2050-} &  \\
+ &  & \textbf{goals} & \textbf{goals} & \textbf{2100} &  \\
+\hline
+1 & Conventional tech., no new nuclear & Yes & No & +25 Mt & 3.51 trillion. \\
+2 & Conventional tech., with new nuclear & Yes & Yes & -12 Mt & 2.66 trillion. \\
+3 & Emerging tech., no new nuclear & Yes & Yes & No change & 3.19 trillion. \\
+4 & Emerging tech., with new nuclear & Yes & Yes & -32 Mt & 2.80 trillion. \\
+5 & Nascent tech., no new nuclear & Yes & Yes & No change & 3.18 trillion. \\
+\hline 
+	\end{tabularx}
+\label{tab:results_summary}
+\end{table}
 
 \subsection{Sensitivity analysis}
 
