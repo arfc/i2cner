@@ -9,6 +9,7 @@ We outline salient features of our model in this section, while the data used fo
 While Japanese electricity demand is expected to grow in the near future  \cite{noauthor_electricity_2019}, long-term electricity demand in Japan is expected to plateau, or even decrease, due to Japan's ageing population. However, precisely quantifying this rate of decrease is challenging, as this reduction in population will likely be accompanied by increased electrification of transportation and industrial sectors. Hence, post-2030, we have assumed a demand curve based on increased electrification driving increasing demand, which eventually plateaus due to the aforementioned expected demographic changes. The model captures the initial condition of the post-Fukushima Japanese electricity supply system using The Energy Data and Modelling Centre's data from 2013-2016 \cite{the_institute_of_energy_economics_japan_energy_2018}. Long term impacts of factors such as the retirement of the existing nuclear reactor fleet and the deployment of emerging technology is assessed by simulating the system until 2100. We account for the carbon cost of each technology using an emission coefficient that incorporates both direct emissions and life cycle emissions averaged over the entire operating lifetime for each technology. Using \gls{TIMES} day-night and seasonal time periods \cite{loulou_etsap-tiam_2008}, the daily and seasonal variability of renewables is incorporated. The availability of renewables varies during these time periods based on the annually averaged capacity factors of renewables in Japan \cite{the_institute_of_energy_economics_japan_energy_2018, irena_renewable_2020}.
 
 \begin{table}[!ht]
+\centering
 	\caption{Electricity demand increase over the simulation time frame.}
 	\vspace{0.1in}
 	\begin{tabularx}{0.4\textwidth}{p{0.15\textwidth} p{0.25\textwidth}}
@@ -26,6 +27,7 @@ While Japanese electricity demand is expected to grow in the near future  \cite{
 \end{table}
 
 \begin{table}[!ht]
+\centering
 	\caption{Emission constraints.}
 	\vspace{0.1in}
 	\begin{tabularx}{0.6\textwidth}{p{0.05\textwidth} p{0.2\textwidth}p{0.05\textwidth} p{0.3\textwidth}}
@@ -50,6 +52,7 @@ Exogenous variables such as economic data, emission coefficients, nameplate capa
 All hydrogen storage devices are operated with a maximum availability factor of 90\%, making them extremely flexible for load-following. Long-term storage of hydrogen is also available using hydrogen tanks with appropriate loss factors \cite{iea_technology_2015}. For hydrogen electrolysers and fuel cells, life-cycle emissions from just the stack are considered, as balance-of-plant emissions from utility scale hydrogen depend strongly on the type of plant and the source of energy used for electrolysis. Our assumptions about the reduction in the investment costs and life-cycle emissions of batteries are conservative due to the rising cost of cobalt and nickel, and lithium-ion battery manufacturing being concentrated in high \gls{GHG}-emitting nations, respectively \cite{oliveira_environmental_2015,emilsson_lithium-ion_2019,turcheniuk_ten_2018,simon_potential_2015}. 
 
 \begin{table}[!ht]
+\centering
 	\caption{Electricity supply transition scenario definition based on enabled technologies.}
 	\vspace{0.1in}
 	\begin{tabularx}{0.65\textwidth}{p{0.1\textwidth} p{0.18\textwidth} p{0.15\textwidth} p{0.18\textwidth}}
@@ -84,6 +87,7 @@ While the aforementioned scenarios identify potential pathways that are likely t
 While there is significant uncertainty in the investment cost of nuclear power plants \cite{lovering_historical_2016}, it varies for individual plants and not for the technology as a whole. Preliminary simulations also demonstrated that nuclear power dominates the energy mix, and its share is fairly insensitive to perturbations over known ranges of investment costs \cite{lovering_historical_2016} due to its low life cycle emissions. Consequently, we eliminated nuclear power's investment cost as a candidate for sensitivity analysis. Furthermore, Japan has been exploring low-emission alternatives to nuclear since the Fukushima Daiichi disaster. In order to assess these potential alternatives which would otherwise be eliminated from the energy mix if new nuclear reactors were deployed, we chose Scenario 5 (Table \ref{scen-table}) as our base scenario for sensitivity analysis. Ten model parameters were sampled 30 times from appropriate distributions (Table \ref{sa-vars}). The parameter value at the first year of deployment (Table \ref{eco}) was varied, but the parameter's learning curve was held constant throughout all scenarios. For example, a 20\% change in the deployment year (2030) investment cost of \gls{SOFC}s with respect to the base case scenario reduces their investment cost in 2050 by 20\% as well. This makes learning-based cost-reductions proportionate across all sensitivity analysis runs. These parameters were randomly co-varied in 30 simulations. The share of each electricity generation technology (as the ratio of cumulative technology output to the cumulative electricity demand) and output of hydrogen technologies was plotted versus each varying parameter to correlate the effect of these parameters with the penetration of these technologies into the mix. A similar approach was also used to correlate these parameters with the system's transition cost.
 
 \begin{table}[!ht]
+\centering
 	\caption{Candidate parameters and their variation in our sensitivity analysis.}
 	\vspace{0.1in}
 	\begin{tabularx}{0.9\textwidth}{p{0.3\textwidth} p{0.15\textwidth} p{0.15\textwidth}p{0.3\textwidth}}
