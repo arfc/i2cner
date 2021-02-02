@@ -1,0 +1,65 @@
+\documentclass[review]{elsarticle}
+
+\usepackage{lineno}
+\usepackage{xspace}
+\modulolinenumbers[5]
+
+\journal{Applied Energy}
+
+%% `Elsevier LaTeX' style
+\bibliographystyle{elsarticle-num}
+%%%%%%%%%%%%%%%%%%%%%%%
+
+%%%% packages and definitions (optional)
+\usepackage{placeins}
+\usepackage{booktabs} % nice rules (thick lines) for tables
+\usepackage{microtype} % improves typography for PDF
+\usepackage{hhline}
+\usepackage{amsmath}
+
+%\usepackage[demo]{graphicx}
+%\usepackage{caption}
+%\usepackage{subcaption}
+
+\usepackage{booktabs}
+\usepackage{threeparttable, tablefootnote}
+
+\usepackage{tabularx}
+\newcolumntype{b}{>{\hsize=1.0\hsize}X}
+\newcolumntype{s}{>{\hsize=.5\hsize}X}
+\newcolumntype{m}{>{\hsize=.75\hsize}X}
+\newcolumntype{x}{>{\hsize=.25\hsize}X}
+
+\graphicspath{ {figures/} }
+
+% tikz %
+\usepackage{tikz}
+\usetikzlibrary{positioning, arrows, decorations, shapes}
+
+\usetikzlibrary{shapes.geometric,arrows}
+\tikzstyle{process} = [rectangle, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=blue!30]
+\tikzstyle{object} = [ellipse, rounded corners, minimum width=3cm, minimum height=1cm,text centered, draw=black, fill=green!30]
+\tikzstyle{arrow} = [thick,->,>=stealth]
+
+% hyperref %
+\usepackage[hidelinks]{hyperref}
+
+\begin{document}
+\begin{frontmatter}
+\title{The role of current and emerging technologies in meeting Japan's mid- to long-term carbon reduction goals}
+\end{frontmatter}
+\section*{CRediT Statement}
+
+The authors contributed to this work as described below.
+
+\textbf{Anshuman Chaube}: Methodology, validation, writing - original draft, visualisation.
+
+\textbf{Andrew Chapman}: Methodology, validation,  writing - original draft, writing - review and editing.
+
+\textbf{Akari Minami}: data curation, validation.
+
+\textbf{James Stubbins}: writing - review and editing, supervision. 
+
+\textbf{Kathryn D. Huff}: Conceptualisation, resources, writing - review and editing, supervision.
+\end{document}
+
