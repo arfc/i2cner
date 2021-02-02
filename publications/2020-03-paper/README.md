@@ -1,2 +1,2 @@
-# 2019-ashraf-rykhl-mox-sdtmsr
-This repository contains manuscript and simulation results related with using various initial fuel compositions for SD-TMSR
+# 2021-i2cner-paper
+This repository contains manuscript and simulation results related to the project "Dynamic transition analysis with TIMES".
