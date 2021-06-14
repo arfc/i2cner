@@ -1,4 +1,4 @@
-manuscript = review-responses
+manuscript = paper1
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -shell-escape -file-line-error
 

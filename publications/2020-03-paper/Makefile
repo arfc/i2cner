@@ -1,4 +1,4 @@
-manuscript = Scenarios
+manuscript = paper1
 references = $(wildcard *.bib)
 latexopt   = -halt-on-error -shell-escape -file-line-error
 

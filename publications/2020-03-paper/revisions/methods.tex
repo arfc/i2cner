@@ -1,0 +1,113 @@
+\section{Methodology} \label{method}
+% what is TIMES
+\subsection{TIMES Model Description}
+\gls{TIMES} models dynamic energy systems and simulates transition scenarios as a mixed-integer linear optimisation problem that is subject to a primary objective function and additional constraints \cite{loulou_etsap-tiam_2008}. The generation, refinement, supply, storage, and trade of energy commodities are modelled across multiple sectors and multiple regions using a wide variety of in-built commodity and process types. Emissions can be associated with energy commodities or processes as an emission coefficient per unit commodity produced or consumed. 
+
+%basic features of model
+We outline salient features of our model in this section, while the data used for our simulations are in \ref{Appendix}. The relevant input files can be accessed online \cite{chaube_arfci2cner_2021}. The objective function in our single-region model is the overall cost of the transition. The major constraints in our simulations are the demand for electricity (Table \ref{demand}), emission constraints on the electricity-generation sector based on Japan's \gls{INDC} (Table \ref{co2-limits}), and feasible nameplate capacity deployment limits (Table \ref{caplim}). Miscellaneous assumptions are summarised in Table \ref{misc-assump}. In summary, our model minimises the transition cost while meeting the increasing electricity demand and achieving the required emission cuts using a combination of generation and storage technologies. 
+
+\begin{table}[H]
+\centering
+	\caption{Electricity demand increase over the simulation time frame.}
+	\vspace{0.1in}
+	\begin{tabularx}{0.4\textwidth}{p{0.15\textwidth} p{0.25\textwidth}}
+		\hline
+\textbf{Year} & \textbf{Annual demand} \\
+ & \textbf{increase} \\
+\hline
+2017-2030 & 1.7 \% \cite{noauthor_electricity_2019} \\
+2031-2050 & 1.0 \% \\
+2051-2070 & 0.5 \% \\
+2070-2100 & 0.0 \% \\
+\hline 
+	\end{tabularx}
+\label{demand}
+\end{table}
+
+\begin{table}[H]
+\centering
+	\caption{Emission constraints.}
+	\vspace{0.1in}
+	\begin{tabularx}{0.6\textwidth}{p{0.05\textwidth} p{0.2\textwidth}p{0.05\textwidth} p{0.3\textwidth}}
+		\hline
+\textbf{Year} & \textbf{Emission limit} & \textbf{Base} & \textbf{Reduction} \\
+ & & \textbf{year} & \textbf{from base year} \\
+\hline
+2030 & 438 Mt CO$_2$-eq. & 2013 & 26 \% \\
+2050 & 75 Mt CO$_2$-eq. & 1990 & 80 \% \\
+2100 & 75 Mt CO$_2$-eq. & 2050 & 0 \% \\
+\hline 
+	\end{tabularx}
+\label{co2-limits}
+\end{table}
+
+While Japanese electricity demand is expected to grow in the near future  \cite{noauthor_electricity_2019}, long-term electricity demand in Japan is expected to plateau, or even decrease, due to Japan's ageing population. However, precisely quantifying this rate of decrease is challenging, as this reduction in population will likely be accompanied by increased electrification of transportation and industrial sectors. Hence, post-2030, we have assumed a demand curve based on increased electrification driving increasing demand, which eventually plateaus due to the aforementioned expected demographic changes. The model captures the initial condition of the post-Fukushima Japanese electricity supply system using The Energy Data and Modelling Centre's data from 2013-2016 \cite{the_institute_of_energy_economics_japan_energy_2018}. Long term impacts of factors such as the retirement of the existing nuclear reactor fleet and the deployment of emerging technology is assessed by simulating the system until 2100. We account for the carbon cost of each technology using an emission coefficient that incorporates both direct emissions and life cycle emissions averaged over the entire operating lifetime for each technology. Using \gls{TIMES} day-night and seasonal time periods \cite{loulou_etsap-tiam_2008}, the daily and seasonal variability of renewables is incorporated. The availability of renewables varies during these time periods based on the annually averaged capacity factors of renewables in Japan \cite{the_institute_of_energy_economics_japan_energy_2018, irena_renewable_2020}.
+
+%scenario description
+To explore possible pathways to curbing \gls{GHG} emissions, we simulated five transition scenarios of varying likelihoods, with different sets of technologies enabled for deployment, as described in Table \ref{scen-table}. The first set includes conventional technologies such as  \gls{USC}, \gls{lng}, solar photovoltaic, wind energy (with onshore, offshore-fixed, and offshore-floating considered separately), and utility-scale lithium-ion battery storage. New deployments of oil-fuelled power plants are disabled due to the declining use of oil for electricity generation in accordance with Japan's goal of energy security and independence, as per the Basic Energy Plan. The second set of technologies considered includes emerging carbon-neutral technologies that are already commercialised or close to commercialisation, namely emerging solar photovoltaic (modelled as a composite of perovskites and CdTe solar cells), \gls{CCS}, and utility-scale hydrogen power. For hydrogen power, steam reforming, steam reforming with \gls{CCS}, \glspl{AEC}, \glspl{PEMEC}, \glspl{PEMFC}, and \glspl{SOFC} were incoporated based on their technological potential. Along with these two technology groups, we also explore the potential impact of nuclear energy. Nuclear power has significant advantages over renewables including long operational lifetimes, extremely low life-cycle emissions, and high capacity factors. However, nuclear power faces extremely low public acceptance in Japan after the Fukushima-Daiichi accident, therefore its future in Japan is highly uncertain. Hence, transition scenarios with and without new nuclear reactor deployment must be juxtaposed to assess the importance of the role of nuclear in emission reduction. Finally, the long-term impact of nascent hydrogen technologies on the hydrogen economy is assessed in an additional scenario. In this scenario, the potential commercialisation of \gls{SOEC} and \gls{PWS} post-2050 is explored in the absence of new nuclear power.
+
+\begin{table}[H]
+\centering
+	\caption{Electricity supply transition scenario definition based on enabled technologies.}
+	\vspace{0.1in}
+	\begin{tabularx}{0.65\textwidth}{p{0.1\textwidth} p{0.18\textwidth} p{0.15\textwidth} p{0.18\textwidth}}
+\hline 
+\textbf{Scenario}& \textbf{Emerging} & \textbf{New} & \textbf{Nascent}\\
+ & \textbf{tech.} & \textbf{nuclear} & \textbf{tech.}\\
+
+%                 & \textbf{enabled} & \textbf{enabled} & \textbf{enabled}\\
+                  \hline
+%1               &   \xmark       &      \xmark     &   \xmark     \\ 
+%2               &   \xmark       &      \greencheck     &   \xmark     \\ 
+%3               &   \greencheck       &      \xmark     &   \xmark     \\ 
+%4               &   \greencheck       &      \greencheck     &   \xmark     \\ 
+%5               &   \greencheck       &      \xmark     &   \greencheck     \\ 
+1               &  No       &         No     &     No  \\ 
+2               &   No       &      Yes     &     No  \\ 
+3               &   Yes     &         No      &     No   \\
+4               &   Yes     &      Yes     &     No  \\ 
+5               &   Yes     &      No     &     Yes  \\ 
+\hline
+	\end{tabularx}
+\label{scen-table}
+\end{table}
+
+
+%misc assumptions
+Exogenous variables such as economic data, emission coefficients, nameplate capacity limits, and growth rates are detailed in Tables \ref{eco}, \ref{caplim}, and \ref{growrate} respectively. Prices and projections for fossil fuels and nuclear fuel are incorporated \cite{wittenstein_projected_2015, world_bank_commodity_2016, international_energy_agency_world_2019}. Learning curves for costs and life-cycle emissions are compiled from existing data (Table \ref{eco}) based on expected scaling of manufacturing, availability of manufacturing materials, and the use of clean energy for manufacturing energy system components. These learning curves are modelled as piecewise linear functions interpolated between the available data points, with the curve plateauing at the latest value for a given parameter, as detailed in Table \ref{eco}. Capacity limits of renewables and \gls{PWS} are based on their land-use requirements. The maximum annual capacity growth rates for existing technologies are held constant. The growth rate of nuclear power is based on historic trends and current pressure vessel manufacturing limitations \cite{iaea_pris_nodate}. The reactor size assumed in this study is 1165 MWe, based on Watts-Bar Unit 2 \cite{iaea_pris_nodate-1}. Due to a projected increase in the share of renewables, nuclear power plants must be able to load-follow to a certain extent, which is approximated in our model based on French reactors' range of capacity factors. The growth rates of all emerging technologies are modelled on the rates observed for solar photovoltaic technology, with rapid initial growth followed by gradual reduction, eventually reaching a moderate maximum attainable growth rate. One notable exception is the maximum growth rate of emerging solar technologies, which we have assumed to be the same as that of existing solar photovoltaic technologies. We assume that these technologies, some of which are already commercialised or close to commercialisation, will benefit immensely from the already streamlined solar photovoltaic manufacturing and supply chain. Therefore, they could be deployed as rapidly as conventional solar photovoltaic cells. 
+
+All hydrogen storage devices are operated with a maximum availability factor of 90\%, making them extremely flexible for load-following. Long-term storage of hydrogen is also available using hydrogen tanks with appropriate loss factors \cite{iea_technology_2015}. For hydrogen electrolysers and fuel cells, life-cycle emissions from just the stack are considered, as balance-of-plant emissions from utility scale hydrogen depend strongly on the type of plant and the source of energy used for electrolysis. Our assumptions about the reduction in the investment costs and life-cycle emissions of batteries are conservative due to the rising cost of cobalt and nickel, and lithium-ion battery manufacturing being concentrated in high \gls{GHG}-emitting nations, respectively \cite{oliveira_environmental_2015,emilsson_lithium-ion_2019,turcheniuk_ten_2018,simon_potential_2015}. 
+
+
+
+
+\subsection{Sensitivity analysis}
+%approach, goal, what are we hoping to learn
+%variables, sampling approach, median, range, which variables, which base case scenario, why
+While the aforementioned scenarios identify potential pathways that are likely to result in deep emission cuts, many parameters, such as the investment cost, life cycle emissions, and lifetimes, are highly uncertain for novel technologies like \gls{CCS} and hydrogen generation and conversion technologies. Therefore, our sensitivity analysis is focused on investigating the impact of such parameters (Table \ref{sa-vars}). We analyse the sensitivity of the share of each of these technologies in the electricity-generation mix and of the system transition cost with respect to these variables.
+
+\begin{table}[H]
+\centering
+	\caption{Candidate parameters and their variation in our sensitivity analysis.}
+	\vspace{0.1in}
+	\begin{tabularx}{0.9\textwidth}{p{0.3\textwidth} p{0.15\textwidth} p{0.15\textwidth}p{0.3\textwidth}}
+\hline 
+\textbf{Technology}  & \textbf{Sampled} & \textbf{Distribution}& \textbf{Distribution}\\
+\textbf{Parameter} & \textbf{Distribution} & \textbf{Mean}& \textbf{Range}\\
+\hline
+\gls{PWS} Investment Cost       & Gaussian    & 3088 \$/kW & $\pm$20\%. \\                  
+\gls{SOEC} Investment Cost      & Gaussian    & 1388 \$/kW & $\pm$20\%.\\                  
+\gls{PEMEC} Investment Cost     & Gaussian    & 3800 \$/kW & $\pm$20\%.\\                  
+\gls{SOFC} Investment Cost      & Gaussian    & 7399 \$/kW & $\pm$20\%.\\                  
+\gls{PEMFC} Investment Cost     & Gaussian    & 7399 \$/kW & $\pm$20\%.\\                  
+\gls{CCS} Gas Investment Cost   & Gaussian    & 2626 \$/kW & $\pm$20\%.\\                  
+\gls{CCS} Coal Investment Cost  & Gaussian    & 5252 \$/kW & $\pm$20\%.\\
+\gls{PWS} Emission Coefficient  & Triangular  & 1.08 g/kWh & 0.2-5.405 g/kWh. \\                  
+\gls{SOEC} Emission Coefficient & Triangular  & 1.08 g/kWh & 0.2-5.405 g/kWh. \\
+\gls{PWS} Efficiency            & Triangular  & 0.525 & 0.5-0.58. \\                               
+\hline
+	\end{tabularx}
+\label{sa-vars}
+\end{table}
+
+While there is significant uncertainty in the investment cost of nuclear power plants \cite{lovering_historical_2016}, it varies for individual plants and not for the technology as a whole. Preliminary simulations also demonstrated that nuclear power dominates the energy mix, and its share is fairly insensitive to perturbations over known ranges of investment costs \cite{lovering_historical_2016} due to its low life cycle emissions. Consequently, we eliminated nuclear power's investment cost as a candidate for sensitivity analysis. Furthermore, Japan has been exploring low-emission alternatives to nuclear since the Fukushima Daiichi disaster. In order to assess these potential alternatives which would otherwise be eliminated from the energy mix if new nuclear reactors were deployed, we chose Scenario 5 (Table \ref{scen-table}) as our base scenario for sensitivity analysis. Ten model parameters were sampled 30 times from appropriate distributions (Table \ref{sa-vars}). The parameter value at the first year of deployment (Table \ref{eco}) was varied, but the parameter's learning curve was held constant throughout all scenarios. For example, a 20\% change in the deployment year (2030) investment cost of \gls{SOFC}s with respect to the base case scenario reduces their investment cost in 2050 by 20\% as well. This makes learning-based cost-reductions proportionate across all sensitivity analysis runs. These parameters were randomly co-varied in 30 simulations. The share of each electricity generation technology (as the ratio of cumulative technology output to the cumulative electricity demand) and output of hydrogen technologies was plotted versus each varying parameter to correlate the effect of these parameters with the penetration of these technologies into the mix. A similar approach was also used to correlate these parameters with the system's transition cost.
