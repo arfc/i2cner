@@ -156,7 +156,9 @@ changes which improved the paper.
 Since the focus of the paper is on electricity, the share of GHG should be presented separately.
         
         \begin{solution}
-                Thank you for these comments. We appreciate your detailed review. For the comment above, the following text has been added to the paper
+                Thank you for these comments. We appreciate your detailed review. For the comment above, the following text has been added to the paper:
+                
+                The largest contribution to global \gls{GHG} emissions, some 73\%, comes from energy consumption in the transportation, electricity and heat, buildings, manufacturing, and construction sectors [2]. Energy use in buildings in particular generates 17.5\% of all emissions [3].
         \end{solution}
 
     %---------------------------------------------------------------------
@@ -165,7 +167,9 @@ Since the focus of the paper is on electricity, the share of GHG should be prese
  away from nuclear energy is not true and contradicts itself directly in the following sentence
         
         \begin{solution}
-                Thank you for these comments. For the comment above, the following text has been added to the paper to make the transition between the two statements less jarring. However, the narrative was fundamentally true for a while, as indicated by the /slow-restart of nuclear power plants and increasing reliance on coal, as shown by TEPCO(CHECK PUBLISHER NAME)'s Annual Electricity Review.
+                Thank you for these comments.  Our narrative was based on the slow, reluctant restart of nuclear power plants and increasing reliance on coal, as shown by the data from The Federation of Electric Power Companies of Japan's Annual Electricity Review and data from the EDMC. However, the jarring transition between the two sentences has been revised as follows:
+                
+                Like many other developed nations, Japan has been rapidly deploying renewables, and in the wake of the Fukushima Daiichi accident, it shut down its nuclear reactors and increased its reliance on coal [4, 5]. However, now Japan is reinvigorating its nuclear power sector, as evidenced by the restart of some of its nuclear reactors [6].
                 
         \end{solution}
         
@@ -174,7 +178,9 @@ Since the focus of the paper is on electricity, the share of GHG should be prese
          \question "lessons learnt from these decarbonisation simulations could inform global energy policy by delineating potential transition pathways, identifying key novel technologies, and their most significant parameters."
 	added value not clearly elaborated in comparison to existing literature        
         \begin{solution}
-                Thank you for these comments. We appreciate your detailed review. For the comment above, the following text has been added to the paper
+                Thank you for these comments. For the comment above, the following text has been added to the paper:
+                
+                Therefore, due to Japan's similarity to other developed nations and its willingness to consider a variety of commercial and pre-commercial low-carbon technologies, simulating likely transition pathways for decarbonisation of the Japanese electricity sector could inform global energy policy. Our simulations provide these insights by delineating potential transition scenarios that consider multiple combinations of a variety of technological options, and our sensitivity analyses identify key novel technologies and their most significant parameters.
         \end{solution}	
         
     %---------------------------------------------------------------------
@@ -183,7 +189,11 @@ Since the focus of the paper is on electricity, the share of GHG should be prese
          Describe in more detail how calculations are made here. How do the factors enter the model? Statically? Separately for the production, use and disposal phases? Where does the data come from? CO2 only or CO2 equivalents? 
         
         \begin{solution}
-                Thank you for these comments.  For the comment above, the following text has been added to the paper
+                Thank you for these comments. The values are taken directly from literature, and the sources are cited in Table A.8. The incorporation is dynamic and the variation has been mentioned in Table A.8 and in the methodology section, but further changes have been made for clarity (see below). The references report one lifecycle emission value which incorporates cradle to grave emissions. For further details please refer to individual references. The data use CO$_2$ equivalents - the units in Table A.8 have been changed to reflect this, thank you for catching this. The following sentences has been added to incorporate this information and further clarify the text:
+                
+                We account for the carbon cost of each technology using an emission coefficient that incorporates both direct emissions and life cycle emissions averaged over the entire operating lifetime for each technology. The emission coefficient data and their sources are listed in Table A.8. The emission coefficients vary dynamically for technologies that have projections available in literature, and are linearly interpolated between available data points until the last available projection, beyond which they are held constant. For hydrogen fuel cells and electrolysers, emission coefficients vary in magnitude across different technologies but the learning curves follow similar trajectories due to the similarity of technologies. The lifecycle emissions for \gls{PWS} are unknown, hence we have assumed them to be the same as that of \glspl{SOEC} as both are lab-scale technologies with similar deployment time-frames, and \gls{PWS} must have similar or lower life-cycle emissions as \gls{SOEC} to be competitive.
+                
+                
         \end{solution}
         
                     %---------------------------------------------------------------------
@@ -192,14 +202,29 @@ Since the focus of the paper is on electricity, the share of GHG should be prese
          \question "or hydrogen electrolysers and fuel cells, life-cycle emissions from just the stack are considered, as balance-of-plant emissions from utility scale hydrogen depend strongly on the type of plant and the source of energy used for electrolysis."
 Does this mean that H2 goes in emission-free? Then this would have to be clearly stated.
         \begin{solution}
-                Thank you for these comments. We appreciate your detailed review. For the comment above, the following text has been added to the paper
+                Thank you for these comments. Hydrogen technologies are not emission-free as life-cycle emissions from the stack are still incorporated into the model. Their respective emission coefficients are detailed in Table A.8, a clearer reference to which has been added in response to your comment:
+                
+                For hydrogen electrolysers and fuel cells, life-cycle emissions from just the stack are considered (see Table A.8), as balance-of-plant emissions from utility scale hydrogen depend strongly on the type of plant and the source of energy used for electrolysis. 
+                
         \end{solution}      
         
    %---------------------------------------------------------------------
           
          \question Figure 1-5 starts at 2013, until when is historical data shown and when does simulation start?
         \begin{solution}
-                Thank you for these comments. We appreciate your detailed review. For the comment above, the following text has been added to the paper
+                Thank you for catching this. Historical data is shown from 2013-2016, and while this was mentioned briefly in the methodology section when discussing the initial condition, it lacked clarity. We have added the following text to the methodology section:
+                \begin{itemize}
+                
+                \item The model captures the initial condition of the post-Fukushima Japanese electricity supply system using historical data The Energy Data and Modelling Centre’s data from 2013-2016 [27].
+                \end{itemize}
+                
+                And the following text to the results section:
+                \begin{itemize}
+                
+                \item Note that the years 2013-2016 represent the initial condition modelled using historical data [27], and the simulation results begin from 2017 onwards.
+                
+                \end{itemize}
+                
         \end{solution}      
               
         
@@ -209,7 +234,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
         \question The Paris agreement converged on Intended Nationally Determined Contributions on carbon footprint reduction. What are the parameters a country such as Japan consider while determining such targets?
         
         \begin{solution}
-                Thank you for these comments. We appreciate your detailed review, which has certainly improved the paper. Regarding the parameters that must be considered, we have referenced the Paris Agreements which state the international considerations, and the Japanese Basic Energy Plan and the 3E+S approach, which we have summarised briefly in the introduction chapter. Since the focus of our paper is not on energy policy review and analysis, further details of these parameters are left in the references for the sake of brevity.
+                Thank you for these comments. We appreciate your detailed review, which has certainly improved the paper. Regarding the parameters that must be considered, we have referenced the Paris Agreements which state the international considerations, and the Japanese Basic Energy Plan and the 3E+S approach, which we have summarised briefly in the introduction chapter. Since the focus of our paper is not on energy policy review and analysis, further details of these parameters are provided in the references.
         \end{solution}
 
         %---------------------------------------------------------------------
@@ -217,8 +242,9 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
         \question I have some apprehensions regarding the long-term horizon of 2100 for investigating the impact of the technologies. Such a long duration will involve many uncertainties. Further, the technology growth has been exponential in the last century. Therefore, it seems plausible that new technologies will be introduced in the energy mix. How the current paper deals with such uncertainties and technology disruptions?
         
         \begin{solution}
-                 Thank you for your comment. We have conducted a thorough literature review to identify key technologies that could play a significant role in decarbonisation at scale. Likely changes in key technology parameters such as investment cost, emission coefficient etc. are incorporated dynamically through learning curves obtained from our references, and using TIMES interpolation features. Many of these data sources identify median values and ranges of key parameters in the original references. Beyond that, it is true that novel technologies may emerge in the future, and they will be incorporated in any future simulations that we conduct. The final paragraph of the Conclusion section has been revised to indicate the same :
-                 ...as trucks and pipelines on hydrogen and CCS is also worth investigating. \textbf{Any new technologies that develop in the future and promise rapid decarbonisation should also be incorporated in such work.}
+                 Thank you for your comment. For existing and emerging technologies, we have conducted a thorough literature review to identify key technologies that could play a significant role in decarbonisation at scale. Likely changes in key technology parameters such as investment cost, emission coefficient etc. are incorporated dynamically through learning curves obtained from our references, and using TIMES interpolation features. Many of these data sources identify median values and ranges of key parameters in the original references. Beyond that, it is true that completely novel technologies may emerge in the future, and they will be incorporated in any future simulations that we conduct. The final paragraph of the Conclusion section has been revised to indicate the same :
+                 
+                 ...as trucks and pipelines on hydrogen and CCS is also worth investigating. Any new technologies that develop in the future and promise rapid decarbonisation should also be incorporated in such work.
                  
                  
         \end{solution}
@@ -226,7 +252,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
                 \question Carbon capture and sequestration is not a new technology. It has been utilized since long. Please highlight the chronological evolution of CCS and Hydrogen technologies to put your contributions in context. In fact, a table showing such chronological evolution for all the suggested technologies viz. nuclear power, wind, solar must be provided. 
         
         \begin{solution}
-                 Thank you for your comment. While carbon capture technology has been available in some form for a variety of applications since early 2000s, high-efficiency utility-scale carbon capture and sequestration plants have not been developed beyond the pilot stage in any nation, including Japan. This is further indicated by our data references provided by the EIA, which projects the first commercial prototype to become available in 2022-23 (see Table A.8). We have amended the initial reference to "carbon capture and sequestration" to "utility-scale carbon capture and sequestration" for further clarity.
+                 Thank you for your comment. While carbon capture technology has been available in some form for a variety of applications since early 2000s, high-efficiency utility-scale carbon capture and sequestration plants have not been developed beyond the pilot stage in any nation, including Japan. This is further indicated by our data references provided by the EIA, which projects the first commercial prototype to become available in 2022-23 (see Table A.8). We have amended the initial reference in the introduction from "carbon capture and sequestration" to "high-efficiency utility-scale carbon capture and sequestration" for further clarity.
                  
                  
         \end{solution}
@@ -237,7 +263,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
         
         \begin{solution}
         
-                 Thank you for your comment. One form of environmental impact, namely the direct and lifecycle CO$_2$ emissions, has been incorporated for all methods of electricity generation and storage using TIMES's emission coefficient feature. For all energy sources including renewables like wind and solar, the references for lifecycle emissions include the carbon cost of materials, manufacturing, and disposable as and when applicable. Since the focus of our paper is on modelling energy systems while focussing on \textbf{carbon emissions}, other forms of environmental impact such as recycling, acidification, human toxicity etc. are beyond the scope of our paper.
+                 Thank you for your comment. One form of environmental impact, namely the direct and lifecycle CO$_2$ emissions, has been incorporated for all methods of electricity generation and storage using TIMES's emission coefficient feature (please see Table A.8). For all energy sources including renewables like wind and solar, the references for lifecycle emissions include the carbon cost of materials, manufacturing, and disposal as and when applicable. Since the focus of our paper is on modelling energy systems while focussing on carbon emissions alone, other forms of environmental impact such as recycling, acidification, human toxicity etc. are beyond the scope of our paper.
                  
                  
         \end{solution}
@@ -247,9 +273,21 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
         
         \begin{solution}
         
-                 Thank you for your comment. We have touched upon this issue in our discussion, by identifying a need for improving safety standards within the Japanese regulatory framework, and for the need of engendering public acceptance by creating trust in nuclear power. Since the focus of our paper is not on policy and creating public acceptance, further discussion on this issue is beyond the scope of our paper.
+                 Thank you for your comment. We have touched upon this issue in our discussion, by identifying a need for improving safety standards within the Japanese regulatory framework, and for the need of engendering public acceptance by creating trust in nuclear power. To further emphasise the urgency of using existing options like nuclear power, the following sentence has been added to the discussion section in light of recent developments
                  
-                 The lines 18-19 in page 2 have been revised as follows for further clarity:
+                 \begin{itemize}
+                 \item An approach reliant on a mature technology like nuclear also improves the likelihood of Japan meeting its 2050 emission goals, as the timely success of the Japanese hydrogen plan is far from certain especially considering the more ambitious carbon reduction goals recently announced by <ORGANIZATION NAME> <REFERENCE>.
+                 \end{itemize}
+                 
+                  Since the focus of our paper is not on policy and creating public acceptance, further discussion on this issue is beyond the scope of our paper.
+                 
+                 The lines 34-36 in the abstract simply indicate the results of our findings, which are talking about future projections, whereas lines 18-19 on page 2 refer to the changes that have occurred in the Japanese electricity supply sector in the recent past. While we do not see any direct contradiction, your and Reviewer 1's comments have prompted us to revise the rather abrupt transition in lines 34-36 on page 2 as follows:
+                 
+                 \begin{itemize}
+                 
+                  \item  Like many other developed nations, Japan has been rapidly deploying renewables, and in the wake of the Fukushima Daiichi accident, it shut down its nuclear reactors and increased its reliance on coal [4, 5]. However, now Japan is reinvigorating its nuclear power sector, as evidenced by the restart of some of its nuclear reactors [6].
+                 
+                 \end{itemize}                 
                  
                  
         \end{solution}
@@ -262,7 +300,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
         
         \begin{solution}
         
-                 Thank you for your comment. We have simply referenced the policy as named by the Japanese government. We are not responsible for the nomenclature and are unable to modify its name for the sake of precision. We have referenced the need for social acceptance in the Discussion section, especially when discussing nuclear power.
+                 Thank you for your comment. We have simply referenced the policy as it was named by the Japanese government. We are not responsible for the nomenclature and are unable to modify its name as we need to be precise in our references. We have attemped to address your concerns by discussing the need for social acceptance in the Discussion section, especially in relation to nuclear power.
                  
                  
         \end{solution}      
@@ -273,7 +311,9 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
                                 
         \begin{solution}
         
-                 Thank you for your comment. We have identified research gaps by highlighting the lack of clarity in the transition pathway, the emergence of new technologies, the incorporation of carbon emission coefficients for all technologies, and the use of sensitivity analysis in determining key parameters across our abstract, introduction, and conclusion. A separate section has not been added for brevity.
+                 Thank you for your comment. We have identified research gaps by highlighting the lack of clarity in the transition pathway, the emergence of new technologies, the incorporation of carbon emission coefficients for all technologies, and the use of sensitivity analysis in determining key parameters across our abstract, introduction, and conclusion. The research gap you mentioned hhas been further highlighted by an additional sentence in the introduction:
+                 
+                 Our simulations provide these insights by delineating potential transition scenarios that consider multiple combinations of a variety of technological options, and our sensitivity analyses identify key novel technologies and their most significant parameters.
                  
                  
         \end{solution}     
@@ -283,7 +323,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
                                 
         \begin{solution}
         
-                 Thank you for your comment. The same table is present in the draft at the end of Section 4.2. We have not placed the table at the beginning of the section for the sake of readability, specifically so that the reader may first be introduced to the concept and scope of our sensitivity analysis and the parameters therein, before diving into the detailed ranges of variation.
+                 Thank you for your comment. This table is present in the draft at the end of Section 4.2. We have not placed the table at the beginning of the section for the sake of readability, specifically so that the reader may first be introduced to the concept and scope of our sensitivity analysis and the parameters therein, before diving into the detailed ranges of variation.
                  
                  
         \end{solution} 
@@ -292,7 +332,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
                                 
         \begin{solution}
         
-                 Thank you for your comment. We have simply referenced a source of funding. The focus of the paper is on modelling the electricity supply sector of a developed nation using TIMES while reducing carbon emissions. Cultural impacts are beyond the scope of our paper.
+                 Thank you for your comment. We have simply referenced a source of funding that happens to be the Japanese Ministry of Education, Culture, Sports, Science and Technology. The focus of the paper is on modelling the decarbonisation of the electricity supply sector of a developed nation using TIMES. We cannot comment on the aspects of our research in relation to culture, education, or sports, as only the science and technology aspects fall within the scope of our paper.
                  
                  
         \end{solution} 
@@ -301,7 +341,7 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
                                 
         \begin{solution}
         
-                 Thank you for your comment. We appreciate the depth of your question. We have referenced nuclear-specific challenges throughout the paper in discussing the associated cost, the safety concerns especially after Fukushima-Daiichi, and the lack of public acceptance. However, the focus of the paper is on modelling the electricity supply sector using TIMES while reducing carbon emissions. Investigating impediments to any specific technology and proposing solutions to such impediments is beyond the scope of our paper, which aims to conduct an technologically-impartial analysis into decarbonisation transition scenarios.
+                 Thank you for your comment. We appreciate the depth of your question. We have referenced nuclear-specific challenges throughout the paper in discussing the associated cost, the safety concerns especially after Fukushima-Daiichi, and the lack of public acceptance. However, the focus of the paper is on modelling the electricity supply sector using TIMES while reducing carbon emissions. Investigating impediments to any specific technology and proposing solutions to such impediments is beyond the scope of our paper, which aims to conduct an technologically-impartial analysis into decarbonisation transition scenarios. Further, any arguments we make in favour of any technology are informed by the energy analysis we have conducted, and any discussion about reliability theory is beyond the scope of our paper.
                  
                  
         \end{solution} 
@@ -312,7 +352,9 @@ Does this mean that H2 goes in emission-free? Then this would have to be clearly
         
          \question Table 1. Please, remove the refrence from the table and include it in the table caption.
         \begin{solution}
-                Thank you for these comments. We appreciate your detailed review. The requested changes have been made to Table 1, and the caption now reads
+                Thank you for these comments. We appreciate your detailed review. The requested changes have been made to Table 1, and the caption now reads:
+                
+                Electricity demand increase over the simulation time frame. The demand for 2017-2030 is obtained from [5], the rest of the curve is based on estimated population growth trends.
                 
         \end{solution}  
                                       %--------------------------------------------------------------------

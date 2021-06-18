@@ -17,6 +17,10 @@
 \usepackage{placeins}
 %\usepackage{supertabular}
 \usepackage{footnote}
+\usepackage{xcolor}
+\usepackage{url}
+\usepackage{underscore}
+
 %\makesavenoteenv{tabularx}
 \usepackage{booktabs} % nice rules (thick lines) for tables
 \usepackage{longtable} % for 'longtable' environment
@@ -39,7 +43,7 @@
 \newcommand{\abs}[1]{\left\lvert #1 \right\rvert}
 %\usepackage[singlelinecheck=false % <-- important]{caption}
 %\usepackage{adjustbox}
-%\usepackage{cite}
+\usepackage{cite}
 %\usepackage[demo]{graphicx}
 %\usepackage{caption}
 %\usepackage{subcaption}
@@ -52,6 +56,7 @@
 \newcolumntype{s}{>{\hsize=.5\hsize}X}
 \newcolumntype{m}{>{\hsize=.75\hsize}X}
 \newcolumntype{x}{>{\hsize=.25\hsize}X}
+\RequirePackage[2019/11/18]{latexrelease}
 
 \graphicspath{{figures/}}
 
@@ -81,6 +86,7 @@ minimum height=2em]
 \usepackage[hidelinks]{hyperref}
 % after hyperref %
 \usepackage{cleveref}
+\usepackage{changebar}
 \usepackage{datatool}
 %\usepackage[nonumberlist,nopostdot,nonumberlist,acronym,toc,section]{glossaries}
 \usepackage[xindy,nonumberlist]{glossaries}
@@ -90,8 +96,48 @@ minimum height=2em]
 \newcommand{\greencheck}{{\color{green}\checkmark}}
 \newcommand{\xmark}{{\color{red}\ding{55}}}
 \usepackage[includefoot,bottom=8pt]{geometry}
+\usepackage{changes}
 
+%%DIF PREAMBLE EXTENSION ADDED BY LATEXDIFF
+%%DIF UNDERLINE PREAMBLE %DIF PREAMBLE
+%\RequirePackage[normalem]{ulem} %DIF PREAMBLE
+%\RequirePackage{color}\definecolor{RED}{rgb}{1,0,0}\definecolor{BLUE}{rgb}{0,0,1} %DIF PREAMBLE
+%\providecommand{\DIFadd}[1]{{\protect\color{blue}\uwave{#1}}} %DIF PREAMBLE
+%\providecommand{\DIFdel}[1]{{\protect\color{red}\sout{#1}}}                      %DIF PREAMBLE
+%%DIF SAFE PREAMBLE %DIF PREAMBLE
+%\providecommand{\DIFaddbegin}{} %DIF PREAMBLE
+%\providecommand{\DIFaddend}{} %DIF PREAMBLE
+%\providecommand{\DIFdelbegin}{} %DIF PREAMBLE
+%\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+%\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+%\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+%\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+%\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+%\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+%\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
+%%DIF END PREAMBLE EXTENSION ADDED BY LATEXDIFF
 
+%\RequirePackage{color}
+%%DIF PREAMBLE
+%\RequirePackage[stable]{footmisc} %DIF PREAMBLE
+%\RequirePackage{changebar} %DIF PREAMBLE
+%\providecommand{\DIFadd}[1]{#1} %DIF PREAMBLE
+%%\providecommand{\DIFdel}[1]{{\protect\color{red} [..\footnote{removed: #1}]}\xspace}
+%\providecommand{\DIFdel}[1]{} %DIF PREAMBLE
+%%DIF PREAMBLE
+%%DIF SAFE PREAMBLE %DIF PREAMBLE
+%\providecommand{\DIFaddbegin}{\protect\color{blue}} %DIF PREAMBLE
+%\providecommand{\DIFaddend}{\protect\color{black}} %DIF PREAMBLE
+%\providecommand{\DIFdelbegin}{\protect\cbdelete} %DIF PREAMBLE
+%\providecommand{\DIFdelend}{} %DIF PREAMBLE
+%%DIF FLOATSAFE PREAMBLE %DIF PREAMBLE
+%\providecommand{\DIFaddFL}[1]{\DIFadd{#1}} %DIF PREAMBLE
+%\providecommand{\DIFdelFL}[1]{\DIFdel{#1}} %DIF PREAMBLE
+%\providecommand{\DIFaddbeginFL}{} %DIF PREAMBLE
+%\providecommand{\DIFaddendFL}{} %DIF PREAMBLE
+%\providecommand{\DIFdelbeginFL}{} %DIF PREAMBLE
+%\providecommand{\DIFdelendFL}{} %DIF PREAMBLE
 
 \begin{document}
 \begin{frontmatter}
@@ -124,23 +170,23 @@ carbon capture
 
 \printglossary[title=Abbreviations]
 
-\input{introduction}
+\input{intro-changes}
 \FloatBarrier
-\input{litreview}
-\FloatBarrier
-\input{methods}
-\FloatBarrier
-\input{results}
-\FloatBarrier
-\input{discussion}
-\FloatBarrier
-\input{conclusion}
-\FloatBarrier
-\input{acks}
-\FloatBarrier
+%\input{litreview-changes}
+%\FloatBarrier
+%\input{methods-changes}
+%\FloatBarrier
+%\input{results-changes}
+%\FloatBarrier
+%\input{discussion-changes}
+%\FloatBarrier
+%\input{conclusion-changes}
+%\FloatBarrier
+%\input{acks}
+%\FloatBarrier
 \bibliographystyle{elsarticle-num}
 \bibliography{i2cner-paper-2}
-\newpage
-\appendix
-\input{Appendix}
+%\newpage
+%\appendix
+%\input{Appendix-revised}
 \end{document}
