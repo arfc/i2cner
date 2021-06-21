@@ -1,0 +1,36 @@
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{Energy use in buildings in particular generates 17.5\% of all emissions \mbox { \cite {ritchie_emissions_2021}}.}}{1}{section*.1}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{high-efficiency utility-scale }}{2}{section*.2}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{(henceforth referred to as }}{2}{section*.3}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{) }}{2}{section*.4}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{and has attempted to transition away from nuclear power since the }}{2}{section*.5}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{, and in the wake of the }}{2}{section*.6}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{\mbox { \cite {international_energy_agency_latest_2019}}. Yet Japan is also considering }}{2}{section*.7}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{, it shut down its nuclear reactors and increased its reliance on coal \mbox {\cite {international_energy_agency_latest_2019, noauthor_electricity_2019}}. However, now Japan is }}{2}{section*.8}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{as}}{2}{section*.9}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{some of}}{2}{section*.10}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{lessons learnt from these decarbonisation simulations}}{2}{section*.11}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{simulating likely transition pathways for decarbonisation of the Japanese electricity sector}}{2}{section*.12}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{. Our simulations provide these insights}}{2}{section*.13}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{pathways, identifying}}{2}{section*.14}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{scenarios that consider multiple combinations of a variety of technological options, and our sensitivity analyses identify}}{2}{section*.15}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{,}}{2}{section*.16}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{The demand for 2017-2030 is obtained from \mbox { \cite {noauthor_electricity_2019}} , the rest of the curve is based on estimated population growth trends.}}{5}{section*.18}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{\mbox { \cite {noauthor_electricity_2019} } }}{5}{section*.21}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{historical data}}{6}{section*.22}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{The emission coefficient data and their sources are listed in Table \ref {eco}. The emission coefficients vary dynamically for technologies that have projections available in literature, and are linearly interpolated between available data points until the last available projection, beyond which they are held constant. For hydrogen fuel cells and electrolysers, emission coefficients vary in magnitude across different technologies but the learning curves follow similar trajectories due to the similarity of technologies \mbox {\cite {iea_technology_2015} } \mbox {\cite {pinaud_technical_2013}}. The lifecycle emissions for \gls {PWS} are unknown, hence we have assumed them to be the same as that of \glspl {SOEC} as both are lab-scale technologies with similar deployment time-frames, and \gls {PWS} must have similar or lower life-cycle emissions as \gls {SOEC} to be competitive}}{6}{section*.23}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{(see Table \ref {eco})}}{8}{section*.24}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{Note that the years 2013-2016 represent the initial condition modelled using historical data \mbox { \cite {the_institute_of_energy_economics_japan_energy_2018}} , and the simulation results begin from 2017 onwards. }}{10}{section*.25}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{\textbf {3.51 trillion USD}}}{11}{section*.26}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{3.51 trillion USD}}{11}{section*.27}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{\textbf {2.66 trillion USD.}}}{12}{section*.28}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{2.66 trillion USD.}}{12}{section*.29}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{{3.19 trillion USD}}}{13}{section*.30}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{3.19 trillion USD}}{13}{section*.31}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{\textbf {2.80 trillion USD}}}{14}{section*.32}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{2.80 trillion USD}}{14}{section*.33}%
+\contentsline {deleted}{Deleted: \truncate {\Changestruncatewidth }{\textbf {3.18 trillion USD}}}{15}{section*.34}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{3.18 trillion USD}}{15}{section*.35}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{especially considering the more ambitious carbon reduction goals recently announced by METI \mbox {\cite {noauthor_japans_2021,yamaguchi_japan_2021}}}}{22}{section*.36}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{Any new technologies that develop in the future and promise rapid decarbonisation should also be incorporated in such work.}}{23}{section*.37}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{-eq}}{34}{section*.39}%
+\contentsline {added}{Added: \truncate {\Changestruncatewidth }{-eq}}{35}{section*.39}%

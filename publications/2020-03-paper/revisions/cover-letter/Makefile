@@ -1,25 +1,21 @@
-manuscript = times-paper-revised
+manuscript = cover_letter
 references = $(wildcard *.bib)
-latexopt   = -halt-on-error -shell-escape -file-line-error
+latexopt   = -halt-on-error -file-line-error
 
 all: all-via-pdf
 
-all-via-pdf: $(manuscript).tex $(references)
-	pdflatex $(latexopt) $<
-	bibtex $(manuscript).aux
-	pdflatex $(latexopt) $<
+all-via-pdf: $(manuscript).tex $(references) background.pdf
 	pdflatex $(latexopt) $<
 
 all-via-dvi: 
 	latex $(latexopt) $(manuscript)
-	bibtex $(manuscript).aux
-	latex $(latexopt) $(manuscript)
-	latex $(latexopt) $(manuscript)
 	dvipdf $(manuscript)
+
+background.pdf : background.tex
+	pdflatex $(latexopt) $<
 
 epub: 
 	latex $(latexopt) $(manuscript)
-	bibtex $(manuscript).aux
 	mk4ht htlatex $(manuscript).tex 'xhtml,charset=utf-8,pmathml' ' -cunihtf -utf8 -cvalidate'
 	ebook-convert $(manuscript).html $(manuscript).epub
 
@@ -37,6 +33,6 @@ realclean: clean
 	convert $< $@
 
 zip:
-	zip paper.zip *.tex *.eps *.bib
+	zip $(manuscript).zip *.tex *.eps *.bib
 
 .PHONY: all clean
